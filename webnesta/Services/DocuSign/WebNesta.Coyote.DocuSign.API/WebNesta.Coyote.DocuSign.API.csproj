@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\WebNesta.Coyote.Core\WebNesta.Coyote.Core.csproj" />
+    <ProjectReference Include="..\WebNesta.Coyote.DocuSign.Domain\WebNesta.Coyote.DocuSign.Domain.csproj" />
+  </ItemGroup>
+
+
+</Project>

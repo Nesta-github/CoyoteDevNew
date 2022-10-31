@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "WebNesta.Coyote.Geral.Domain/1.0.0": {
+        "dependencies": {
+          "WebNesta.Coyote.Core": "1.0.0"
+        },
+        "runtime": {
+          "WebNesta.Coyote.Geral.Domain.dll": {}
+        }
+      },
+      "WebNesta.Coyote.Core/1.0.0": {
+        "runtime": {
+          "WebNesta.Coyote.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "WebNesta.Coyote.Geral.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "WebNesta.Coyote.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,10 @@
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\DocuSign\WebNesta.Coyote.DocuSign.Data\bin\Debug\netcoreapp3.1\WebNesta.Coyote.DocuSign.Data.deps.json
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\DocuSign\WebNesta.Coyote.DocuSign.Data\bin\Debug\netcoreapp3.1\WebNesta.Coyote.DocuSign.Data.dll
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\DocuSign\WebNesta.Coyote.DocuSign.Data\bin\Debug\netcoreapp3.1\WebNesta.Coyote.DocuSign.Data.pdb
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\DocuSign\WebNesta.Coyote.DocuSign.Data\obj\Debug\netcoreapp3.1\WebNesta.Coyote.DocuSign.Data.csproj.AssemblyReference.cache
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\DocuSign\WebNesta.Coyote.DocuSign.Data\obj\Debug\netcoreapp3.1\WebNesta.Coyote.DocuSign.Data.GeneratedMSBuildEditorConfig.editorconfig
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\DocuSign\WebNesta.Coyote.DocuSign.Data\obj\Debug\netcoreapp3.1\WebNesta.Coyote.DocuSign.Data.AssemblyInfoInputs.cache
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\DocuSign\WebNesta.Coyote.DocuSign.Data\obj\Debug\netcoreapp3.1\WebNesta.Coyote.DocuSign.Data.AssemblyInfo.cs
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\DocuSign\WebNesta.Coyote.DocuSign.Data\obj\Debug\netcoreapp3.1\WebNesta.Coyote.DocuSign.Data.csproj.CoreCompileInputs.cache
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\DocuSign\WebNesta.Coyote.DocuSign.Data\obj\Debug\netcoreapp3.1\WebNesta.Coyote.DocuSign.Data.dll
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\DocuSign\WebNesta.Coyote.DocuSign.Data\obj\Debug\netcoreapp3.1\WebNesta.Coyote.DocuSign.Data.pdb

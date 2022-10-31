@@ -1,0 +1,13 @@
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Domain\bin\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Domain.deps.json
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Domain\bin\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Domain.dll
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Domain\bin\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Domain.pdb
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Domain\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Domain.csproj.AssemblyReference.cache
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Domain\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Domain\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Domain.AssemblyInfoInputs.cache
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Domain\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Domain.AssemblyInfo.cs
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Domain\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Domain.csproj.CoreCompileInputs.cache
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Domain\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Domain.dll
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Domain\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Domain.pdb
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Domain\bin\Debug\netcoreapp3.1\WebNesta.Coyote.Core.dll
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Domain\bin\Debug\netcoreapp3.1\WebNesta.Coyote.Core.pdb
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Domain\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Domain.csproj.CopyComplete

@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\WebNesta.Coyote.Core\WebNesta.Coyote.Core.csproj" />
+    <ProjectReference Include="..\WebNesta.Coyote.Geral.Data\WebNesta.Coyote.Geral.Data.csproj" />
+    <ProjectReference Include="..\WebNesta.Coyote.Geral.Domain\WebNesta.Coyote.Geral.Domain.csproj" />
+  </ItemGroup>
+
+
+</Project>

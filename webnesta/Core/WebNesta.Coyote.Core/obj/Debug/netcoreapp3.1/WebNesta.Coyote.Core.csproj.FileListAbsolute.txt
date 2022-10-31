@@ -1,0 +1,10 @@
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Core\WebNesta.Coyote.Core\bin\Debug\netcoreapp3.1\WebNesta.Coyote.Core.deps.json
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Core\WebNesta.Coyote.Core\bin\Debug\netcoreapp3.1\WebNesta.Coyote.Core.dll
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Core\WebNesta.Coyote.Core\bin\Debug\netcoreapp3.1\WebNesta.Coyote.Core.pdb
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Core\WebNesta.Coyote.Core\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Core.csproj.AssemblyReference.cache
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Core\WebNesta.Coyote.Core\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Core.GeneratedMSBuildEditorConfig.editorconfig
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Core\WebNesta.Coyote.Core\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Core.AssemblyInfoInputs.cache
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Core\WebNesta.Coyote.Core\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Core.AssemblyInfo.cs
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Core\WebNesta.Coyote.Core\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Core.csproj.CoreCompileInputs.cache
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Core\WebNesta.Coyote.Core\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Core.dll
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Core\WebNesta.Coyote.Core\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Core.pdb

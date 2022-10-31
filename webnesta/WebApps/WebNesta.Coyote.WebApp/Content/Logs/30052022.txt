@@ -1,0 +1,449 @@
+
+Log Entry : 09:06:09 segunda-feira, 30 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em ASP._Page_Views_Informes_Index_cshtml.Execute() na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Views\Informes\Index.cshtml:linha 122
+   em System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   em System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   em System.Web.WebPages.StartPage.RunPage()
+   em System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   em System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   em System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   em System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   em System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__4()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: Referência de objeto não definida para uma instância de um objeto.
+-------------------------------
+
+Log Entry : 09:30:32 segunda-feira, 30 de maio de 2022
+  :
+  :master : SELECT CJTPIDTP,CJTPDSTP from CJTPTIPO where PAIDPAIS=1 order by 1 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 09:33:04 segunda-feira, 30 de maio de 2022
+  :
+  :master : SELECT CJTPIDTP,CJTPDSTP from CJTPTIPO where PAIDPAIS=1 order by 1 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 09:35:29 segunda-feira, 30 de maio de 2022
+  :
+  :master : SELECT CJTPIDTP,CJTPDSTP from CJTPTIPO where PAIDPAIS=1 order by 1 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 09:42:15 segunda-feira, 30 de maio de 2022
+  :
+  :master : SELECT CJTPIDTP,CJTPDSTP from CJTPTIPO where PAIDPAIS=1 order by 1 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 10:17:48 segunda-feira, 30 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em System.Web.Mvc.Controller.HandleUnknownAction(String actionName)
+   em System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: Um método 'propdin_cbPanelSubTelasPartial' de ação pública não foi encontrado no controlador 'WebNesta_CapitalMarket.Controllers.SetupController'.
+-------------------------------
+
+Log Entry : 10:35:51 segunda-feira, 30 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em System.Web.Mvc.Controller.HandleUnknownAction(String actionName)
+   em System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: Um método 'propdin_cbPanelSubTelasPartial' de ação pública não foi encontrado no controlador 'WebNesta_CapitalMarket.Controllers.SetupController'.
+-------------------------------
+
+Log Entry : 13:53:11 segunda-feira, 30 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em WebNesta_CapitalMarket.Controllers.API_Request.PostRequest(String contentJSON) na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Controllers\API_Request.cs:linha 106
+   em WebNesta_CapitalMarket.Controllers.BaseController.OnActionExecuting(ActionExecutingContext filterContext) na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Controllers\BaseController.cs:linha 131
+   em System.Web.Mvc.Controller.System.Web.Mvc.IActionFilter.OnActionExecuting(ActionExecutingContext filterContext)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.InvokeActionMethodFilterAsynchronouslyRecursive(Int32 filterIndex)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__0(AsyncCallback asyncCallback, Object asyncState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallBeginDelegate(AsyncCallback callback, Object callbackState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.Begin(AsyncCallback callback, Object state, Int32 timeout)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.BeginInvokeActionMethodWithFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor, IDictionary`2 parameters, AsyncCallback callback, Object state)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__0(AsyncCallback asyncCallback, Object asyncState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallBeginDelegate(AsyncCallback callback, Object callbackState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.Begin(AsyncCallback callback, Object state, Int32 timeout)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.BeginInvokeAction(ControllerContext controllerContext, String actionName, AsyncCallback callback, Object state)
+   em System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_0(AsyncCallback asyncCallback, Object asyncState, ExecuteCoreState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallBeginDelegate(AsyncCallback callback, Object callbackState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.Begin(AsyncCallback callback, Object state, Int32 timeout)
+   em System.Web.Mvc.Controller.BeginExecuteCore(AsyncCallback callback, Object state)
+   em System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_1(AsyncCallback asyncCallback, Object callbackState, Controller controller)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallBeginDelegate(AsyncCallback callback, Object callbackState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.Begin(AsyncCallback callback, Object state, Int32 timeout)
+   em System.Web.Mvc.Controller.BeginExecute(RequestContext requestContext, AsyncCallback callback, Object state)
+   em System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.BeginExecute(RequestContext requestContext, AsyncCallback callback, Object state)
+   em System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_0(AsyncCallback asyncCallback, Object asyncState, ProcessRequestState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallBeginDelegate(AsyncCallback callback, Object callbackState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.Begin(AsyncCallback callback, Object state, Int32 timeout)
+   em System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   em System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContext httpContext, AsyncCallback callback, Object state)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.BeginProcessRequest(HttpContext context, AsyncCallback cb, Object extraData)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: Não foi possível acessar a API https://cloud4.webnesta.com:44300/api/v1/Account/NotificacoesRecebidas - ERROR: Impossível conectar-se ao servidor remoto
+-------------------------------
+
+Log Entry : 13:56:12 segunda-feira, 30 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em System.Web.HttpServerUtility.ExecuteInternal(IHttpHandler handler, TextWriter writer, Boolean preserveForm, Boolean setPreviousPage, VirtualPath path, VirtualPath filePath, String physPath, Exception error, String queryStringOverride)
+   em System.Web.HttpServerUtility.Execute(IHttpHandler handler, TextWriter writer, Boolean preserveForm, Boolean setPreviousPage)
+   em System.Web.HttpServerUtility.Execute(IHttpHandler handler, TextWriter writer, Boolean preserveForm)
+   em System.Web.HttpServerUtilityWrapper.Execute(IHttpHandler handler, TextWriter writer, Boolean preserveForm)
+   em System.Web.Mvc.Html.ChildActionExtensions.ActionHelper(HtmlHelper htmlHelper, String actionName, String controllerName, RouteValueDictionary routeValues, TextWriter textWriter)
+   em System.Web.Mvc.Html.ChildActionExtensions.Action(HtmlHelper htmlHelper, String actionName, String controllerName, RouteValueDictionary routeValues)
+   em System.Web.Mvc.Html.ChildActionExtensions.Action(HtmlHelper htmlHelper, String actionName, String controllerName)
+   em ASP._Page_Views_Shared__Layout_cshtml.Execute()
+   em System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   em System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   em System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   em System.Web.WebPages.WebPageBase.<>c__DisplayClass40_0.<RenderPageCore>b__0(TextWriter writer)
+   em System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   em System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   em System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   em System.Web.WebPages.WebPageBase.PopContext()
+   em System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   em System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   em System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   em System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__4()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: Erro ao executar a solicitação filho do manipulador 'System.Web.Mvc.HttpHandlerUtil+ServerExecuteHttpHandlerAsyncWrapper'.
+-------------------------------
+
+Log Entry : 14:03:52 segunda-feira, 30 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em WebNesta_CapitalMarket.Controllers.API_Request.PostRequest(String contentJSON) na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Controllers\API_Request.cs:linha 106
+   em WebNesta_CapitalMarket.Controllers.SetupController.InserirPropdin(PropriedadeDin propriedade, FormCollection fc) na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Controllers\SetupController.cs:linha 492
+   em lambda_method(Closure , ControllerBase , Object[] )
+   em System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   em System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_0.<InvokeActionMethodFilterAsynchronouslyRecursive>b__0()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_2.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__4()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: Não foi possível acessar a API https://cloud4.webnesta.com:44300/api/v1/Setup/InserirPropriedade?currentUser=master - ERROR: O servidor remoto retornou um erro: (500) Erro Interno do Servidor.
+-------------------------------
+
+Log Entry : 14:15:17 segunda-feira, 30 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em WebNesta_CapitalMarket.Controllers.API_Request.PostRequest(String contentJSON) na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Controllers\API_Request.cs:linha 106
+   em WebNesta_CapitalMarket.Controllers.SetupController.InserirPropdin(PropriedadeDin propriedade, FormCollection fc) na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Controllers\SetupController.cs:linha 492
+   em lambda_method(Closure , ControllerBase , Object[] )
+   em System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   em System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_0.<InvokeActionMethodFilterAsynchronouslyRecursive>b__0()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_2.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__4()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: Não foi possível acessar a API https://cloud4.webnesta.com:44300/api/v1/Setup/InserirPropriedade?currentUser=master - ERROR: O servidor remoto retornou um erro: (500) Erro Interno do Servidor.
+-------------------------------
+
+Log Entry : 14:17:30 segunda-feira, 30 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em WebNesta_CapitalMarket.Controllers.API_Request.PostRequest(String contentJSON) na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Controllers\API_Request.cs:linha 106
+   em WebNesta_CapitalMarket.Controllers.SetupController.InserirPropdin(PropriedadeDin propriedade, FormCollection fc) na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Controllers\SetupController.cs:linha 492
+   em lambda_method(Closure , ControllerBase , Object[] )
+   em System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   em System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_0.<InvokeActionMethodFilterAsynchronouslyRecursive>b__0()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_2.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__4()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: Não foi possível acessar a API https://cloud4.webnesta.com:44300/api/v1/Setup/InserirPropriedade?currentUser=master - ERROR: O servidor remoto retornou um erro: (500) Erro Interno do Servidor.
+-------------------------------
+
+Log Entry : 14:36:04 segunda-feira, 30 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em System.Web.Mvc.Controller.HandleUnknownAction(String actionName)
+   em System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: Um método 'propdin_inserir_cbPanelSubTelasPartial' de ação pública não foi encontrado no controlador 'WebNesta_CapitalMarket.Controllers.SetupController'.
+-------------------------------
+
+Log Entry : 14:37:44 segunda-feira, 30 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em WebNesta_CapitalMarket.Controllers.API_Request.PostRequest(String contentJSON) na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Controllers\API_Request.cs:linha 106
+   em WebNesta_CapitalMarket.Controllers.SetupController.InserirPropdin(PropriedadeDin propriedade, FormCollection fc) na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Controllers\SetupController.cs:linha 492
+   em lambda_method(Closure , ControllerBase , Object[] )
+   em System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   em System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_0.<InvokeActionMethodFilterAsynchronouslyRecursive>b__0()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_2.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__4()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: Não foi possível acessar a API https://cloud4.webnesta.com:44300/api/v1/Setup/InserirPropriedade?currentUser=master - ERROR: O servidor remoto retornou um erro: (500) Erro Interno do Servidor.
+-------------------------------
+
+Log Entry : 14:41:19 segunda-feira, 30 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em WebNesta_CapitalMarket.Controllers.API_Request.PostRequest(String contentJSON) na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Controllers\API_Request.cs:linha 106
+   em WebNesta_CapitalMarket.Controllers.SetupController.InserirPropdin(PropriedadeDin propriedade, FormCollection fc) na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Controllers\SetupController.cs:linha 492
+   em lambda_method(Closure , ControllerBase , Object[] )
+   em System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   em System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_0.<InvokeActionMethodFilterAsynchronouslyRecursive>b__0()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_2.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__4()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: Não foi possível acessar a API https://cloud4.webnesta.com:44300/api/v1/Setup/InserirPropriedade?currentUser=master - ERROR: O servidor remoto retornou um erro: (500) Erro Interno do Servidor.
+-------------------------------
+
+Log Entry : 17:15:17 segunda-feira, 30 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em System.Web.Mvc.Controller.HandleUnknownAction(String actionName)
+   em System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: Um método 'propdin_cbPanelSubTelasPartial' de ação pública não foi encontrado no controlador 'WebNesta_CapitalMarket.Controllers.SetupController'.
+-------------------------------

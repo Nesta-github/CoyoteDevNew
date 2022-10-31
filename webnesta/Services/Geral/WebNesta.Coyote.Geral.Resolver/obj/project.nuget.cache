@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "igLOZNIfMkoYnaWUdtxKNkLPXdaDakSsXVl16kZw5SoqwzzNAqooZ0wDoDe4D1BHW7jl5+B67yJVCNfJLWlZ8A==",
+  "success": true,
+  "projectFilePath": "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\Services\\Geral\\WebNesta.Coyote.Geral.Resolver\\WebNesta.Coyote.Geral.Resolver.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\alex.santos\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.0.0\\microsoft.extensions.dependencyinjection.abstractions.2.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

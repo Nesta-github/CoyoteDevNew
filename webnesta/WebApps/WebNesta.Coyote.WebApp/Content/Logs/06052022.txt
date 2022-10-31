@@ -1,0 +1,1762 @@
+
+Log Entry : 14:06:12 sexta-feira, 6 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em System.Web.Compilation.AssemblyBuilder.Compile()
+   em System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   em System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   em System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   em System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   em System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   em System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
+   em System.Web.Compilation.BuildManager.GetCompiledType(String virtualPath)
+   em System.Web.Mvc.BuildManagerWrapper.System.Web.Mvc.IBuildManager.GetCompiledType(String virtualPath)
+   em System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   em System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__4()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Views\CapaContrato\Index.cshtml(192): error CS1061: 'Contrato' does not contain a definition for 'OPCDAUXA' and no accessible extension method 'OPCDAUXA' accepting a first argument of type 'Contrato' could be found (are you missing a using directive or an assembly reference?)
+-------------------------------
+
+Log Entry : 14:06:36 sexta-feira, 6 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em System.Web.Compilation.AssemblyBuilder.Compile()
+   em System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   em System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   em System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   em System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   em System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   em System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
+   em System.Web.Compilation.BuildManager.GetCompiledType(String virtualPath)
+   em System.Web.Mvc.BuildManagerWrapper.System.Web.Mvc.IBuildManager.GetCompiledType(String virtualPath)
+   em System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   em System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__4()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Views\CapaContrato\Index.cshtml(192): error CS1061: 'Contrato' does not contain a definition for 'OPCDAUXA' and no accessible extension method 'OPCDAUXA' accepting a first argument of type 'Contrato' could be found (are you missing a using directive or an assembly reference?)
+-------------------------------
+
+Log Entry : 14:42:28 sexta-feira, 6 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em DevExpress.Web.Mvc.ExtensionBase.Render()
+   em DevExpress.Web.Mvc.ExtensionBase.<GetHtml>b__69_0()
+   em DevExpress.Web.Mvc.Internal.Utils.GetInnerWriterOutput(Action renderDelegate)
+   em DevExpress.Web.Mvc.ExtensionBase.GetHtml()
+   em ASP._Page_Views_CapaContrato__comboFornecedoresPartial_cshtml.Execute() na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Views\CapaContrato\_comboFornecedoresPartial.cshtml:linha 2
+   em System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   em System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   em System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   em System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   em System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   em System.Web.Mvc.HtmlHelper.RenderPartialInternal(String partialViewName, ViewDataDictionary viewData, Object model, TextWriter writer, ViewEngineCollection viewEngineCollection)
+   em System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   em System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model)
+   em ASP._Page_Views_CapaContrato_Index_cshtml.Execute() na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Views\CapaContrato\Index.cshtml:linha 347
+   em System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   em System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   em System.Web.WebPages.StartPage.RunPage()
+   em System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   em System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   em System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   em System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   em System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__4()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: An extension with 'comboFornecedores' name already rendered.
+-------------------------------
+
+Log Entry : 14:46:23 sexta-feira, 6 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em DevExpress.Web.Mvc.ExtensionBase.Render()
+   em DevExpress.Web.Mvc.ExtensionBase.<GetHtml>b__69_0()
+   em DevExpress.Web.Mvc.Internal.Utils.GetInnerWriterOutput(Action renderDelegate)
+   em DevExpress.Web.Mvc.ExtensionBase.GetHtml()
+   em ASP._Page_Views_CapaContrato__comboTopologiaPartial_cshtml.Execute() na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Views\CapaContrato\_comboTopologiaPartial.cshtml:linha 2
+   em System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   em System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   em System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   em System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   em System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   em System.Web.Mvc.HtmlHelper.RenderPartialInternal(String partialViewName, ViewDataDictionary viewData, Object model, TextWriter writer, ViewEngineCollection viewEngineCollection)
+   em System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   em System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model)
+   em ASP._Page_Views_CapaContrato_Index_cshtml.Execute() na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Views\CapaContrato\Index.cshtml:linha 365
+   em System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   em System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   em System.Web.WebPages.StartPage.RunPage()
+   em System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   em System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   em System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   em System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   em System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__4()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: An extension with 'comboTopologia' name already rendered.
+-------------------------------
+
+Log Entry : 15:06:07 sexta-feira, 6 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em System.Web.HttpServerUtility.ExecuteInternal(IHttpHandler handler, TextWriter writer, Boolean preserveForm, Boolean setPreviousPage, VirtualPath path, VirtualPath filePath, String physPath, Exception error, String queryStringOverride)
+   em System.Web.HttpServerUtility.Execute(IHttpHandler handler, TextWriter writer, Boolean preserveForm, Boolean setPreviousPage)
+   em System.Web.HttpServerUtility.Execute(IHttpHandler handler, TextWriter writer, Boolean preserveForm)
+   em System.Web.HttpServerUtilityWrapper.Execute(IHttpHandler handler, TextWriter writer, Boolean preserveForm)
+   em System.Web.Mvc.Html.ChildActionExtensions.ActionHelper(HtmlHelper htmlHelper, String actionName, String controllerName, RouteValueDictionary routeValues, TextWriter textWriter)
+   em System.Web.Mvc.Html.ChildActionExtensions.Action(HtmlHelper htmlHelper, String actionName, String controllerName, RouteValueDictionary routeValues)
+   em System.Web.Mvc.Html.ChildActionExtensions.Action(HtmlHelper htmlHelper, String actionName, Object routeValues)
+   em ASP._Page_Views_CapaContrato_Index_cshtml.Execute() na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Views\CapaContrato\Index.cshtml:linha 374
+   em System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   em System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   em System.Web.WebPages.StartPage.RunPage()
+   em System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   em System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   em System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   em System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   em System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__4()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: Erro ao executar a solicitação filho do manipulador 'System.Web.Mvc.HttpHandlerUtil+ServerExecuteHttpHandlerAsyncWrapper'.
+-------------------------------
+
+Log Entry : 15:21:06 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 15:22:58 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 15:24:01 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 15:26:20 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 15:27:13 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 15:28:03 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 15:29:50 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 15:31:39 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 15:34:35 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 15:35:53 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 15:40:14 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 15:54:28 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 15:58:17 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 16:02:04 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 16:06:18 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 16:06:59 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 16:17:05 sexta-feira, 6 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em WebNesta_CapitalMarket.Controllers.API_Request.PostRequest(String contentJSON) na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Controllers\API_Request.cs:linha 103
+   em WebNesta_CapitalMarket.Controllers.LoginController.Index(Login login, FormCollection fc, String logar, String validar) na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Controllers\LoginController.cs:linha 166
+   em lambda_method(Closure , ControllerBase , Object[] )
+   em System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   em System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_0.<InvokeActionMethodFilterAsynchronouslyRecursive>b__0()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_2.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__4()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: Não foi possível acessar a API https://cloud4.webnesta.com:44300/api/v1/Account/Logar - ERROR: O servidor remoto retornou um erro: (500) Erro Interno do Servidor.
+-------------------------------
+
+Log Entry : 16:19:06 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 16:20:18 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 16:20:50 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 16:23:04 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 16:33:16 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 16:36:52 sexta-feira, 6 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em WebNesta_CapitalMarket.Controllers.API_Request.PostRequest(String contentJSON) na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Controllers\API_Request.cs:linha 103
+   em WebNesta_CapitalMarket.Controllers.CapaContratoController.Inserir(Aquisicao aquisicao, FormCollection fc) na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Controllers\CapaContratoController.cs:linha 395
+   em lambda_method(Closure , ControllerBase , Object[] )
+   em System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   em System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_0.<InvokeActionMethodFilterAsynchronouslyRecursive>b__0()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_2.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__4()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: Não foi possível acessar a API https://cloud4.webnesta.com:44300/api/v1/Aquisicao/Inserir?currentUser=master - ERROR: O servidor remoto retornou um erro: (500) Erro Interno do Servidor.
+-------------------------------
+
+Log Entry : 16:46:48 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 17:03:27 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 17:05:03 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 17:07:20 sexta-feira, 6 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em WebNesta_CapitalMarket.Controllers.API_Request.PostRequest(String contentJSON)
+   em WebNesta_CapitalMarket.Controllers.CapaContratoController.Inserir(Aquisicao aquisicao, FormCollection fc)
+   em lambda_method(Closure , ControllerBase , Object[] )
+   em System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   em System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_0.<InvokeActionMethodFilterAsynchronouslyRecursive>b__0()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_2.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__4()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: Não foi possível acessar a API https://cloud4.webnesta.com:44300/api/v1/Aquisicao/Inserir?currentUser=master - ERROR: O servidor remoto retornou um erro: (500) Erro Interno do Servidor.
+-------------------------------
+
+Log Entry : 17:10:53 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 17:30:47 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 17:32:02 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 18:23:10 sexta-feira, 6 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureType(JsonReader reader, Object value, CultureInfo culture, JsonContract contract, Type targetType)
+   em Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   em Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, Object target)
+   em Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   em Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   em Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   em Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateList(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty containerProperty, String id)
+   em Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+   em Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   em Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   em Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   em Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   em Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   em Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   em WebNesta_CapitalMarket.Controllers.CapaContratoController.Inserir(Int32 ID) na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Controllers\CapaContratoController.cs:linha 238
+   em lambda_method(Closure , ControllerBase , Object[] )
+   em System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   em System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_0.<InvokeActionMethodFilterAsynchronouslyRecursive>b__0()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_2.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__4()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: Error converting value {null} to type 'System.Int32'. Path '[0].OPIDOPCA', line 1, position 239.
+-------------------------------
+
+Log Entry : 18:23:45 sexta-feira, 6 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureType(JsonReader reader, Object value, CultureInfo culture, JsonContract contract, Type targetType)
+   em Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   em Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, Object target)
+   em Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   em Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   em Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   em Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateList(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty containerProperty, String id)
+   em Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+   em Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   em Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   em Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   em Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   em Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   em Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   em WebNesta_CapitalMarket.Controllers.CapaContratoController.Inserir(Int32 ID) na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Controllers\CapaContratoController.cs:linha 238
+   em lambda_method(Closure , ControllerBase , Object[] )
+   em System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   em System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_0.<InvokeActionMethodFilterAsynchronouslyRecursive>b__0()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_2.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__4()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: Error converting value {null} to type 'System.Int32'. Path '[0].OPIDOPCA', line 1, position 239.
+-------------------------------
+
+Log Entry : 18:24:43 sexta-feira, 6 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureType(JsonReader reader, Object value, CultureInfo culture, JsonContract contract, Type targetType)
+   em Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   em Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, Object target)
+   em Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   em Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   em Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   em Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateList(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty containerProperty, String id)
+   em Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+   em Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   em Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   em Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   em Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   em Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   em Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   em WebNesta_CapitalMarket.Controllers.CapaContratoController.Inserir(Int32 ID) na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Controllers\CapaContratoController.cs:linha 238
+   em lambda_method(Closure , ControllerBase , Object[] )
+   em System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   em System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_0.<InvokeActionMethodFilterAsynchronouslyRecursive>b__0()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_2.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__4()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: Error converting value {null} to type 'System.Int32'. Path '[0].OPIDOPCA', line 1, position 239.
+-------------------------------
+
+Log Entry : 18:26:37 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 18:29:25 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 18:31:11 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 18:32:21 sexta-feira, 6 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em ASP._Page_Views_CapaContrato_Inserir_cshtml.Execute() na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Views\CapaContrato\Inserir.cshtml:linha 31
+   em System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   em System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   em System.Web.WebPages.StartPage.RunPage()
+   em System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   em System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   em System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   em System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   em System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__4()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: Referência de objeto não definida para uma instância de um objeto.
+-------------------------------
+
+Log Entry : 18:40:32 sexta-feira, 6 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   em System.Collections.Generic.List`1.get_Item(Int32 index)
+   em ASP._Page_Views_CapaContrato__cbPropriedadesInserirConteudoPartial_cshtml.Execute() na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Views\CapaContrato\_cbPropriedadesInserirConteudoPartial.cshtml:linha 6
+   em System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   em System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   em System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   em System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   em System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   em System.Web.Mvc.HtmlHelper.RenderPartialInternal(String partialViewName, ViewDataDictionary viewData, Object model, TextWriter writer, ViewEngineCollection viewEngineCollection)
+   em System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   em System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model)
+   em ASP._Page_Views_CapaContrato__cbPropriedadeInserirPartial_cshtml.<Execute>b__3_1() na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Views\CapaContrato\_cbPropriedadeInserirPartial.cshtml:linha 11
+   em DevExpress.Web.Mvc.Internal.ContentControl`1.RenderInternal(HtmlTextWriter writer)
+   em DevExpress.Web.Mvc.Internal.ContentControl`1.Render(HtmlTextWriter writer)
+   em System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   em System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   em System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   em System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   em DevExpress.Web.ContentControl.RenderContents(HtmlTextWriter writer)
+   em DevExpress.Web.ASPxWebControlBase.RenderInternal(HtmlTextWriter writer)
+   em DevExpress.Web.ASPxWebControlBase.Render(HtmlTextWriter writer)
+   em System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   em System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   em System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   em System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   em System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   em System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   em System.Web.UI.WebControls.WebControl.Render(HtmlTextWriter writer)
+   em System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   em System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   em System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   em System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   em System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   em System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   em DevExpress.Web.ASPxWebControlBase.RenderInternal(HtmlTextWriter writer)
+   em DevExpress.Web.ASPxWebControlBase.Render(HtmlTextWriter writer)
+   em System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   em System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   em System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   em System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   em System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   em System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   em DevExpress.Web.ASPxWebControl.RenderInternal(HtmlTextWriter writer)
+   em DevExpress.Web.ASPxWebControlBase.Render(HtmlTextWriter writer)
+   em System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   em System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   em System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   em DevExpress.Web.Mvc.ExtensionBase.Render()
+   em DevExpress.Web.Mvc.ExtensionBase.<GetHtml>b__69_0()
+   em DevExpress.Web.Mvc.Internal.Utils.GetInnerWriterOutput(Action renderDelegate)
+   em DevExpress.Web.Mvc.ExtensionBase.GetHtml()
+   em ASP._Page_Views_CapaContrato__cbPropriedadeInserirPartial_cshtml.Execute() na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Views\CapaContrato\_cbPropriedadeInserirPartial.cshtml:linha 3
+   em System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   em System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   em System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   em System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   em System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   em System.Web.Mvc.HtmlHelper.RenderPartialInternal(String partialViewName, ViewDataDictionary viewData, Object model, TextWriter writer, ViewEngineCollection viewEngineCollection)
+   em System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   em System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model)
+   em ASP._Page_Views_CapaContrato_Inserir_cshtml.Execute() na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Views\CapaContrato\Inserir.cshtml:linha 430
+   em System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   em System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   em System.Web.WebPages.StartPage.RunPage()
+   em System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   em System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   em System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   em System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   em System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__4()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: O índice estava fora do intervalo. Ele deve ser não-negativo e menor que o tamanho da coleção.
+Nome do parâmetro: index
+-------------------------------
+
+Log Entry : 18:44:32 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 18:46:37 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 18:46:41 sexta-feira, 6 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em DevExpress.Web.Mvc.ExtensionBase.Render()
+   em DevExpress.Web.Mvc.ExtensionBase.<GetHtml>b__69_0()
+   em DevExpress.Web.Mvc.Internal.Utils.GetInnerWriterOutput(Action renderDelegate)
+   em DevExpress.Web.Mvc.ExtensionBase.GetHtml()
+   em ASP._Page_Views_CapaContrato_Inserir_cshtml.<Execute>b__3_0() na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Views\CapaContrato\Inserir.cshtml:linha 82
+   em System.Web.WebPages.WebPageBase.<>c__DisplayClass42_0.<RenderSection>b__0(TextWriter tw)
+   em System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   em System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   em ASP._Page_Views_Shared__Layout_cshtml.Execute() na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Views\Shared\_Layout.cshtml:linha 448
+   em System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   em System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   em System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   em System.Web.WebPages.WebPageBase.<>c__DisplayClass40_0.<RenderPageCore>b__0(TextWriter writer)
+   em System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   em System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   em System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   em System.Web.WebPages.WebPageBase.PopContext()
+   em System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   em System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   em System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   em System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__4()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: An extension with 'Button2' name already rendered.
+-------------------------------
+
+Log Entry : 18:47:49 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 18:52:14 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 18:56:46 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 18:57:55 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 19:00:05 sexta-feira, 6 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)
+   em System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
+   em System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   em System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   em System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContext httpContext, AsyncCallback callback, Object state)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.BeginProcessRequest(HttpContext context, AsyncCallback cb, Object extraData)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: O controlador do caminho '/Aquisicao/cbPropriedadeInserirPartial' não foi encontrado ou não implementa IController.
+-------------------------------
+
+Log Entry : 19:00:59 sexta-feira, 6 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)
+   em System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
+   em System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   em System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   em System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContext httpContext, AsyncCallback callback, Object state)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.BeginProcessRequest(HttpContext context, AsyncCallback cb, Object extraData)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: O controlador do caminho '/Aquisicao/cbPropriedadeInserirPartial' não foi encontrado ou não implementa IController.
+-------------------------------
+
+Log Entry : 19:01:08 sexta-feira, 6 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)
+   em System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
+   em System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   em System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   em System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContext httpContext, AsyncCallback callback, Object state)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.BeginProcessRequest(HttpContext context, AsyncCallback cb, Object extraData)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: O controlador do caminho '/Aquisicao/cbPropriedadeInserirPartial' não foi encontrado ou não implementa IController.
+-------------------------------
+
+Log Entry : 19:02:02 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 19:02:46 sexta-feira, 6 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)
+   em System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
+   em System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   em System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   em System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContext httpContext, AsyncCallback callback, Object state)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.BeginProcessRequest(HttpContext context, AsyncCallback cb, Object extraData)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: O controlador do caminho '/Aquisicao/cbPropriedadeInserirPartial' não foi encontrado ou não implementa IController.
+-------------------------------
+
+Log Entry : 19:03:46 sexta-feira, 6 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)
+   em System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
+   em System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   em System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   em System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContext httpContext, AsyncCallback callback, Object state)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.BeginProcessRequest(HttpContext context, AsyncCallback cb, Object extraData)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: O controlador do caminho '/Aquisicao/gridDeAteInserirPartial' não foi encontrado ou não implementa IController.
+-------------------------------
+
+Log Entry : 19:04:08 sexta-feira, 6 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)
+   em System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
+   em System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   em System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   em System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContext httpContext, AsyncCallback callback, Object state)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.BeginProcessRequest(HttpContext context, AsyncCallback cb, Object extraData)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: O controlador do caminho '/Aquisicao/gridDeAteInserirPartial' não foi encontrado ou não implementa IController.
+-------------------------------
+
+Log Entry : 19:04:22 sexta-feira, 6 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)
+   em System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
+   em System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   em System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   em System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContext httpContext, AsyncCallback callback, Object state)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.BeginProcessRequest(HttpContext context, AsyncCallback cb, Object extraData)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: O controlador do caminho '/Aquisicao/cbPropriedadeInserirPartial' não foi encontrado ou não implementa IController.
+-------------------------------
+
+Log Entry : 19:06:58 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 19:09:35 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 19:17:31 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 19:21:03 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 19:22:14 sexta-feira, 6 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   em System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   em System.Convert.ToInt32(String value)
+   em WebNesta_CapitalMarket.Controllers.CapaContratoController.Inserir(Aquisicao aquisicao, FormCollection fc) na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Controllers\CapaContratoController.cs:linha 352
+   em lambda_method(Closure , ControllerBase , Object[] )
+   em System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   em System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_0.<InvokeActionMethodFilterAsynchronouslyRecursive>b__0()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_2.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__4()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: A cadeia de caracteres de entrada não estava em um formato correto.
+-------------------------------
+
+Log Entry : 19:23:04 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 19:25:56 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 19:26:53 sexta-feira, 6 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   em System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   em System.Convert.ToInt32(String value)
+   em WebNesta_CapitalMarket.Controllers.CapaContratoController.Inserir(Aquisicao aquisicao, FormCollection fc) na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Controllers\CapaContratoController.cs:linha 352
+   em lambda_method(Closure , ControllerBase , Object[] )
+   em System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   em System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_0.<InvokeActionMethodFilterAsynchronouslyRecursive>b__0()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_2.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__4()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: A cadeia de caracteres de entrada não estava em um formato correto.
+-------------------------------
+
+Log Entry : 19:27:47 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 19:36:39 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 19:36:57 sexta-feira, 6 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em WebNesta_CapitalMarket.Controllers.API_Request.PostRequest(String contentJSON) na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Controllers\API_Request.cs:linha 103
+   em WebNesta_CapitalMarket.Controllers.CapaContratoController.Inserir(Aquisicao aquisicao, FormCollection fc) na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Controllers\CapaContratoController.cs:linha 359
+   em lambda_method(Closure , ControllerBase , Object[] )
+   em System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   em System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_0.<InvokeActionMethodFilterAsynchronouslyRecursive>b__0()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_2.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__4()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: Não foi possível acessar a API https://cloud4.webnesta.com:44300/api/v1/Aquisicao/Alterar?currentUser=master - ERROR: O servidor remoto retornou um erro: (500) Erro Interno do Servidor.
+-------------------------------
+
+Log Entry : 19:45:08 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 19:50:56 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 19:52:14 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 20:00:31 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 21:01:24 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=100018881 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 21:06:40 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=100018881 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 21:08:04 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=100018881 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 21:10:05 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=100018881 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 21:10:54 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 21:11:40 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=100018881 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 21:12:17 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=100018881 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 21:15:06 sexta-feira, 6 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em System.Web.HttpServerUtility.ExecuteInternal(IHttpHandler handler, TextWriter writer, Boolean preserveForm, Boolean setPreviousPage, VirtualPath path, VirtualPath filePath, String physPath, Exception error, String queryStringOverride)
+   em System.Web.HttpServerUtility.Execute(IHttpHandler handler, TextWriter writer, Boolean preserveForm, Boolean setPreviousPage)
+   em System.Web.HttpServerUtility.Execute(IHttpHandler handler, TextWriter writer, Boolean preserveForm)
+   em System.Web.HttpServerUtilityWrapper.Execute(IHttpHandler handler, TextWriter writer, Boolean preserveForm)
+   em System.Web.Mvc.Html.ChildActionExtensions.ActionHelper(HtmlHelper htmlHelper, String actionName, String controllerName, RouteValueDictionary routeValues, TextWriter textWriter)
+   em System.Web.Mvc.Html.ChildActionExtensions.Action(HtmlHelper htmlHelper, String actionName, String controllerName, RouteValueDictionary routeValues)
+   em System.Web.Mvc.Html.ChildActionExtensions.Action(HtmlHelper htmlHelper, String actionName, String controllerName, Object routeValues)
+   em ASP._Page_Views_CapaContrato_Consulta_cshtml.Execute() na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Views\CapaContrato\Consulta.cshtml:linha 393
+   em System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   em System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   em System.Web.WebPages.StartPage.RunPage()
+   em System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   em System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   em System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   em System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   em System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__4()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: Erro ao executar a solicitação filho do manipulador 'System.Web.Mvc.HttpHandlerUtil+ServerExecuteHttpHandlerAsyncWrapper'.
+-------------------------------
+
+Log Entry : 21:30:02 sexta-feira, 6 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em System.Web.HttpServerUtility.ExecuteInternal(IHttpHandler handler, TextWriter writer, Boolean preserveForm, Boolean setPreviousPage, VirtualPath path, VirtualPath filePath, String physPath, Exception error, String queryStringOverride)
+   em System.Web.HttpServerUtility.Execute(IHttpHandler handler, TextWriter writer, Boolean preserveForm, Boolean setPreviousPage)
+   em System.Web.HttpServerUtility.Execute(IHttpHandler handler, TextWriter writer, Boolean preserveForm)
+   em System.Web.HttpServerUtilityWrapper.Execute(IHttpHandler handler, TextWriter writer, Boolean preserveForm)
+   em System.Web.Mvc.Html.ChildActionExtensions.ActionHelper(HtmlHelper htmlHelper, String actionName, String controllerName, RouteValueDictionary routeValues, TextWriter textWriter)
+   em System.Web.Mvc.Html.ChildActionExtensions.Action(HtmlHelper htmlHelper, String actionName, String controllerName, RouteValueDictionary routeValues)
+   em System.Web.Mvc.Html.ChildActionExtensions.Action(HtmlHelper htmlHelper, String actionName, String controllerName, Object routeValues)
+   em ASP._Page_Views_CapaContrato_Consulta_cshtml.Execute() na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Views\CapaContrato\Consulta.cshtml:linha 393
+   em System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   em System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   em System.Web.WebPages.StartPage.RunPage()
+   em System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   em System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   em System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   em System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   em System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__4()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: Erro ao executar a solicitação filho do manipulador 'System.Web.Mvc.HttpHandlerUtil+ServerExecuteHttpHandlerAsyncWrapper'.
+-------------------------------
+
+Log Entry : 21:32:46 sexta-feira, 6 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em System.Web.HttpServerUtility.ExecuteInternal(IHttpHandler handler, TextWriter writer, Boolean preserveForm, Boolean setPreviousPage, VirtualPath path, VirtualPath filePath, String physPath, Exception error, String queryStringOverride)
+   em System.Web.HttpServerUtility.Execute(IHttpHandler handler, TextWriter writer, Boolean preserveForm, Boolean setPreviousPage)
+   em System.Web.HttpServerUtility.Execute(IHttpHandler handler, TextWriter writer, Boolean preserveForm)
+   em System.Web.HttpServerUtilityWrapper.Execute(IHttpHandler handler, TextWriter writer, Boolean preserveForm)
+   em System.Web.Mvc.Html.ChildActionExtensions.ActionHelper(HtmlHelper htmlHelper, String actionName, String controllerName, RouteValueDictionary routeValues, TextWriter textWriter)
+   em System.Web.Mvc.Html.ChildActionExtensions.Action(HtmlHelper htmlHelper, String actionName, String controllerName, RouteValueDictionary routeValues)
+   em System.Web.Mvc.Html.ChildActionExtensions.Action(HtmlHelper htmlHelper, String actionName, String controllerName, Object routeValues)
+   em ASP._Page_Views_CapaContrato_Consulta_cshtml.Execute() na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Views\CapaContrato\Consulta.cshtml:linha 393
+   em System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   em System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   em System.Web.WebPages.StartPage.RunPage()
+   em System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   em System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   em System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   em System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   em System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__4()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: Erro ao executar a solicitação filho do manipulador 'System.Web.Mvc.HttpHandlerUtil+ServerExecuteHttpHandlerAsyncWrapper'.
+-------------------------------
+
+Log Entry : 21:42:39 sexta-feira, 6 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em System.Web.VirtualPath.Create(String virtualPath, VirtualPathOptions options)
+   em System.Web.VirtualPathUtility.ToAbsolute(String virtualPath)
+   em WebNesta_CapitalMarket.Controllers.ContratosController.cbPreviewDocsPartial(String cdFileName) na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Controllers\ContratosController.cs:linha 247
+   em lambda_method(Closure , ControllerBase , Object[] )
+   em System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   em System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_0.<InvokeActionMethodFilterAsynchronouslyRecursive>b__0()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_2.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__4()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: O caminho virtual relativo 'Error occurred. Error details: "Não existe Capa Contrato com OPIDCONT=9208"' não é permitido aqui.
+-------------------------------
+
+Log Entry : 21:44:44 sexta-feira, 6 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em System.Web.VirtualPath.Create(String virtualPath, VirtualPathOptions options)
+   em System.Web.VirtualPathUtility.ToAbsolute(String virtualPath)
+   em WebNesta_CapitalMarket.Controllers.ContratosController.cbPreviewDocsPartial(String cdFileName) na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Controllers\ContratosController.cs:linha 247
+   em lambda_method(Closure , ControllerBase , Object[] )
+   em System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   em System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_0.<InvokeActionMethodFilterAsynchronouslyRecursive>b__0()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_2.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__4()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: O caminho virtual relativo 'Error occurred. Error details: "Não existe Capa Contrato com OPIDCONT=9208"' não é permitido aqui.
+-------------------------------
+
+Log Entry : 21:52:47 sexta-feira, 6 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em System.Web.VirtualPath.Create(String virtualPath, VirtualPathOptions options)
+   em System.Web.VirtualPathUtility.ToAbsolute(String virtualPath)
+   em WebNesta_CapitalMarket.Controllers.CapaContratoController.cbPreviewDocsPartial(String cdFileName) na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Controllers\CapaContratoController.cs:linha 924
+   em lambda_method(Closure , ControllerBase , Object[] )
+   em System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   em System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_0.<InvokeActionMethodFilterAsynchronouslyRecursive>b__0()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_2.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__4()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: O caminho virtual relativo 'Error occurred. Error details: "Não existe Capa Contrato com OPIDCONT=9208"' não é permitido aqui.
+-------------------------------
+
+Log Entry : 21:59:05 sexta-feira, 6 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em System.Web.VirtualPath.Create(String virtualPath, VirtualPathOptions options)
+   em System.Web.VirtualPathUtility.ToAbsolute(String virtualPath)
+   em WebNesta_CapitalMarket.Controllers.CapaContratoController.cbPreviewDocsPartial(String cdFileName) na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Controllers\CapaContratoController.cs:linha 924
+   em lambda_method(Closure , ControllerBase , Object[] )
+   em System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   em System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_0.<InvokeActionMethodFilterAsynchronouslyRecursive>b__0()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_2.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__4()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: O caminho virtual relativo 'Error occurred. Error details: "Não existe Capa Contrato com OPIDCONT=9208"' não é permitido aqui.
+-------------------------------
+
+Log Entry : 22:09:47 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=100018881 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 22:10:26 sexta-feira, 6 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em WebNesta_CapitalMarket.Controllers.API_Request.PostRequest(String contentJSON) na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Controllers\API_Request.cs:linha 103
+   em WebNesta_CapitalMarket.Controllers.CapaContratoController.Alterar(Aquisicao aquisicao, FormCollection fc) na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Controllers\CapaContratoController.cs:linha 444
+   em lambda_method(Closure , ControllerBase , Object[] )
+   em System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   em System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_0.<InvokeActionMethodFilterAsynchronouslyRecursive>b__0()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_2.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__4()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: Não foi possível acessar a API https://cloud4.webnesta.com:44300/api/v1/Aquisicao/Alterar?currentUser=master - ERROR: O servidor remoto retornou um erro: (500) Erro Interno do Servidor.
+-------------------------------
+
+Log Entry : 22:13:10 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=100018881 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 22:13:35 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=100018881 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 22:14:59 sexta-feira, 6 de maio de 2022
+  :
+  :##ERROR## stacktrace:    em WebNesta_CapitalMarket.Controllers.API_Request.PostRequest(String contentJSON) na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Controllers\API_Request.cs:linha 103
+   em WebNesta_CapitalMarket.Controllers.CapaContratoController.Alterar(Aquisicao aquisicao, FormCollection fc) na C:\Users\Jesse\Documents\GitHub\Coyote\Projeto\WebNesta_Coyotte\Controllers\CapaContratoController.cs:linha 446
+   em lambda_method(Closure , ControllerBase , Object[] )
+   em System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   em System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   em System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_0.<InvokeActionMethodFilterAsynchronouslyRecursive>b__0()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_2.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__4()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__1(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecuteCore>b__152_1(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.<>c.<BeginExecute>b__151_2(IAsyncResult asyncResult, Controller controller)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.<>c.<BeginProcessRequest>b__20_1(IAsyncResult asyncResult, ProcessRequestState innerState)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   em System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   em System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: Não foi possível acessar a API https://cloud4.webnesta.com:44300/api/v1/Aquisicao/Alterar?currentUser=master - ERROR: O servidor remoto retornou um erro: (500) Erro Interno do Servidor.
+-------------------------------
+
+Log Entry : 22:18:11 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=100018881 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 22:28:08 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=100018881 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 22:28:59 sexta-feira, 6 de maio de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=100018881 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------

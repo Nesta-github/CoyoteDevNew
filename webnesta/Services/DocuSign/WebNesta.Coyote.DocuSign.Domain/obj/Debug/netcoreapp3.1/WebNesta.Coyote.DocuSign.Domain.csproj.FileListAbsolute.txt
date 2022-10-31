@@ -1,0 +1,13 @@
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\DocuSign\WebNesta.Coyote.DocuSign.Domain\bin\Debug\netcoreapp3.1\WebNesta.Coyote.DocuSign.Domain.deps.json
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\DocuSign\WebNesta.Coyote.DocuSign.Domain\bin\Debug\netcoreapp3.1\WebNesta.Coyote.DocuSign.Domain.dll
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\DocuSign\WebNesta.Coyote.DocuSign.Domain\bin\Debug\netcoreapp3.1\WebNesta.Coyote.DocuSign.Domain.pdb
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\DocuSign\WebNesta.Coyote.DocuSign.Domain\bin\Debug\netcoreapp3.1\WebNesta.Coyote.Core.dll
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\DocuSign\WebNesta.Coyote.DocuSign.Domain\bin\Debug\netcoreapp3.1\WebNesta.Coyote.Core.pdb
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\DocuSign\WebNesta.Coyote.DocuSign.Domain\obj\Debug\netcoreapp3.1\WebNesta.Coyote.DocuSign.Domain.csproj.AssemblyReference.cache
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\DocuSign\WebNesta.Coyote.DocuSign.Domain\obj\Debug\netcoreapp3.1\WebNesta.Coyote.DocuSign.Domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\DocuSign\WebNesta.Coyote.DocuSign.Domain\obj\Debug\netcoreapp3.1\WebNesta.Coyote.DocuSign.Domain.AssemblyInfoInputs.cache
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\DocuSign\WebNesta.Coyote.DocuSign.Domain\obj\Debug\netcoreapp3.1\WebNesta.Coyote.DocuSign.Domain.AssemblyInfo.cs
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\DocuSign\WebNesta.Coyote.DocuSign.Domain\obj\Debug\netcoreapp3.1\WebNesta.Coyote.DocuSign.Domain.csproj.CoreCompileInputs.cache
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\DocuSign\WebNesta.Coyote.DocuSign.Domain\obj\Debug\netcoreapp3.1\WebNesta.Coyote.DocuSign.Domain.csproj.CopyComplete
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\DocuSign\WebNesta.Coyote.DocuSign.Domain\obj\Debug\netcoreapp3.1\WebNesta.Coyote.DocuSign.Domain.dll
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\DocuSign\WebNesta.Coyote.DocuSign.Domain\obj\Debug\netcoreapp3.1\WebNesta.Coyote.DocuSign.Domain.pdb

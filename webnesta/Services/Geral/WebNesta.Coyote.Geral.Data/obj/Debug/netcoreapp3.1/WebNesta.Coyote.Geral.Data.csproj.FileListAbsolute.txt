@@ -1,0 +1,15 @@
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Data\bin\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Data.deps.json
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Data\bin\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Data.dll
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Data\bin\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Data.pdb
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Data\bin\Debug\netcoreapp3.1\WebNesta.Coyote.Core.dll
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Data\bin\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Domain.dll
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Data\bin\Debug\netcoreapp3.1\WebNesta.Coyote.Core.pdb
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Data\bin\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Domain.pdb
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Data\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Data.csproj.AssemblyReference.cache
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Data\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Data.GeneratedMSBuildEditorConfig.editorconfig
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Data\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Data.AssemblyInfoInputs.cache
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Data\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Data.AssemblyInfo.cs
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Data\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Data.csproj.CoreCompileInputs.cache
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Data\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Data.csproj.CopyComplete
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Data\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Data.dll
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Data\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Data.pdb

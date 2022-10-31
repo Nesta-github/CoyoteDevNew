@@ -1,0 +1,42 @@
+
+Log Entry : 08:40:30 sexta-feira, 25 de fevereiro de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=9969 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 08:43:16 sexta-feira, 25 de fevereiro de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=9969 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 08:45:46 sexta-feira, 25 de fevereiro de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=9969 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 08:47:18 sexta-feira, 25 de fevereiro de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=9969 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 08:48:40 sexta-feira, 25 de fevereiro de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=9969 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 08:58:31 sexta-feira, 25 de fevereiro de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=9969 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------

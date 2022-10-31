@@ -1,0 +1,236 @@
+ALTER procedure [dbo].[nesta_sp_Cash_Flow]
+
+(
+
+ @p_opidcont  numeric(38,0)
+
+,@p_TipoFluxo int = 10 -- 10 = Fluxo IFRS, Fluxo CVM Real Teste 8/4/2021
+
+                       -- 11 = Fluxo Operacional
+
+					   -- 21 = Fluxo CVM Nominal
+
+					   -- 22 = Fluxo CVM Inflacionado
+
+					   -- 23 = Fluxo USGAAP
+
+,@p_GravaLog  int = 0
+
+,@p_mensagem  nvarchar(4000) output
+
+)
+
+as
+
+begin
+
+  set nocount on
+
+
+
+  set @p_mensagem = 'OK'
+
+
+
+  declare @v_prprodid numeric(38,0)
+
+  declare @v_chidcodi numeric(38,0)
+
+
+
+  begin try
+
+    select @v_prprodid = op.prprodid, @v_chidcodi = pr.chidcodi 
+
+    from opcontra op, prprodut pr
+
+    where op.opidcont = @p_opidcont
+
+      and pr.prprodid = op.prprodid
+
+
+
+    if @@ROWCOUNT = 0
+
+	  raiserror('No data found to process Cash Flow.',16,1)
+
+
+
+   if @v_chidcodi = 9969
+
+	begin
+
+	  if @v_prprodid in (9969,9970) --9970 inserido por Jess? para POC de contratos por Medi??o
+
+	  begin
+
+	    if @p_TipoFluxo in(10,100,101,102) 
+
+		begin
+
+		  exec dbo.nesta_sp_9969_100 @p_opidcont, @p_GravaLog, @p_mensagem output -- Fluxo de Caixa IFRS16 ou CVM Cen?rio REAL
+
+	      exec dbo.nesta_sp_9969_101 @p_opidcont, @p_GravaLog, @p_mensagem output -- Fluxo de Caixa CVM Cen?rio NOMINAL
+
+		  exec dbo.nesta_sp_9969_102 @p_opidcont, @p_GravaLog, @p_mensagem output -- Fluxo de Caixa CVM Cen?rio INFLACIONADO
+
+		end 
+
+		else if @p_TipoFluxo in (11,105) -- Fluxo de Caixa Operacional REAL ESTATE
+
+	      exec dbo.nesta_sp_9969_105 @p_opidcont, @p_GravaLog, @p_mensagem output
+
+		else
+
+	  	  raiserror('Cash Flow script not available for selected component.',16,1)
+
+      end
+
+	  else
+
+	  	raiserror('Cash Flow script not available for selected component.',16,1)
+
+	end
+
+    else if @v_chidcodi = 9955
+
+	begin
+
+	  if @v_prprodid = 9974
+
+	  begin
+
+	    if @p_TipoFluxo in(100) 
+
+		begin
+
+		  exec dbo.nesta_sp_9955_100 @p_opidcont, @p_GravaLog, @p_mensagem output -- Fluxo de Caixa IFRS16 ETTJ
+
+		end 
+
+		else
+
+	  	  raiserror('Cash Flow script not available for selected component.',16,1)
+
+      end
+
+	  else
+
+	  	raiserror('Cash Flow script not available for selected component.',16,1)
+
+	end
+
+
+
+    else if @v_chidcodi = 9962
+
+	begin
+
+	  if @v_prprodid = 9962
+
+	  begin
+
+	    if @p_TipoFluxo in(100,104) 
+
+		begin
+
+		  exec dbo.nesta_sp_9962_10 @p_opidcont, @p_GravaLog, @p_mensagem output -- Fluxo de Caixa IFRS16 Tabela Price
+
+		  exec dbo.nesta_sp_9962_40 @p_opidcont, @p_GravaLog, @p_mensagem output -- Fluxo USGAAP
+
+		end 
+
+		else
+
+	  	  raiserror('Cash Flow script not available for selected component.',16,1)
+
+      end
+
+	  else
+
+	  	raiserror('Cash Flow script not available for selected component.',16,1)
+
+	end
+
+
+
+    else if @v_chidcodi = 9963
+
+	begin
+
+	  if @v_prprodid = 9963
+
+	  begin
+
+	    if @p_TipoFluxo in(100) 
+
+		begin
+
+		  exec dbo.nesta_sp_9963_100 @p_opidcont, @p_GravaLog, @p_mensagem output -- Fluxo de Caixa IFRS16 Tabela Price
+
+		end 
+
+	    else if @p_TipoFluxo in(104) 
+
+		begin
+
+		  exec dbo.nesta_sp_9962_40 @p_opidcont, @p_GravaLog, @p_mensagem output -- Fluxo USGAAP
+
+		end 
+
+		else
+
+	  	  raiserror('Cash Flow script not available for selected component.',16,1)
+
+      end
+
+	  else
+
+	  	raiserror('Cash Flow script not available for selected component.',16,1)
+
+	end
+
+
+
+	else
+
+	begin
+
+	  raiserror('Script not available.',16,1)
+
+	end
+
+	
+
+	if xact_state() = 1
+
+      commit 
+
+
+
+  end try
+
+  begin catch
+
+    set @p_mensagem = isnull(substring(error_message(), 1, 4000), '')
+
+    
+
+	if xact_state() = -1
+
+      rollback 
+
+
+
+	raiserror(@p_mensagem,16,1)
+
+    
+
+  end catch  
+
+
+
+end
+
+
+

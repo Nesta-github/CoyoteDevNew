@@ -1,0 +1,270 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\Services\\Geral\\WebNesta.Coyote.Geral.API\\WebNesta.Coyote.Geral.API.csproj": {}
+  },
+  "projects": {
+    "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\Core\\WebNesta.Coyote.Core\\WebNesta.Coyote.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\Core\\WebNesta.Coyote.Core\\WebNesta.Coyote.Core.csproj",
+        "projectName": "WebNesta.Coyote.Core",
+        "projectPath": "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\Core\\WebNesta.Coyote.Core\\WebNesta.Coyote.Core.csproj",
+        "packagesPath": "C:\\Users\\alex.santos\\.nuget\\packages\\",
+        "outputPath": "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\Core\\WebNesta.Coyote.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\alex.santos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "E:\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
+          "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\WebApps\\WebNesta.Coyote.WebApp\\Nugget": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\Services\\Geral\\WebNesta.Coyote.Geral.API\\WebNesta.Coyote.Geral.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\Services\\Geral\\WebNesta.Coyote.Geral.API\\WebNesta.Coyote.Geral.API.csproj",
+        "projectName": "WebNesta.Coyote.Geral.API",
+        "projectPath": "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\Services\\Geral\\WebNesta.Coyote.Geral.API\\WebNesta.Coyote.Geral.API.csproj",
+        "packagesPath": "C:\\Users\\alex.santos\\.nuget\\packages\\",
+        "outputPath": "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\Services\\Geral\\WebNesta.Coyote.Geral.API\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\alex.santos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "E:\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
+          "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\WebApps\\WebNesta.Coyote.WebApp\\Nugget": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\Core\\WebNesta.Coyote.Core\\WebNesta.Coyote.Core.csproj": {
+                "projectPath": "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\Core\\WebNesta.Coyote.Core\\WebNesta.Coyote.Core.csproj"
+              },
+              "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\Services\\Geral\\WebNesta.Coyote.Geral.Data\\WebNesta.Coyote.Geral.Data.csproj": {
+                "projectPath": "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\Services\\Geral\\WebNesta.Coyote.Geral.Data\\WebNesta.Coyote.Geral.Data.csproj"
+              },
+              "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\Services\\Geral\\WebNesta.Coyote.Geral.Domain\\WebNesta.Coyote.Geral.Domain.csproj": {
+                "projectPath": "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\Services\\Geral\\WebNesta.Coyote.Geral.Domain\\WebNesta.Coyote.Geral.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\Services\\Geral\\WebNesta.Coyote.Geral.Data\\WebNesta.Coyote.Geral.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\Services\\Geral\\WebNesta.Coyote.Geral.Data\\WebNesta.Coyote.Geral.Data.csproj",
+        "projectName": "WebNesta.Coyote.Geral.Data",
+        "projectPath": "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\Services\\Geral\\WebNesta.Coyote.Geral.Data\\WebNesta.Coyote.Geral.Data.csproj",
+        "packagesPath": "C:\\Users\\alex.santos\\.nuget\\packages\\",
+        "outputPath": "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\Services\\Geral\\WebNesta.Coyote.Geral.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\alex.santos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "E:\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
+          "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\WebApps\\WebNesta.Coyote.WebApp\\Nugget": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\Core\\WebNesta.Coyote.Core\\WebNesta.Coyote.Core.csproj": {
+                "projectPath": "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\Core\\WebNesta.Coyote.Core\\WebNesta.Coyote.Core.csproj"
+              },
+              "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\Services\\Geral\\WebNesta.Coyote.Geral.Domain\\WebNesta.Coyote.Geral.Domain.csproj": {
+                "projectPath": "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\Services\\Geral\\WebNesta.Coyote.Geral.Domain\\WebNesta.Coyote.Geral.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\Services\\Geral\\WebNesta.Coyote.Geral.Domain\\WebNesta.Coyote.Geral.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\Services\\Geral\\WebNesta.Coyote.Geral.Domain\\WebNesta.Coyote.Geral.Domain.csproj",
+        "projectName": "WebNesta.Coyote.Geral.Domain",
+        "projectPath": "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\Services\\Geral\\WebNesta.Coyote.Geral.Domain\\WebNesta.Coyote.Geral.Domain.csproj",
+        "packagesPath": "C:\\Users\\alex.santos\\.nuget\\packages\\",
+        "outputPath": "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\Services\\Geral\\WebNesta.Coyote.Geral.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\alex.santos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "E:\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
+          "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\WebApps\\WebNesta.Coyote.WebApp\\Nugget": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\Core\\WebNesta.Coyote.Core\\WebNesta.Coyote.Core.csproj": {
+                "projectPath": "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\Core\\WebNesta.Coyote.Core\\WebNesta.Coyote.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

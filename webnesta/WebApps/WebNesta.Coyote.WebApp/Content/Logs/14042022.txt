@@ -1,0 +1,76 @@
+
+Log Entry : 15:11:10 quinta-feira, 14 de abril de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 15:14:25 quinta-feira, 14 de abril de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 15:16:17 quinta-feira, 14 de abril de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 15:18:32 quinta-feira, 14 de abril de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 15:19:14 quinta-feira, 14 de abril de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 15:20:00 quinta-feira, 14 de abril de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 15:20:44 quinta-feira, 14 de abril de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 15:21:02 quinta-feira, 14 de abril de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 15:21:24 quinta-feira, 14 de abril de 2022
+  :
+  :master : select chdsdecr from CHCOMPOT WHERE chidcodi=0 : ERROR : O tempo limite do logon expirou
+Erro relatado pela rede ou específico à instância ao estabelecer conexão com o SQL Server. O servidor não foi encontrado ou não está acessível. Verifique se o nome da instância está correto e se o SQL Server está configurado para permitir conexões remotas. Para obter mais informações, consulte os Manuais Online do SQL Server.
+Named Pipes Provider: Could not open a connection to SQL Server [53]. 
+-------------------------------
+
+Log Entry : 15:32:58 quinta-feira, 14 de abril de 2022
+  :
+  :##ERROR## stacktrace:    em System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)
+   em System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
+   em System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
+   em System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   em System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContext httpContext, AsyncCallback callback, Object state)
+   em System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.BeginProcessRequest(HttpContext context, AsyncCallback cb, Object extraData)
+   em System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   em System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   em System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) message: O controlador do caminho '/EmissaoContrato' não foi encontrado ou não implementa IController.
+-------------------------------
