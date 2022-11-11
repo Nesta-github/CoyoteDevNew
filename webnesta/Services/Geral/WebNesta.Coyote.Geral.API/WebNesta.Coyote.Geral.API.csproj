@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\..\Core\WebNesta.Coyote.Core\WebNesta.Coyote.Core.csproj" />
     <ProjectReference Include="..\WebNesta.Coyote.Geral.Data\WebNesta.Coyote.Geral.Data.csproj" />
     <ProjectReference Include="..\WebNesta.Coyote.Geral.Domain\WebNesta.Coyote.Geral.Domain.csproj" />

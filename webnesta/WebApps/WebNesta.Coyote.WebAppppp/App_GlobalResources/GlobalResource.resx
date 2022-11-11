@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="alert_fail" xml:space="preserve">
+    <value>Oops</value>
+    <comment>Global alert fail message</comment>
+  </data>
+  <data name="alert_fail_sub" xml:space="preserve">
+    <value>Invalid Captcha</value>
+    <comment>Global alert fail sub message</comment>
+  </data>
+  <data name="alert_success" xml:space="preserve">
+    <value>Success</value>
+    <comment>Global alert success message</comment>
+  </data>
+  <data name="alert_success_sub" xml:space="preserve">
+    <value />
+    <comment>Global alert success sub message</comment>
+  </data>
+  <data name="btn_alterar" xml:space="preserve">
+    <value>Edit</value>
+    <comment>Botão Alterar localizado em todas as páginas</comment>
+  </data>
+  <data name="btn_cancelar" xml:space="preserve">
+    <value>Cancel</value>
+    <comment>Botão Cancelar localizado em todas as páginas</comment>
+  </data>
+  <data name="btn_consultar" xml:space="preserve">
+    <value>Consult</value>
+  </data>
+  <data name="btn_desvincular" xml:space="preserve">
+    <value>Unlink</value>
+  </data>
+  <data name="btn_excluir" xml:space="preserve">
+    <value>Delete</value>
+    <comment>Botão Excluir localizado em todas as páginas</comment>
+  </data>
+  <data name="btn_excluir_second" xml:space="preserve">
+    <value>Confirm Delete?</value>
+  </data>
+  <data name="btn_grid_batch_cancel" xml:space="preserve">
+    <value>Cancel</value>
+    <comment>Botão Cancelar dos Grids</comment>
+  </data>
+  <data name="btn_grid_batch_deletevalues" xml:space="preserve">
+    <value>Deleted values</value>
+    <comment>Texto de confirmação de exclusão dos grids</comment>
+  </data>
+  <data name="btn_grid_batch_hide" xml:space="preserve">
+    <value>Hide preview</value>
+    <comment>Botão Ocultar visualização dos Grids</comment>
+  </data>
+  <data name="btn_grid_batch_insertvalues" xml:space="preserve">
+    <value>Inserted values</value>
+    <comment>Texto de confirmação de inserção dos grids</comment>
+  </data>
+  <data name="btn_grid_batch_preview" xml:space="preserve">
+    <value>Preview</value>
+    <comment>Botão Validar dos Grids</comment>
+  </data>
+  <data name="btn_grid_batch_save" xml:space="preserve">
+    <value>Save</value>
+    <comment>Botão Salvar dos Grids</comment>
+  </data>
+  <data name="btn_grid_batch_updatevalues" xml:space="preserve">
+    <value>Updated values</value>
+    <comment>Texto de confirmação de alteração dos grids</comment>
+  </data>
+  <data name="btn_historico" xml:space="preserve">
+    <value>Historic</value>
+  </data>
+  <data name="btn_inserir" xml:space="preserve">
+    <value>Insert</value>
+    <comment>Botão Inserir localizado em todas as páginas</comment>
+  </data>
+  <data name="btn_ok" xml:space="preserve">
+    <value>OK</value>
+    <comment>Botão OK localizado em todas as páginas</comment>
+  </data>
+  <data name="btn_processar" xml:space="preserve">
+    <value>Process</value>
+    <comment>Botão Processar localizado em todas as páginas</comment>
+  </data>
+  <data name="btn_replicar" xml:space="preserve">
+    <value>Replicate</value>
+  </data>
+  <data name="btn_salvar" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="btn_selecionar" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="btn_vincular" xml:space="preserve">
+    <value>Link</value>
+  </data>
+  <data name="btn_voltar" xml:space="preserve">
+    <value>Return</value>
+    <comment>Botão Voltar localizado em todas as páginas</comment>
+  </data>
+  <data name="loadingpanel_basesnegociacao" xml:space="preserve">
+    <value>Changing Trading Base</value>
+  </data>
+  <data name="loadingpanel_basesnegociacao2" xml:space="preserve">
+    <value>Changing Parameterization</value>
+  </data>
+  <data name="login_date" xml:space="preserve">
+    <value>Since:</value>
+  </data>
+  <data name="login_language" xml:space="preserve">
+    <value>Current Language:</value>
+  </data>
+  <data name="login_user" xml:space="preserve">
+    <value>Login User:</value>
+  </data>
+  <data name="menu_actions_lbl_01" xml:space="preserve">
+    <value>Contract Typology</value>
+  </data>
+  <data name="menu_actions_lbl_02" xml:space="preserve">
+    <value>Counterparty</value>
+  </data>
+  <data name="menu_actions_lbl_03" xml:space="preserve">
+    <value>Accounting Class</value>
+  </data>
+  <data name="menu_actions_lbl_04" xml:space="preserve">
+    <value>Wallet</value>
+  </data>
+  <data name="menu_actions_lbl_05" xml:space="preserve">
+    <value>Indexers</value>
+  </data>
+  <data name="menu_actions_lbl_06" xml:space="preserve">
+    <value>Funds</value>
+  </data>
+  <data name="menu_actions_lbl_07" xml:space="preserve">
+    <value>Formulas</value>
+  </data>
+  <data name="menu_actions_lbl_08" xml:space="preserve">
+    <value>Chart of Accounts</value>
+  </data>
+  <data name="menu_actions_lbl_09" xml:space="preserve">
+    <value>Billing</value>
+  </data>
+  <data name="menu_actions_lbl_10" xml:space="preserve">
+    <value>Monitoring</value>
+  </data>
+  <data name="menu_actions_lbl_11" xml:space="preserve">
+    <value>OCR Layout</value>
+  </data>
+  <data name="menu_actions_lbl_12" xml:space="preserve">
+    <value>OCR Readings</value>
+  </data>
+  <data name="menu_actions_lbl_13" xml:space="preserve">
+    <value>Documents</value>
+  </data>
+  <data name="menu_actions_lbl_14" xml:space="preserve">
+    <value>Curve ETTJ</value>
+  </data>
+  <data name="menu_actions_lbl_15" xml:space="preserve">
+    <value>Book</value>
+  </data>
+  <data name="menu_actions_lbl_16" xml:space="preserve">
+    <value>Importer</value>
+  </data>
+  <data name="menu_links_lbl_1" xml:space="preserve">
+    <value>Access our website</value>
+  </data>
+  <data name="menu_links_lbl_2" xml:space="preserve">
+    <value>webnesta.com</value>
+  </data>
+  <data name="menu_links_lbl_3" xml:space="preserve">
+    <value>Follow us on social networks</value>
+  </data>
+  <data name="menu_profile_lbl_1" xml:space="preserve">
+    <value>Messages</value>
+  </data>
+  <data name="menu_profile_lbl_2" xml:space="preserve">
+    <value>Notifications</value>
+  </data>
+  <data name="menu_profile_lbl_3" xml:space="preserve">
+    <value>Language ({0})</value>
+  </data>
+  <data name="menu_profile_lbl_4_1" xml:space="preserve">
+    <value>Dark Theme</value>
+  </data>
+  <data name="menu_profile_lbl_4_2" xml:space="preserve">
+    <value>Light Theme</value>
+  </data>
+  <data name="menu_profile_lbl_5" xml:space="preserve">
+    <value>Widgets</value>
+  </data>
+  <data name="menu_profile_lbl_6" xml:space="preserve">
+    <value>Modules</value>
+  </data>
+  <data name="menu_profile_lbl_7" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="menu_profile_lbl_8" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="menu_profile_lbl_title_profile" xml:space="preserve">
+    <value>Hello, {0}</value>
+  </data>
+  <data name="menu_tutorial_lbl1" xml:space="preserve">
+    <value>List of Tutorials</value>
+  </data>
+  <data name="numero_nestabot" xml:space="preserve">
+    <value>5511995543452</value>
+  </data>
+  <data name="tooltip_btn_action" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="tooltip_btn_links" xml:space="preserve">
+    <value>Links</value>
+  </data>
+  <data name="tooltip_btn_nestabot" xml:space="preserve">
+    <value>HelpDesk</value>
+  </data>
+  <data name="tooltip_btn_tutorial" xml:space="preserve">
+    <value>Tutorials</value>
+  </data>
+</root>

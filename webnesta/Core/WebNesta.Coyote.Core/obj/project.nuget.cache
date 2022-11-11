@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "tNN4zK77qIXB4G+llQefU2cJy2Cphm30B1/0Yb9aGOKym3Db4bcGaH5l7726uFRFL+7TRoshNij6vzoxQP/ypA==",
+  "dgSpecHash": "tx+kT9zrLdSy+U+NUsKpBDFZ2it0pjHJEIA/qfTS9iFlF2nYw3hj2M2wajMfYrmBDIZloC1vY1qW/V2AU2wztA==",
   "success": true,
   "projectFilePath": "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\Core\\WebNesta.Coyote.Core\\WebNesta.Coyote.Core.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\alex.santos\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

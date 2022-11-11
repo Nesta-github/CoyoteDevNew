@@ -14,8 +14,6 @@ namespace WebNesta.Coyote.Geral.API.Controllers
     [Route("WeatherForecast")]
     public class WeatherForecastController : ControllerBase
     {
-        public readonly IAccountRepository<Account> _repository;
-
         private static readonly string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
@@ -23,9 +21,8 @@ namespace WebNesta.Coyote.Geral.API.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger, IAccountRepository<Account> repository)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
-            _repository = repository;
             _logger = logger;
         }
 

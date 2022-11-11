@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Coyote Contracts - Nesta</title>
+
+
+    @*    <title>Coyote Contracts - Nesta</title>
+    Html.DevExpress().GetStyleSheets(
+    new StyleSheet { ExtensionSuite = ExtensionSuite.NavigationAndLayout, Theme = "COYOTE" },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.Editors, Theme = "COYOTE" },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.HtmlEditor, Theme = "COYOTE" },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.CardView, Theme = "COYOTE" },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.GridView, Theme = "COYOTE" },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.PivotGrid, Theme = "COYOTE" },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.Chart, Theme = "COYOTE" },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.Report, Theme = "COYOTE" },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.Scheduler, Theme = "COYOTE" },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.TreeList, Theme = "COYOTE" },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.Dashboard, Theme = "COYOTE" },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.RichEdit, Theme = "COYOTE" }
+    )*@
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/login_style.css" rel="stylesheet" />
+    <link href="~/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="~/css/all.min.css" rel="stylesheet" />
+
+
+    @*  Html.DevExpress().GetScripts(
+    new Script { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+    new Script { ExtensionSuite = ExtensionSuite.Editors },
+    new Script { ExtensionSuite = ExtensionSuite.CardView },
+    new Script { ExtensionSuite = ExtensionSuite.GridView },
+    new Script { ExtensionSuite = ExtensionSuite.Chart },
+    new Script { ExtensionSuite = ExtensionSuite.Scheduler },
+    new Script { ExtensionSuite = ExtensionSuite.Dashboard },
+    new Script { ExtensionSuite = ExtensionSuite.TreeList },
+    new Script { ExtensionSuite = ExtensionSuite.RichEdit }
+    )*@
+
+</head>
+<body>
+    <script src="~/lib/jquery/jquery-3.5.1.js"></script>
+    <script src="~/lib/jquery/jquery-ui.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/js/login/login.js"></script>
+
+    <div id="dvLoading" class="loading">
+        <img src="/img/loading.gif" alt=""
+             style="left: 45%;top: 30%;position: absolute;width: 10%;" />
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" style="z-index:999999999999999999999999999 !important" role="dialog">
+        <div class="modal-dialog ">
+
+            <div id="dvModalSuccess" style="display:none" class="modal-content popupAlertaFeedback">
+
+
+                <div class="modal-header border-0 p-0 pr-2">
+                    <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body" style="top: -1vh; left: 0;">
+                    <div class="row">
+                        <div class="col-2">
+                            <i class="fas fa-check-circle sucesso"></i>
+                        </div>
+                        <div class="col-10">
+                            <p id="dvModalTitleSuccess" class="popupAlertaFeedback" style="font-size: 30px; font-weight: bold;">
+                                @WebNesta.Coyote.Web.App_GlobalResources.GlobalResource.ResourceManager.GetString("alert_success") !
+                            </p>
+                            <p id="dvModalMessageSuccess" class="popupAlertaFeedback"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="dvModalError" style="display:none" class="modal-content popupAlertaFeedback erro">
+                <div class="modal-header border-0 p-0 pr-2">
+                    <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body" style="top: -1vh; left: 0;">
+                    <div class="row">
+                        <div class="col-2">
+                            <i class="fas fa-times-circle erro"></i>
+                        </div>
+                        <div class="col-10">
+                            <p id="dvModalTitleError" class="popupAlertaFeedback" style="font-size: 30px; font-weight: bold;">Oops</p>
+                            <p id="dvModalMessageError" class="popupAlertaFeedback"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="modal fade" id="modalRecoveryPassword"  style="z-index:999999 !important" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content popupRecoveryPassword" style="width:952px;height:824px">
+
+                <div class="modal-header border-0 p-0 pr-2">
+                    <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body" style="top: -1vh; left: 0;">
+                    <div class="row">
+                        <div class="col-12">
+                            <p class="popupRecoveryPassword" style="font-size: 30px; font-weight: bold;text-align:center">
+                                Recuperação de senha
+                            </p>
+                         
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 text-center"> @*style="text-align:center;"*@
+                            <p class="popupRecoveryPasswordDescription" style="width:100%">
+                                Insira seu e-mail para a <br />recuperar sua senha:
+                            </p> 
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-c1">
+                            <div class="c-right">
+                                <div class="dxeTextBoxSys dxeTextBox_COYOTE dxeTextBoxDefaultWidthSys" style="border: none !important;">
+                                    <div class="dxic" style="border: none !important;width:100%;">
+                                        <input type="text" id="txtEmailRecuperarSenha" class="dxeEditArea_COYOTE dxeEditAreaSys" style="border: none !important;" placeholder=" Clique Aqui" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 text-center">
+
+                            <input type="button" class="btn_login text-center" name="btnRecuperarSenha" value="Recuperar" id="btnRecuperarSenha" />
+                            <input type="button" class="btn_login text-center" name="btnCancelarRecuperarSenha" value="Cancelar" id="btnCancelarRecuperarSenha" />
+                               
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    @*    Html.DevExpress().PopupControl(settings =>
+    {
+    settings.Name = "popupTutorial";
+    settings.Theme = "COYOTE";
+    settings.PopupElementID = "ajudaLogin";
+    settings.ControlStyle.CssClass = "popupTutorial";
+    settings.AllowResize = false;
+    settings.ShowHeader = false;
+    settings.ShowOnPageLoad = false;
+    settings.AllowDragging = true;
+    settings.PopupHorizontalAlign = PopupHorizontalAlign.WindowCenter;
+    settings.PopupVerticalAlign = PopupVerticalAlign.WindowCenter;
+    settings.CloseAction = CloseAction.OuterMouseClick;
+    settings.CloseOnEscape = false;
+    settings.Modal = false;
+    settings.Width = Unit.Pixel(800);
+    settings.SetContent(() =>
+    {
+    ViewContext.Writer.Write("<div>" + @Html.Partial("_popupTutorialConteudoPartial") + "</div>");
+    });
+    }).GetHtml()
+    *@
+    <div id="dvPageVersion" class="appVersionLogin"></div>
+    <div class="container-fluid">
+        <div class="row px-5 pt-4 pb-5">
+            <div class="col-6 esq">
+                <div class="logo"><img src="~/img/logo_login.png" style="height:60vh" /></div>
+                <footer>
+                    <p class="mb-1">Todos os direitos reservados para Somnium Tecnologia S. A.</p>
+                    <span><a href="https://www.webnesta.com/" target="_blank">webnesta.com</a></span> <br />
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                </footer>
+            </div>
+            <div class="col-6 dir">@RenderBody()</div>
+
+        </div>
+
+    </div>
+    @*if (ViewBag.JavaScriptFunction != null)
+    {
+    <script type="text/javascript">
+    @Html.Raw(ViewBag.JavaScriptFunction)
+    </script>
+    }*@
+</body>
+</html>

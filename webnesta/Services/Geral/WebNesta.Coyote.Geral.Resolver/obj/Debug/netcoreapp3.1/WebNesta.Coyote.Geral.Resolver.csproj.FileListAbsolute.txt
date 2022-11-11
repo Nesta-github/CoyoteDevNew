@@ -1,8 +1,3 @@
-E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Resolver\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Resolver.csproj.AssemblyReference.cache
-E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Resolver\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Resolver.GeneratedMSBuildEditorConfig.editorconfig
-E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Resolver\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Resolver.AssemblyInfoInputs.cache
-E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Resolver\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Resolver.AssemblyInfo.cs
-E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Resolver\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Resolver.csproj.CoreCompileInputs.cache
 E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Resolver\bin\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Resolver.exe
 E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Resolver\bin\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Resolver.deps.json
 E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Resolver\bin\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Resolver.runtimeconfig.json
@@ -10,6 +5,11 @@ E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Resolv
 E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Resolver\bin\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Resolver.dll
 E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Resolver\bin\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Resolver.pdb
 E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Resolver\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Resolver\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Resolver.csproj.AssemblyReference.cache
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Resolver\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Resolver.GeneratedMSBuildEditorConfig.editorconfig
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Resolver\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Resolver.AssemblyInfoInputs.cache
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Resolver\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Resolver.AssemblyInfo.cs
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Resolver\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Resolver.csproj.CoreCompileInputs.cache
 E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Resolver\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Resolver.csproj.CopyComplete
 E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Resolver\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Resolver.dll
 E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.Resolver\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Resolver.pdb

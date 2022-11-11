@@ -14,7 +14,6 @@ using WebNesta.Coyote.Core.Data;
 using WebNesta.Coyote.Geral.Data;
 using WebNesta.Coyote.Geral.Domain;
 using WebNesta.Coyote.Geral.Domain.Service;
-using WebNesta.Coyote.Geral.Service;
 
 namespace WebNesta.Coyote.Geral.API
 {
@@ -30,10 +29,15 @@ namespace WebNesta.Coyote.Geral.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
-
+        //s    services.AddSingleton<IConfiguration>(Configuration);
             services.AddScoped<IDomainAccountService, AccountService>();
-            services.AddScoped<IAccountRepository<Account>, AccountRepository>();
+            services.AddScoped<IDomainVersionService, VersionService>();
+            services.AddScoped<IAccountRepository<UTUTISEN, TUSUSUARI>, AccountRepository>();
+            services.AddScoped<IVersionRepository, VersionRepository>();
+
+            services.AddCors();
+
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,16 +54,15 @@ namespace WebNesta.Coyote.Geral.API
 
             app.UseAuthorization();
 
-           // app.UseHttpsRedirection();
-
-//            app.UseRouting();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
 
-            app.UseCors(option => option.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+            app.UseCors(option =>
+
+             option.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()
+            );
 
         }
     }

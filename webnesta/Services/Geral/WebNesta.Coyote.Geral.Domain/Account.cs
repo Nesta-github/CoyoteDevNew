@@ -15,6 +15,8 @@ namespace WebNesta.Coyote.Geral.Domain
                 CREDUSER = user;
         }
 
+
+        public string CREDCONN { get; set; }
         /// <summary>
         /// Credencial do usuários
         /// </summary>

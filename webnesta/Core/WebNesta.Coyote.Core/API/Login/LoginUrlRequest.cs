@@ -7,7 +7,7 @@ namespace WebNesta.Coyote.Core.API.Login
 {
     public class LoginUrlRequest : IRequest
     {
-        public string GetUrl(ApiContext context, object[] parametros)
+        public string GetUrl(ApiContext context, object[] parametros = null)
         {
             var url = string.Empty;
 
@@ -18,6 +18,9 @@ namespace WebNesta.Coyote.Core.API.Login
                         parametros[0],
                         parametros[1],
                         parametros[2]);
+                    break; 
+                case ApiContext.Login:
+                    url = "Account"; 
                     break;
                     //return
             }

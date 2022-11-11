@@ -7,5 +7,6 @@ namespace WebNesta.Coyote.Core.API
     public enum ApiContext
     {
         LoginTutorialCarregar = 0,
+        Login = 1,
     }
 }
