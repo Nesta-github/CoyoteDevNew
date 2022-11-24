@@ -23,6 +23,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Users\\Public\\Documents\\DevExpress Demos 20.1\\DevExtreme\\ASP.NET MVC Controls\\WidgetsGallery\\ASP.NET Core\\NuGet": {},
           "E:\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
           "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\WebApps\\WebNesta.Coyote.WebApp\\Nugget": {},
           "https://api.nuget.org/v3/index.json": {}

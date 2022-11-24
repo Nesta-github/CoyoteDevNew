@@ -3,5 +3,6 @@
     public interface IDomainVersionService
     {
         string GetObjectVersion(string page);
+       
     }
 }

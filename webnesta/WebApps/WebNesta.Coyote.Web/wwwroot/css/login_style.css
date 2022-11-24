@@ -53,29 +53,33 @@ a.paging-fields {
         transform: rotate(90deg);
         padding: 7px 0 7px 0;
     }
-    .card_tutorial > .card-header {
-        font-family: Gudea-Regular;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 20px;
-        line-height: 25px;
-        letter-spacing: -0.02em;
-        color: #5D5D5D;
-        padding-bottom: 5px;
-    }
+
+.card_tutorial > .card-header {
+    font-family: Gudea-Regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: -0.02em;
+    color: #5D5D5D;
+    padding-bottom: 5px;
+}
+
     .card_tutorial > .card-header > span {
         font-size: 18px;
     }
-    .card_tutorial > .card-body {
-        font-family: Gudea-Regular;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 12px;
-        line-height: 20px;
-        letter-spacing: -0.02em;
-        color: #5D5D5D;
-        padding-top: 5px;
-    }
+
+.card_tutorial > .card-body {
+    font-family: Gudea-Regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: -0.02em;
+    color: #5D5D5D;
+    padding-top: 5px;
+}
+
 body {
     background-color: #3B95E5;
     background-image: url('../img/back_top.png'),url('../img/back_bottom.png');
@@ -84,47 +88,55 @@ body {
     height: 100vh;
     background-size: 120%;
 }
-body > .container-fluid {
-    top: 1%;
-    position: absolute;
-}
-body > .container-fluid > .row{
-    height: 100vh;
-}
-    body > .container-fluid > .row > .dir {
-        background-color: #fff;
-        border-radius: 42px;
-        padding: 20px;
-        display: flex;
+
+    body > .container-fluid {
+        top: 1%;
+        position: absolute;
     }
-    body > .container-fluid > .row > .esq {
-        display: flex;
-        align-content: center;
-        justify-content: center;
-        position: relative;
-        text-align: center;
-    }
-        body > .container-fluid > .row > .esq > img {
-            height: 45%;
-            margin-top: 25%;
+
+        body > .container-fluid > .row {
+            height: 100vh;
         }
-        body > .container-fluid > .row > .esq > footer {
-            font-family: Gudea-Regular;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 14px;
-            line-height: 17px;
-            letter-spacing: -0.02em;
-            color: #E1E1E1;
-            position: absolute;
-            bottom: 0;
-        }
-        a{
-            text-decoration:none !important;
-        }
+
+            body > .container-fluid > .row > .dir {
+                background-color: #fff;
+                border-radius: 42px;
+                padding: 20px;
+                display: flex;
+            }
+
+            body > .container-fluid > .row > .esq {
+                display: flex;
+                align-content: center;
+                justify-content: center;
+                position: relative;
+                text-align: center;
+            }
+
+                body > .container-fluid > .row > .esq > img {
+                    height: 45%;
+                    margin-top: 25%;
+                }
+
+                body > .container-fluid > .row > .esq > footer {
+                    font-family: Gudea-Regular;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 14px;
+                    line-height: 17px;
+                    letter-spacing: -0.02em;
+                    color: #E1E1E1;
+                    position: absolute;
+                    bottom: 0;
+                }
+
+a {
+    text-decoration: none !important;
+}
+
 .titulo {
     margin: auto auto 10px auto;
-    font-family:Gudea-Regular;
+    font-family: Gudea-Regular;
     font-style: normal;
     font-weight: normal;
     font-size: 60px;
@@ -132,6 +144,7 @@ body > .container-fluid > .row{
     letter-spacing: -0.02em;
     color: #3B95E5;
 }
+
 .col-c1 {
     width: 100%;
     height: 45px;
@@ -180,6 +193,12 @@ body > .container-fluid > .row{
     .col-c1:hover {
         /*border: 2px #6DB0ED solid;*/
     }
+
+input[type="text"].dxeEditAreaSys::placeholder, input[type="password"].dxeEditAreaSys::placeholder {
+    color: #82BBEF;
+    font-size: 11pt;
+}
+
 .dxeTextBox_COYOTE {
     color: #C8C8C8 !important;
     font-family: Gudea-Regular;
@@ -191,8 +210,8 @@ body > .container-fluid > .row{
     width: 80% !important;
     border: 0px;
     background-color: transparent;
-    /*padding-left: 70px;*/
 }
+
 input[type="text"].dxeEditAreaSys, input[type="password"].dxeEditAreaSys {
     margin: 10px 10px 10px 10px;
     font-family: Gudea-Regular;
@@ -201,22 +220,23 @@ input[type="text"].dxeEditAreaSys, input[type="password"].dxeEditAreaSys {
     font-size: 12pt !important;
     line-height: 22px;
     letter-spacing: -0.02em;
-    color: #8EC6F9 !important;
+    color: #fff !important;
     text-align: right;
     background-color: #3B95E5;
     width: 100%;
     z-index: 99;
+    border: none;
+    padding-right: 1.2vh;
 }
 
 input:focus[type="text"].dxeEditAreaSys, input:focus[type="password"].dxeEditAreaSys {
-    color: #fff !important;
-    border: 0px solid #fff !important;
+    outline: none;
     background: inherit;
 }
 
 .dxeEditAreaSys:active {
     color: #fff !important;
- border-style:none !important;
+    border-style: none !important;
     border: 0px solid #fff !important;
     background: inherit;
 }
@@ -225,6 +245,7 @@ dxeEditAreaSys:focus {
     border-style: none !important;
     border: 0px solid #fff !important;
 }
+
 .dxeTextBox_COYOTE:active {
     color: #fff !important;
     border-style: none !important;
@@ -306,7 +327,7 @@ input[type="password"].dxeEditAreaSys:active {
 
 /* Style the checkmark/indicator */
 .container .checkmark:after {
-/*    left: 9px;
+    /*    left: 9px;
     top: 5px;
     width: 5px;
     height: 10px;
@@ -322,9 +343,9 @@ input[type="password"].dxeEditAreaSys:active {
     font-size: 12px;
 }
 
-.ajuda:hover {
-    color: #3B95E5;
-}
+    .ajuda:hover {
+        color: #3B95E5;
+    }
 
 /* INPUT CHECKBOX*/
 .btn_login {
@@ -343,14 +364,18 @@ input[type="password"].dxeEditAreaSys:active {
     background-color: #fff;
     margin-top: 3vh;
 }
+
     .btn_login:disabled {
         opacity: 0;
         margin-top: -1vh;
     }
+
     .btn_login:hover:not(:disabled) {
         color: #fff;
         background-color: #3B95E5;
-    } .dxcaTextBoxCellNoIndent_COYOTE {
+    }
+
+.dxcaTextBoxCellNoIndent_COYOTE {
     display: inline-flex;
     background-color: #3B95E5;
     color: #fff;
@@ -364,25 +389,31 @@ input[type="password"].dxeEditAreaSys:active {
     line-height: 40px;
     margin-top: 10px;
 }
-      .dxcaRefreshButtonCell_COYOTE {
+
+.dxcaRefreshButtonCell_COYOTE {
     border: 0px;
     position: relative;
 }
-      div#Captcha_IMGD {
+
+div#Captcha_IMGD {
     margin: auto;
     border: 0px;
 }
-      .dxcaControl_COYOTE{
-    margin:auto;
+
+.dxcaControl_COYOTE {
+    margin: auto;
 }
-      .dxcaControl_COYOTE {
+
+.dxcaControl_COYOTE {
     width: 100%;
 }
-      .dxcaRefreshButton_COYOTE {
+
+.dxcaRefreshButton_COYOTE {
     position: absolute;
     left: 48%;
     top: -300%;
 }
+
 .twofa-google {
     border: 1px solid #3B95E5;
     box-sizing: border-box;
@@ -391,12 +422,13 @@ input[type="password"].dxeEditAreaSys:active {
     /*width: 60%;*/
     margin: auto;
 }
-        .twofa-google img {
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            right: 2vh;
-        }
+
+    .twofa-google img {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        right: 2vh;
+    }
 
 .instruction {
     font-family: Gudea-Regular;
@@ -414,11 +446,11 @@ input[type="password"].dxeEditAreaSys:active {
     color: #3B95E5;
     margin: 0px 0px 0px 2vh;
 }
-      
-.instruction2.code {
-    font-size: 7pt;
-    overflow-wrap: break-word;
-}
+
+    .instruction2.code {
+        font-size: 7pt;
+        overflow-wrap: break-word;
+    }
 
 .btn_login_external {
     border: 1px solid #3B95E5;
@@ -430,7 +462,7 @@ input[type="password"].dxeEditAreaSys:active {
     color: #3B95E5;
     text-align: center;
     height: 45px;
-   /* position: relative;
+    /* position: relative;
     box-sizing: border-box;
     width: 185px;
     margin: auto;
@@ -442,24 +474,26 @@ input[type="password"].dxeEditAreaSys:active {
         position: absolute;
         right: 3px;
         bottom: 9px;
-    } 
-    
-    .btn_login_external > i:before {
-        padding: 10px;
-    } 
-      .btn_login_external > p {
+    }
+
+        .btn_login_external > i:before {
+            padding: 10px;
+        }
+
+    .btn_login_external > p {
         font-size: 15px;
         position: absolute;
         left: 18px;
         bottom: 10px;
         margin: 0px;
         display: block;
-    } 
+    }
 
 .link_esqueci {
-margin: auto;
-color: #bdbdbd;
+    margin: auto;
+    color: #bdbdbd;
 }
+
     .link_esqueci:hover {
         color: #3B95E5;
         text-decoration: none;
@@ -510,6 +544,7 @@ form {
     margin: auto;
     cursor: default;
 }
+
 .img_tutorial {
     max-height: 300px;
     max-width: 300px;
@@ -588,6 +623,7 @@ i.erro {
     color: white;
     margin-top: 13px;
 }
+
 .modal-backdrop {
     background-color: transparent;
 }
@@ -699,7 +735,7 @@ p.popupRecoveryPassword {
 
 .popupRecoveryPasswordDescription {
     padding-top: 12%;
-    padding-bottom: 12%;        
+    padding-bottom: 12%;
     width: 167px;
     height: 44px;
     font-family: 'Gudea';
@@ -711,4 +747,53 @@ p.popupRecoveryPassword {
     letter-spacing: -0.02em;
     /* Gray 2 */
     color: #959595;
+}
+
+.nav-link:hover {
+    border-bottom: 4px solid #3B95E5 !important;
+}
+.border-bottom-blue {
+    border-bottom: 4px solid #3B95E5 !important;
+}
+.nav-link-custom {
+    border-bottom: 2px solid rgba(0,0,0,.1);
+    width: 40px !important;
+    text-align: center !important;
+}
+
+.nav-link-custom-active {
+    border-bottom: 4px solid #3B95E5 !important;
+    width: 40px !important;
+    text-align: center !important;
+}
+
+.loading {
+    font-family: Arial;
+    font-size: 10pt;
+    border: 5px solid #67CFF5;
+    width: 200px;
+    height: 100px;
+    display: none;
+    position: fixed;
+    background-color: White;
+    z-index: 999;
+}
+
+
+.modal {
+    position: absolute;
+    top: 10px;
+    right: 100px;
+    bottom: 0;
+    left: 0;
+    z-index: 10040;
+    overflow: auto;
+    overflow-y: auto;
+}
+
+
+@media screen and (max-width: 992px) {
+    #navbarNavAltMarkup {
+        clear: both;
+    }
 }

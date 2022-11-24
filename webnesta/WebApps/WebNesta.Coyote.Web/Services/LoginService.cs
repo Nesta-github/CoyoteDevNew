@@ -5,6 +5,7 @@ using WebNesta.Coyote.Web.Models;
 using Microsoft.Extensions.Configuration;
 using WebNesta.Coyote.Web.Configuration;
 using System.Reflection;
+using WebNesta.Coyote.Geral.Domain.ViewModel;
 
 namespace WebNesta.Coyote.Web.Services
 {
@@ -28,10 +29,12 @@ namespace WebNesta.Coyote.Web.Services
 
             var result = await response.Content.ReadAsStringAsync();
 
+          //  DeserializarObjetoResponse<ResponseResult>(response);
+
             return new ResponseResult() { Title = result };
         }
 
-        public async Task<ResponseResult> Login(AuthViewModel model)
+        public async Task<ValidateViewModel> Login(AuthViewModel model)
         {
             try
             {
@@ -40,11 +43,10 @@ namespace WebNesta.Coyote.Web.Services
                 var response = await _httpClient.PostAsync("/account/login", itemModel);
 
                 // if (!TratarErrosResponse(response)) return await DeserializarObjetoResponse<HttpResponseMessage>(response);
-
-                var result = await response.Content.ReadAsStringAsync();
-
+                
+                var responseModel = await DeserializarObjetoResponse<ValidateViewModel>(response);
                 //DeserializarObjetoResponse<ResponseResult>(response);
-                return new ResponseResult() { Title = result };
+                return responseModel;
             }
             catch (Exception ex)
             {
@@ -53,7 +55,7 @@ namespace WebNesta.Coyote.Web.Services
             }
         }
 
-        public async Task<ResponseResult> RecoveryPassword(RecoveryPasswordViewModel emailRecoveryPassword)
+        public async Task<string> RecoveryPassword(RecoveryPasswordViewModel emailRecoveryPassword)
         {
             try
             {
@@ -61,12 +63,10 @@ namespace WebNesta.Coyote.Web.Services
 
                 var response = await _httpClient.PostAsync("/account/recoverypassword", itemModel);
 
-                // if (!TratarErrosResponse(response)) return await DeserializarObjetoResponse<HttpResponseMessage>(response);
-
                 var result = await response.Content.ReadAsStringAsync();
 
-                //DeserializarObjetoResponse<ResponseResult>(response);
-                return new ResponseResult() { Title = result };
+                return result;
+
             }
             catch (Exception ex)
             {
@@ -75,9 +75,11 @@ namespace WebNesta.Coyote.Web.Services
             }
         }
 
-        public Task<ResponseResult> RecoveryPassword(string emailRecoveryPassword)
+        public async Task<string> GetGoogleAuth()
         {
-            throw new NotImplementedException();
+            var googleAuthKey = _configuration.GetValue<string>("GoogleAuthenticator:Key");
+
+            return null;
         }
     }
 }

@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -38,11 +40,42 @@ namespace WebNesta.Coyote.Web
 
             services.AddMvcConfiguration(Configuration);
 
+            services.AddLocalization(opts =>
+            {
+                opts.ResourcesPath = "App_GlobalResources";
+            });
+
+            services.AddMvc()
+             .AddViewLocalization(
+
+              LanguageViewLocationExpanderFormat.SubFolder,
+              opts =>
+              {
+                  opts.ResourcesPath = "App_GlobalResources";
+              })
+             .AddDataAnnotationsLocalization()
+             .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddAuthentication("CookieAuthentication")
+       .AddCookie("CookieAuthentication", config =>
+       {
+           config.Cookie.Name = "UserLoginCookie";
+           config.LoginPath = "/Login";
+           config.AccessDeniedPath = "/Login";
+       });
+
+
             services.RegisterServices(Configuration);
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            // Quem é você?
+            app.UseAuthentication();
+
+            // Verifica Permissões
+            app.UseAuthorization();
+
             app.UseMvcConfiguration(env);
         }
     }

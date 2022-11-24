@@ -1,56 +1,29 @@
-﻿<!DOCTYPE html>
-
-<html>
+﻿
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Coyote Contracts - Nesta</title>
 
-
-    @*    <title>Coyote Contracts - Nesta</title>
-    Html.DevExpress().GetStyleSheets(
-    new StyleSheet { ExtensionSuite = ExtensionSuite.NavigationAndLayout, Theme = "COYOTE" },
-    new StyleSheet { ExtensionSuite = ExtensionSuite.Editors, Theme = "COYOTE" },
-    new StyleSheet { ExtensionSuite = ExtensionSuite.HtmlEditor, Theme = "COYOTE" },
-    new StyleSheet { ExtensionSuite = ExtensionSuite.CardView, Theme = "COYOTE" },
-    new StyleSheet { ExtensionSuite = ExtensionSuite.GridView, Theme = "COYOTE" },
-    new StyleSheet { ExtensionSuite = ExtensionSuite.PivotGrid, Theme = "COYOTE" },
-    new StyleSheet { ExtensionSuite = ExtensionSuite.Chart, Theme = "COYOTE" },
-    new StyleSheet { ExtensionSuite = ExtensionSuite.Report, Theme = "COYOTE" },
-    new StyleSheet { ExtensionSuite = ExtensionSuite.Scheduler, Theme = "COYOTE" },
-    new StyleSheet { ExtensionSuite = ExtensionSuite.TreeList, Theme = "COYOTE" },
-    new StyleSheet { ExtensionSuite = ExtensionSuite.Dashboard, Theme = "COYOTE" },
-    new StyleSheet { ExtensionSuite = ExtensionSuite.RichEdit, Theme = "COYOTE" }
-    )*@
     <link href="~/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/css/login_style.css" rel="stylesheet" />
     <link href="~/css/fontawesome.min.css" rel="stylesheet" />
     <link href="~/css/all.min.css" rel="stylesheet" />
-
-
-    @*  Html.DevExpress().GetScripts(
-    new Script { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
-    new Script { ExtensionSuite = ExtensionSuite.Editors },
-    new Script { ExtensionSuite = ExtensionSuite.CardView },
-    new Script { ExtensionSuite = ExtensionSuite.GridView },
-    new Script { ExtensionSuite = ExtensionSuite.Chart },
-    new Script { ExtensionSuite = ExtensionSuite.Scheduler },
-    new Script { ExtensionSuite = ExtensionSuite.Dashboard },
-    new Script { ExtensionSuite = ExtensionSuite.TreeList },
-    new Script { ExtensionSuite = ExtensionSuite.RichEdit }
-    )*@
-
-</head>
-<body>
     <script src="~/lib/jquery/jquery-3.5.1.js"></script>
     <script src="~/lib/jquery/jquery-ui.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
     <script src="~/js/login/login.js"></script>
 
+
+</head>
+<body>
+
     <div id="dvLoading" class="loading">
         <img src="/img/loading.gif" alt=""
              style="left: 45%;top: 30%;position: absolute;width: 10%;" />
     </div>
-    <!-- Modal -->
+    <!-- MODAL - SUCCESS -->
     <div class="modal fade" id="myModal" style="z-index:999999999999999999999999999 !important" role="dialog">
         <div class="modal-dialog ">
 
@@ -94,8 +67,9 @@
         </div>
 
     </div>
-
-    <div class="modal fade" id="modalRecoveryPassword"  style="z-index:999999 !important" role="dialog">
+    <!-- FIM - MODAL - SUCCESS -->
+    <!-- INICIO - MODAL - RECOVERY PASSWORD -->
+    <div class="modal fade" id="modalRecoveryPassword" style="z-index:999999 !important" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content popupRecoveryPassword" style="width:952px;height:824px">
 
@@ -108,14 +82,15 @@
                             <p class="popupRecoveryPassword" style="font-size: 30px; font-weight: bold;text-align:center">
                                 Recuperação de senha
                             </p>
-                         
+
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-12 text-center"> @*style="text-align:center;"*@
+                        <div class="col-12 text-center">
+                            @*style="text-align:center;"*@
                             <p class="popupRecoveryPasswordDescription" style="width:100%">
                                 Insira seu e-mail para a <br />recuperar sua senha:
-                            </p> 
+                            </p>
                         </div>
                     </div>
                     <div class="row">
@@ -134,14 +109,58 @@
 
                             <input type="button" class="btn_login text-center" name="btnRecuperarSenha" value="Recuperar" id="btnRecuperarSenha" />
                             <input type="button" class="btn_login text-center" name="btnCancelarRecuperarSenha" value="Cancelar" id="btnCancelarRecuperarSenha" />
-                               
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-   
+    <!-- FIM - MODAL - RECOVERY PASSWORD -->
+    <!-- INICIO - MODAL - TUTORIAL -->
+    <div class="modal fade" id="modalTutorial" style="z-index:999999 !important" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content popupRecoveryPassword" style="width:952px;height:auto">
+
+                <div class="modal-header border-0 p-0 pr-2">
+                    <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body" style="top: -1vh; left: 0;">
+                    @*<div class="row">*@
+                        <div class="col-12">
+                            <p id="popupTutorialTitle" class="popupRecoveryPassword"
+                               style="font-size: 30px; font-weight: bold;text-align:left">
+                                Tutorial
+                            </p>
+                        </div>
+                   
+                        <div class="col-12" style="padding-right: 0px;padding-left: 0px;">
+                           
+                            <nav class="navbar navbar-fixed-top navbar-expand-lg navbar-light">
+                               
+                                <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="border-bottom: 1px solid rgba(0,0,0,.1);">
+                                    <div class="navbar-nav float-lg-right">
+                                    <div style="width: 730px;"></div>
+                                        @*  <a class="nav-item nav-link" style="border-bottom: 2px solid rgba(0,0,0,.1);width:40px !important;text-align:center;" href="#">1</a>
+                                        <a class="nav-item nav-link" style="border-bottom: 2px solid rgba(0,0,0,.1);width:40px !important;text-align:center;" href="#">2</a>
+                                        <a class="nav-item nav-link" style="border-bottom: 2px solid rgba(0,0,0,.1);width:40px !important;text-align:center;" href="#">3</a>
+                                        <a class="nav-item nav-link" style="border-bottom: 2px solid rgba(0,0,0,.1);width:40px !important;text-align:center;" href="#">4</a>*@
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+
+                    @*</div>*@
+                    <div class="container">
+                        <div id="dvContentTutorial" class="row"></div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FIM - MODAL - RECOVERY PASSWORD -->
     @*    Html.DevExpress().PopupControl(settings =>
     {
     settings.Name = "popupTutorial";

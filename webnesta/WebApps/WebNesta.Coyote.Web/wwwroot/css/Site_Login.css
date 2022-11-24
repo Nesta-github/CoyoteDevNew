@@ -309,3 +309,8 @@ a {
         color: DimGray;
         font-family: Arial;
     }
+
+
+#modalTutorial   {
+    background-color: red !important;
+}

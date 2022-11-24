@@ -53,3 +53,5 @@ E:\ProjetoAlex\CoyoteDevNew\webnesta\WebApps\WebNesta.Coyote.Web\obj\Debug\netco
 E:\ProjetoAlex\CoyoteDevNew\webnesta\WebApps\WebNesta.Coyote.Web\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Web.dll
 E:\ProjetoAlex\CoyoteDevNew\webnesta\WebApps\WebNesta.Coyote.Web\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Web.pdb
 E:\ProjetoAlex\CoyoteDevNew\webnesta\WebApps\WebNesta.Coyote.Web\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Web.genruntimeconfig.cache
+E:\ProjetoAlex\CoyoteDevNew\webnesta\WebApps\WebNesta.Coyote.Web\obj\Debug\netcoreapp3.1\Razor\Views\Login\Index1.cshtml.g.cs
+E:\ProjetoAlex\CoyoteDevNew\webnesta\WebApps\WebNesta.Coyote.Web\obj\Debug\netcoreapp3.1\Razor\Views\Login\GetTela.cshtml.g.cs

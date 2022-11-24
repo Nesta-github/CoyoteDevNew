@@ -34,6 +34,8 @@ namespace WebNesta.Coyote.Geral.API
             services.AddScoped<IDomainVersionService, VersionService>();
             services.AddScoped<IAccountRepository<UTUTISEN, TUSUSUARI>, AccountRepository>();
             services.AddScoped<IVersionRepository, VersionRepository>();
+            services.AddScoped<IDomainModuloService<Tutorial>, ModuloService>();
+            services.AddScoped<IModuloRepository<Modulo, Tutorial>, ModuloRepository>();
 
             services.AddCors();
 

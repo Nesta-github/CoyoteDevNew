@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
+using System.Reflection;
 using System.Threading.Tasks;
 using WebNesta.Coyote.Geral.API.ViewModel;
 using WebNesta.Coyote.Geral.Domain;
@@ -39,15 +40,27 @@ namespace WebNesta.Coyote.Geral.API.Controllers
             return Ok(model);
         }
 
+        [HttpGet]
+        [Route("account/getuserbyusername/{username}")]
+        public async Task<IActionResult> GetAccount(string username, string password, string lang)
+        {
+            var account = string.Empty;
+            if (!string.IsNullOrEmpty(username) && !string.IsNullOrEmpty(password))
+            {
+            //    account = _accountService.GetAccount(username, password, lang);
+            }
+            return Ok(account);
+        }
+
         [HttpPost]
         [Route("account/login")]
         public async Task<IActionResult> Login(AuthViewModel model)
         {
-            var account = string.Empty;
+            ValidateViewModel account = null;
 
             if (model != null && !string.IsNullOrEmpty(model.UserName) && !string.IsNullOrEmpty(model.Password))
             {
-                account = _accountService.GetAccount(model.UserName, model.Password);
+                account = _accountService.GetAccount(model.UserName, model.Password, model.Lang);
             }
 
             return Ok(account);
@@ -55,18 +68,18 @@ namespace WebNesta.Coyote.Geral.API.Controllers
 
         [HttpPost]
         [Route("account/recoverypassword")]
-        public /*async */ IActionResult RecoveryPassword(RecoveryPasswordViewModel model)
+      //  public async Task<ValidateViewModel> RecoveryPassword(RecoveryPasswordViewModel model)
+        public ValidateViewModel RecoveryPassword(RecoveryPasswordViewModel model)
         {
-            //var response = new ValidateViewModel(false,"");
-            var response = string.Empty;
-
+            ValidateViewModel validateViewModel = null;
+            
             if (model != null && !string.IsNullOrEmpty(model.Email))
             {
                 //response = await _accountService.RecoveryPassword(model.Email);
-                response = _accountService.RecoveryPassword(model.Email);
+                validateViewModel =  _accountService.RecoveryPassword(model.Email);
             }
 
-            return Ok(response);
+            return validateViewModel;
         }
     }
 }

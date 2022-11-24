@@ -10,5 +10,7 @@ namespace WebNesta.Coyote.Web.ViewModel
         public Tutorial Tutorial { get; set; }
         public Captcha Captcha { get; set; }
         public string TelaVersion { get; set; }
+        public string UserName { get; set; }
+        public string TesteCaptcha { get; set; }
     }
 }

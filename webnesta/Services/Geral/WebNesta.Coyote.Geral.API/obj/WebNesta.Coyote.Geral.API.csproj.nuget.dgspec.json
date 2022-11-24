@@ -14,6 +14,7 @@
         "outputPath": "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\Core\\WebNesta.Coyote.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
+          "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\NuGet.Config",
           "C:\\Users\\alex.santos\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -22,9 +23,6 @@
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "E:\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
-          "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\WebApps\\WebNesta.Coyote.WebApp\\Nugget": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -78,6 +76,7 @@
         "outputPath": "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\Services\\Geral\\WebNesta.Coyote.Geral.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
+          "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\NuGet.Config",
           "C:\\Users\\alex.santos\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -86,9 +85,6 @@
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "E:\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
-          "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\WebApps\\WebNesta.Coyote.WebApp\\Nugget": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -155,6 +151,7 @@
         "outputPath": "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\Services\\Geral\\WebNesta.Coyote.Geral.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
+          "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\NuGet.Config",
           "C:\\Users\\alex.santos\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -163,9 +160,6 @@
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "E:\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
-          "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\WebApps\\WebNesta.Coyote.WebApp\\Nugget": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -226,6 +220,7 @@
         "outputPath": "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\Services\\Geral\\WebNesta.Coyote.Geral.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
+          "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\NuGet.Config",
           "C:\\Users\\alex.santos\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -234,9 +229,6 @@
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "E:\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
-          "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\WebApps\\WebNesta.Coyote.WebApp\\Nugget": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

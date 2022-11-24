@@ -1,0 +1,251 @@
+﻿@{
+  // ViewBag.Title = Resources.Notify.title;
+  // ViewBag.SubTitle = Resources.Notify.sub_title;
+  //
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<div class="row">
+
+    <div class="col-6" style="padding: 0;">
+
+        <h5 class="ml-3 border-bottom pb-1">@Resources.Notify.left_title</h5>
+
+        <div class="card-body">
+
+            @Html.Action("gridNotifyRecebidosPartial")
+
+        </div>
+
+    </div>
+
+    <div class="col-6" style="padding: 0;">
+
+        <h5 class="ml-3 border-bottom pb-1">@Resources.Notify.right_title</h5>
+
+        <div class="card-body">
+
+            @Html.Action("gridNotifyEnviadosPartial")
+
+        </div>
+
+    </div>
+
+</div>*@
+
+<style>
+    .coyote-table {
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 1em;
+        border-radius: 5px 5px 0 0;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        width: 100%;
+        cursor: default;
+    }
+
+        .coyote-table thead tr {
+            background-color: #82BBEF;
+            color: #fff;
+            text-align: left;
+        }
+
+        .coyote-table th,
+        .coyote-table td {
+            padding: 10px 15px;
+            font-weight: 100;
+        }
+
+        .coyote-table tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+
+            .coyote-table tbody tr:nth-of-type(even) {
+                background-color: #EDEDEF;
+            }
+
+            .coyote-table tbody tr:last-of-type {
+                border-bottom: 2px solid #82BBEF;
+            }
+
+            .coyote-table tbody tr:hover {
+                color: #3B95E5;
+            }
+
+</style>
+
+<div class="row" style="margin-left: 2px;">
+    <div class="col-1" style="border-bottom: 1px solid #C8C8C8; padding: 1vh; color: #959595; text-align: center; cursor: pointer;">Recebidas</div>
+    <div class="col-1" style="border-bottom: 2px solid #3B95E5; padding: 1vh; color: #3B95E5; text-align: center; cursor: pointer;">Enviadas</div>
+</div>
+
+<table class="coyote-table">
+    <thead>
+        <tr>
+            <th>Enviado em</th>
+            <th>Destinatário</th>
+            <th>Mensagem</th>
+            <th>Lido em</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>31/01/22 - 12:33</td>
+            <td>MASTER</td>
+            <td>Checar vencimento do Contrato.</td>
+            <td>01/02/22 - 10:54</td>
+            <td>
+                <i class="fas fa-trash-alt font-hover-red"></i>
+                <i class="fas fa-eye font-hover-blue ml-2"></i>
+                <i class="fas fa-pen font-hover-blue ml-2"></i>
+            </td>
+        </tr>
+
+        <tr class="active-row">
+            <td>15/02/22 - 15:20</td>
+            <td>Jorge Siqueira</td>
+            <td>Tarefa DATA DE ENCERRAMENTO DO CONTRATO do imóvel precisa ser revisada.</td>
+            <td>01/02/22 - 10:54</td>
+            <td>
+                <i class="fas fa-trash-alt font-hover-red"></i>
+                <i class="fas fa-eye font-hover-blue ml-2"></i>
+                <i class="fas fa-pen font-hover-blue ml-2"></i>
+            </td>
+        </tr>
+
+        <tr>
+            <td>31/01/22 - 12:33</td>
+            <td>MASTER</td>
+            <td>Teste mensagem.</td>
+            <td>01/02/22 - 10:54</td>
+            <td>
+                <i class="fas fa-trash-alt font-hover-red"></i>
+                <i class="fas fa-eye font-hover-blue ml-2"></i>
+                <i class="fas fa-pen font-hover-blue ml-2"></i>
+            </td>
+        </tr>
+
+        <tr class="active-row">
+            <td>15/02/22 - 15:20</td>
+            <td>Jonathan Miller</td>
+            <td>DATA DE ENCERRAMENTO DO CONTRATO do imóvel precisa ser revisada.</td>
+            <td>01/02/22 - 10:54</td>
+            <td>
+                <i class="fas fa-trash-alt font-hover-red"></i>
+                <i class="fas fa-eye font-hover-blue ml-2"></i>
+                <i class="fas fa-pen font-hover-blue ml-2"></i>
+            </td>
+        </tr>
+
+        <tr>
+            <td>31/01/22 - 12:33</td>
+            <td>MASTER</td>
+            <td>Checar aditamento do Contrato 16790-12.</td>
+            <td>01/02/22 - 10:54</td>
+            <td>
+                <i class="fas fa-trash-alt font-hover-red"></i>
+                <i class="fas fa-eye font-hover-blue ml-2"></i>
+                <i class="fas fa-pen font-hover-blue ml-2"></i>
+            </td>
+        </tr>
+
+        <tr class="active-row">
+            <td>15/02/22 - 15:20</td>
+            <td>Jorge Siqueira</td>
+            <td>Tarefa DATA DE ENCERRAMENTO DO CONTRATO do imóvel 009F-13.</td>
+            <td>01/02/22 - 10:54</td>
+            <td>
+                <i class="fas fa-trash-alt font-hover-red"></i>
+                <i class="fas fa-eye font-hover-blue ml-2"></i>
+                <i class="fas fa-pen font-hover-blue ml-2"></i>
+            </td>
+        </tr>
+
+        <tr>
+            <td>31/01/22 - 12:33</td>
+            <td>MASTER</td>
+            <td>DATA DE ADITAMENTO DO CONTRATO - Boleta 780-1H.</td>
+            <td>01/02/22 - 10:54</td>
+            <td>
+                <i class="fas fa-trash-alt font-hover-red"></i>
+                <i class="fas fa-eye font-hover-blue ml-2"></i>
+                <i class="fas fa-pen font-hover-blue ml-2"></i>
+            </td>
+        </tr>
+
+        <tr class="active-row">
+            <td>15/02/22 - 15:20</td>
+            <td>MASTER</td>
+            <td>DATA DE ENCERRAMENTO DO CONTRATO do galpão H098H-001 precisa ser revisada.</td>
+            <td>01/02/22 - 10:54</td>
+            <td>
+                <i class="fas fa-trash-alt font-hover-red"></i>
+                <i class="fas fa-eye font-hover-blue ml-2"></i>
+                <i class="fas fa-pen font-hover-blue ml-2"></i>
+            </td>
+        </tr>
+
+        <tr>
+            <td>31/01/22 - 12:33</td>
+            <td>MASTER</td>
+            <td>Checar aditamento do Contrato.</td>
+            <td>01/02/22 - 10:54</td>
+            <td>
+                <i class="fas fa-trash-alt font-hover-red"></i>
+                <i class="fas fa-eye font-hover-blue ml-2"></i>
+                <i class="fas fa-pen font-hover-blue ml-2"></i>
+            </td>
+        </tr>
+
+        <tr class="active-row">
+            <td>15/02/22 - 15:20</td>
+            <td>MASTER</td>
+            <td>DATA DE ENCERRAMENTO DO CONTRATO do galpão H098H-001 precisa ser revisada.</td>
+            <td>01/02/22 - 10:54</td>
+            <td>
+                <i class="fas fa-trash-alt font-hover-red"></i>
+                <i class="fas fa-eye font-hover-blue ml-2"></i>
+                <i class="fas fa-pen font-hover-blue ml-2"></i>
+            </td>
+        </tr>
+
+        <tr>
+            <td>31/01/22 - 12:33</td>
+            <td>MASTER</td>
+            <td>Checar aditamento do Contrato.</td>
+            <td>01/02/22 - 10:54</td>
+            <td>
+                <i class="fas fa-trash-alt font-hover-red"></i>
+                <i class="fas fa-eye font-hover-blue ml-2"></i>
+                <i class="fas fa-pen font-hover-blue ml-2"></i>
+            </td>
+        </tr>
+
+        <tr class="active-row">
+            <td>15/02/22 - 15:20</td>
+            <td>MASTER</td>
+            <td>DATA DE ENCERRAMENTO DO CONTRATO do galpão H098H-001 precisa ser revisada.</td>
+            <td>01/02/22 - 10:54</td>
+            <td>
+                <i class="fas fa-trash-alt font-hover-red"></i>
+                <i class="fas fa-eye font-hover-blue ml-2"></i>
+                <i class="fas fa-pen font-hover-blue ml-2"></i>
+            </td>
+        </tr>
+
+        <tr>
+            <td>31/01/22 - 12:33</td>
+            <td>MASTER</td>
+            <td>Checar aditamento do Contrato.</td>
+            <td>01/02/22 - 10:54</td>
+            <td>
+                <i class="fas fa-trash-alt font-hover-red"></i>
+                <i class="fas fa-eye font-hover-blue ml-2"></i>
+                <i class="fas fa-pen font-hover-blue ml-2"></i>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -104,13 +104,13 @@ namespace WebNesta.Coyote.Geral.Data
             return account;
         }
         
-        public string ValidateAccountAccess(string username, string password)
+        public string ValidateAccountAccess(string username, string password, string lang)
         {
             var result = string.Empty;
 
             using (var connection = new SqlConnection(this.ConnectionString))
             {
-                var proc = @"nesta_sp_Credencial_Valida";
+                var proc = @"nesta_sp_Credential_Is_Valid";
 
                 connection.Open();
 
@@ -119,17 +119,23 @@ namespace WebNesta.Coyote.Geral.Data
                     command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("p_User", username);
                     command.Parameters.AddWithValue("p_Pass", password);
-                    command.Parameters.AddWithValue("p_idioma", "pt-BR");
-                   
-                    SqlParameter outputIdParam = new SqlParameter("@p_mensagem", SqlDbType.NVarChar, 4000)
+                    command.Parameters.AddWithValue("p_Culture", lang);
+
+                    SqlParameter outputMessage = new SqlParameter("@p_Message", SqlDbType.NVarChar, 4000)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+
+                      SqlParameter outputMessageCode = new SqlParameter("@p_Msg_Code", SqlDbType.Int)
                     {
                         Direction = ParameterDirection.Output
                     };
 
                     command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.Add(outputIdParam);
+                    command.Parameters.Add(outputMessageCode);
+                    command.Parameters.Add(outputMessage);
                     command.ExecuteNonQuery();
-                    result = outputIdParam.Value.ToString();
+                    result = string.Concat(outputMessageCode.Value.ToString(),"|", outputMessage.Value);
                 }
             }
 
@@ -161,6 +167,11 @@ namespace WebNesta.Coyote.Geral.Data
             {
                 var proc = @"nesta_sp_Reset_Credential";
 
+                /*
+                 1 - sucesso
+                 0 - erro
+                >1 - codigo do erro específico
+                  */
                 connection.Open();
 
                 using (var command = new SqlCommand(proc, connection))

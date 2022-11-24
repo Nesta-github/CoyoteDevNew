@@ -15,5 +15,16 @@ namespace WebNesta.Coyote.Web.Models
         Documento = 1,
         [Description("Home")]
         Home = 2,
+    } 
+    
+    public enum ControllerTutorialName
+    {
+        //FRM - FORM 
+        //BTN - BOTAO
+        //CHK - CHECKBOX
+        //EDT - EDIÇÃO
+
+        [Description("Login")]
+        Login = 0,
     }
 }

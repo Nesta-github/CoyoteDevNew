@@ -6,7 +6,7 @@ namespace WebNesta.Coyote.Core.Data
     {
         Y GetAccountByEmail(string email);
         T GetCredential(string username);
-        string ValidateAccountAccess(string username, string password);
+        string ValidateAccountAccess(string username, string password, string lang);
         void UpdateAccessAccount(string username);
         string ResetCredential(string username, string code);
     }

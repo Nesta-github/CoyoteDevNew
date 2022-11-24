@@ -1,11 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "HcX3Mdg36JR6bjUkK6PSlKIgHwVqFqgz12Ze0PC7fgrvmkYFlPS96OLYbi8dV0XdTROMEd/jnUBgMpkfzGAwnA==",
+  "dgSpecHash": "J64RYAjjyMbEdINzOpzgXSH8Uhv1fYBBmDfVdt0k2BJ1TvN+5vjqQJacfsHWI91DuZTmXpEA3PZAoFh0TwoK+g==",
   "success": true,
   "projectFilePath": "E:\\ProjetoAlex\\CoyoteDevNew\\webnesta\\WebApps\\WebNesta.Coyote.Web\\WebNesta.Coyote.Web.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\alex.santos\\.nuget\\packages\\googleauthenticator\\2.2.0\\googleauthenticator.2.2.0.nupkg.sha512",
+    "C:\\Users\\alex.santos\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\alex.santos\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\alex.santos\\.nuget\\packages\\qrcoder\\1.4.1\\qrcoder.1.4.1.nupkg.sha512",
     "C:\\Users\\alex.santos\\.nuget\\packages\\refit\\6.3.2\\refit.6.3.2.nupkg.sha512",
     "C:\\Users\\alex.santos\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
+    "C:\\Users\\alex.santos\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512",
     "C:\\Users\\alex.santos\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
     "C:\\Users\\alex.santos\\.nuget\\packages\\system.net.http.json\\6.0.0\\system.net.http.json.6.0.0.nupkg.sha512",
     "C:\\Users\\alex.santos\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",

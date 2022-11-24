@@ -8,8 +8,8 @@ namespace WebNesta.Coyote.Web.Configuration
     {
         public static void RegisterServices(this IServiceCollection services, IConfiguration configuration)
         {
-
             services.AddHttpClient<ILoginService, LoginService>();
+            services.AddHttpClient<IModuloService, ModuloService>();
         }
     }
 }

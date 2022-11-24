@@ -14,20 +14,29 @@ namespace WebNesta.Coyote.Geral.Domain.Service
     public class AccountService : IDomainService, IDomainAccountService
     {
         public readonly IAccountRepository<UTUTISEN, TUSUSUARI> _repository;
+     
         public AccountService(IAccountRepository<UTUTISEN, TUSUSUARI> repository)
         {
             _repository = repository;
         }
 
-        public string GetAccount(string username, string password)
+        public ValidateViewModel GetAccount(string username, string password, string lang)
         {
             var result = string.Empty;
-
+            ValidateViewModel model = null;
             try
             {
-                result = _repository.ValidateAccountAccess(username, password);
+                result = _repository.ValidateAccountAccess(username, password, lang);
 
-                return result;
+                if(!string.IsNullOrEmpty(result))
+                {
+                    var resultSplitted = result.Split("|");
+
+                    model = new ValidateViewModel(resultSplitted[0] == "1", resultSplitted[1].ToString());
+
+                }
+
+                return model;
             }
             catch (Exception ex)
             {
@@ -36,31 +45,23 @@ namespace WebNesta.Coyote.Geral.Domain.Service
             }
         }
 
-        public 
-            /*async */
-            string
-            /*Task<ValidateViewModel> */
-            RecoveryPassword(string emailRecoveryPassword)
+        public ValidateViewModel RecoveryPassword(string emailRecoveryPassword)
+        // public async Task<ValidateViewModel> RecoveryPassword(string emailRecoveryPassword)
         {
-            var message = string.Empty;
-            //ValidateViewModel validateModel = null;
+            ValidateViewModel validateModel = null;
 
             if (string.IsNullOrEmpty(emailRecoveryPassword))
             {
-                message = "E-mail deve ser preenchido.";
-                return message;
-               // validateModel = new ValidateViewModel(false, "E-mail deve ser preenchido.");
-               // return validateModel;
+                validateModel = new ValidateViewModel(false, "E-mail deve ser preenchido.");
+                return validateModel;
             }
 
             var userAccount = _repository.GetAccountByEmail(emailRecoveryPassword);
 
-            if(userAccount == null || (userAccount != null && string.IsNullOrEmpty(userAccount.USIDUSUA)))
+            if (userAccount == null || (userAccount != null && string.IsNullOrEmpty(userAccount.USIDUSUA)))
             {
-                message = "Email não cadastrado.";
-                    return message;
-               //validateModel = new ValidateViewModel(false, "Email não cadastrado.");
-               //return validateModel;
+                validateModel = new ValidateViewModel(false, "Email não cadastrado.");
+                return validateModel;
             }
 
             if (userAccount != null && !string.IsNullOrEmpty(userAccount.USIDUSUA))
@@ -83,52 +84,36 @@ namespace WebNesta.Coyote.Geral.Domain.Service
                     //ENVIAR O EMAIL
                     var taskSendEmail = System.Threading.Tasks.Task.Run(async () =>
                     {
-                        await notifyEmail.SendMessage(new Notify()
+                        notifyEmail.SendMessage(new Notify()
                         {
                             To = new List<string>() { userAccount.USEMAILU },
                             Subject = "Recuperação de Senha",
                             Body = string.Concat("<b>Olá, usuário Coyote!</b><br />Você solicitou a recuperação de senha do seu login Coyote Contracts.</p>",
-                                            "<br /><br /><p> Esta é sua senha provisória para acesso ao sistema: ", userAccountNewPassword.USNMPRUS),
+                                             "<br /><br /><p> Esta é sua senha provisória para acesso ao sistema: ", userAccountNewPassword.USNMPRUS),
                             RandomCode = code,
                             Reset = true
                         });
                     });
-                    
+
                     //  WHATS APP
-                    var taskSendWhatsApp = System.Threading.Tasks.Task.Run(async () =>
-                    {
-                        await notifyWhatsApp.SendMessage(new Notify()
-                        {
-                            PhoneTo = userAccount.USNUMCEL,
-                            From= "Coyote Contracts",
-                            Message =  string.Format("Senha de acesso ao sistema foi recuperada. \n*{0}*", code)
-                        });
-                    });
+                    // var taskSendWhatsApp = System.Threading.Tasks.Task.Run(async () =>
+                    // {
+                    //     await notifyWhatsApp.SendMessage(new Notify()
+                    //     {
+                    //         PhoneTo = userAccount.USNUMCEL,
+                    //         From= "Coyote Contracts",
+                    //         Message =  string.Format("Senha de acesso ao sistema foi recuperada. \n*{0}*", code)
+                    //     });
+                    // });
 
                     taskSendEmail.Wait();
                     // taskSendWhatsApp.Wait();
-                    // validateModel = new ValidateViewModel(true, "Enviado e-mail com senha temporária.");
-                    message = "Enviado e-mail com senha temporária.";
+                    validateModel = new ValidateViewModel(true, "Enviado e-mail com senha temporária.");
+                    //message = "Enviado e-mail com senha temporária.";
                 }
             }
 
-            return message;
-        }
-
-        private string SetCredConnConnection(string connection)
-        {
-            var newConnection = string.Empty;
-            string[] splittedString = connection.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
-            Dictionary<string, string> dictionary =
-                                  splittedString.ToDictionary(s => s.Split('=')[0], s => s.Split('=')[1]);
-#if DEBUG
-            dictionary["Data Source"] = "177.153.236.228";
-#endif
-            //Provider=MSOLEDBSQL.1;Data Source=10.33.30.12;User ID=RE_DEMO;Password=%r3_DEMO#;Initial Catalog=RE_DEMO;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=CPRO99999;Initial File Name=;Use Encryption for Data=True;Tag with column collation when possible=False;MARS Connection=False;DataTypeCompatibility=0;Trust Server Certificate=True;Application Intent=READWRITE;MultisubnetFailover=False;Use FMTONLY=False;Authentication=;Access Token=;Connect Timeout=600
-            newConnection = $"Data Source={dictionary["Data Source"]};Initial Catalog={dictionary["Initial Catalog"]};User id={dictionary["User ID"]};Password={dictionary["Password"]};";
-
-            return newConnection;
-
+            return validateModel;
         }
     }
 }
