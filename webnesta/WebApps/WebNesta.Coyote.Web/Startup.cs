@@ -64,6 +64,7 @@ namespace WebNesta.Coyote.Web
            config.AccessDeniedPath = "/Login";
        });
 
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
             services.RegisterServices(Configuration);
         }

@@ -34,7 +34,6 @@ var modalTutorialNavBar =
         "{3}" +
         "{4}" +
         '</div>' +
-        '<hr/>' +
         '</div >'
 }
 
@@ -65,6 +64,15 @@ var uiViewModel = {
         btnEntraCaptcha: "#btnEntraCaptcha",
         btnCancelarCaptcha: "#btnCancelarCaptcha"
     },
+    MFA: {
+        dvMFA: "#dvMFA",
+        hfUserUniqueKey: "#hfUserUniqueKey",
+        txtSecuriyCode: "#txtSecuriyCode",
+        imgBarcodeImageUrl: "#imgBarcodeImageUrl",
+        pSetupCode: "#pSetupCode",
+        btnValidaGoogleAuth: "#btnValidaGoogleAuth",
+        btnCancelarGoogleAuth: "#btnCancelarGoogleAuth"
+    },
     Valida: false,
     Key_2FA_Google: "",
     chkRemember: "#chkRemember",
@@ -74,7 +82,12 @@ var uiViewModel = {
     lblRemember: "#lblRemember",
     storage: {
         catpchaCodeKey: '#hfCatpchaCodeKey'
-    }
+    },
+    dvRemember: '#dvRemember',
+    dvPassword: '#dvPassword',
+    dvLogin: '#dvLogin',
+    componentTextboxPassword: "#componentTextboxPassword",
+    componentTextboxLogin: "#componentTextboxLogin"
 }
 
 var url = {
@@ -83,14 +96,14 @@ var url = {
     getRecoveryPassword: '/login/RecoveryPassword',
     getRefreshCaptcha: '/login/RefreshCaptcha',
     getValidateCaptcha: "login/ValidateCaptcha",
-    getTutorial: "login/Tutorial"
+    getTutorial: "login/Tutorial",
+    getValidateGoogleAuth: "login/ValidateGoogleAuth"
 }
 
 var util =
 {
     Request: {
         GetRequest: async function (event, url, callback) {
-            console.log('url: ' + url);
             return new Promise((resolve, reject) => {
                 let xhr = new XMLHttpRequest();
                 xhr.onreadystatechange = function () {
@@ -241,6 +254,20 @@ var view = {
     },
     CloseModalRecoveryPassword: function (event) {
         $(uiViewModel.modal.modalRecoveryPassword).modal('toggle');
+    },
+    DisabledTextBoxField: function (isDisabled, componentFieldId, textboxFieldId) {
+        if (isDisabled) {
+            $(textboxFieldId).css({ color: '#C8C8C8 !important', backgroundColor: "#ffff !important" });
+            $(textboxFieldId).attr('disabled','disabled');
+            $(componentFieldId).removeClass("col-c1");
+            $(componentFieldId).addClass("col-c1-disable");
+        }
+        else {
+            $(textboxFieldId).removeAttr('disabled', 'disabled');
+            $(textboxFieldId).css({ color: '#ffff !important', backgroundColor: "#3B95E5 !important" });
+            $(componentFieldId).addClass("col-c1");
+            $(componentFieldId).removeClass("col-c1-disable");
+        }
     }
 }
 
@@ -258,7 +285,7 @@ var model = {
         ////EXIBIR MODAL
         if (!model.ValidateForm(event)) {
             view.LoadingComponent(event, false);
-            view.ShowModal(event, false, "Usuário e Senha inválidos.");
+            view.ShowModal(event, true, "Usuário e Senha inválidos.");
         }
         else {
             //POST
@@ -285,7 +312,7 @@ var model = {
     DataLoadCallback: function (data) {
 
         var responseObject = util.Request.ParseResponse(data)
-        console.log(responseObject);
+
         if (responseObject != null) {
 
             uiViewModel.Valida = responseObject.valida;
@@ -297,6 +324,7 @@ var model = {
                 && responseObject.userName.length > 0) {
                 $(viewModel.usuario).text(responseObject.userName);
                 $(viewModel.usuario).val(responseObject.userName);
+                $(viewModel.remember).prop("checked", true);
             }
 
             if (uiViewModel.Valida) {
@@ -306,6 +334,18 @@ var model = {
             else {
                 util.Validate.FieldEnable(true, uiViewModel.chkRemember)
                 util.Validate.FieldEnable(true, uiViewModel.btnLogin)
+            }
+
+            if (uiViewModel.Key_2FA_Google) {
+
+                $(uiViewModel.captcha.btnEntraCaptcha).remove()
+                $(uiViewModel.captcha.btnCancelarCaptcha).remove()
+                $(uiViewModel.captcha.dvCaptcha).remove();
+            }
+            else {
+                $(uiViewModel.MFA.btnValidaGoogleAuth).remove()
+                $(uiViewModel.MFA.btnCancelarGoogleAuth).remove()
+                $(uiViewModel.MFA.dvMFA).remove();
             }
         }
 
@@ -353,6 +393,12 @@ var model = {
             "margin-left": "33%",
             "margin-bottom": "3%"
         });
+    },
+    ValidateGoogleAuthForm: function (event) {
+        var isValidateGoogleAuthForm =
+            util.Validate.FieldIsNotEmpy(uiViewModel.MFA.txtSecuriyCode);
+
+        return isValidateGoogleAuthForm;
     }
 }
 
@@ -364,9 +410,12 @@ var controller = {
     RegisterEvents: async function (event) {
 
         $(uiViewModel.btnLogin).click(function (event) { model.Login(event); });
-        $(uiViewModel.btnEsqueciMinhaSenha).click(function (event) { console.log('RecoveryPassword'); view.ShowModalRecoveryPassword(event); });
-        $(uiViewModel.btnRecuperarSenha).click(function (event) { console.log('enviar RecoveryPassword'); model.RecoveryPassword(event); });
-        $(uiViewModel.btnCancelarRecuperarSenha).click(function (event) { console.log('enviar view.CloseModalRecoveryPassword(event);'); view.CloseModalRecoveryPassword(event); });
+
+        $(uiViewModel.btnEsqueciMinhaSenha).click(function (event) { view.ShowModalRecoveryPassword(event); });
+
+        $(uiViewModel.btnRecuperarSenha).click(function (event) { model.RecoveryPassword(event); });
+
+        $(uiViewModel.btnCancelarRecuperarSenha).click(function (event) { view.CloseModalRecoveryPassword(event); });
 
         util.Validate.FieldMaskLength(viewModel.usuario, 10);
         util.Validate.FieldMaskLength(viewModel.senha, 10);
@@ -401,10 +450,11 @@ var controller = {
             else {
                 view.ShowModal(event, false, "O campo do código deve ser preenchido.");
             }
-        })
+        });
 
         $(uiViewModel.captcha.btnCancelarCaptcha).click(async function (event) {
-
+            view.DisabledTextBoxField(false, uiViewModel.componentTextboxLogin, viewModel.usuario);
+            view.DisabledTextBoxField(false, uiViewModel.componentTextboxPassword, viewModel.senha);
             util.Session.removeLocalStorageItem($(uiViewModel.storage.catpchaCodeKey).val());
             $(uiViewModel.storage.catpchaCodeKey).val('');
             $(uiViewModel.captcha.btnEntraCaptcha).hide();
@@ -415,8 +465,6 @@ var controller = {
             $(uiViewModel.lblRemember).show();
             $(uiViewModel.btnEsqueciMinhaSenha).show();
             $(uiViewModel.btnLogin).show();
-
-
         });
 
         $(uiViewModel.btnAjudaLogin).click(async function (event) {
@@ -428,7 +476,7 @@ var controller = {
                 await util.Request.GetRequest(event, url.getTutorial + "?lang=" + globalModal.lang
                     , function (data) {
                         data = JSON.parse(data);
-                        console.log(data)
+                    
                         if (data.tutostep !== undefined && data.tutostep != null && data.tutostep.length > 0) {
 
                             var isFirstArrayElement = true;
@@ -477,8 +525,8 @@ var controller = {
                                                 data.tutostep[index].tutoiimg.length > 0) ?
                                                 '<img src="data:image/png;base64, ' + data.tutostep[index].tutoiimg + '" class="img_tutorial" />' : '')
                                         .replace("{4}", video)
-                                        .replace("{5}", !isFirstArrayElement ? 'style="display:none;"' : '')
-                                        .replace("{6}", 'dvTutorial' + index));
+                                        .replace("{5}", !isFirstArrayElement ? 'style="display:none;margin-bottom: 0%;"' : '')
+                                        .replace("{6}", 'dvTutorial' + index)); 
                                 }
                             }
                         }
@@ -487,7 +535,7 @@ var controller = {
                             var selectedNavId = this.id;
                             var selectedIndex = '';
                             $('.navbar-nav a').each(function (i, obj) {
-                               
+
                                 $("#" + obj.id).removeClass('nav-link-custom-active');
                                 $("#" + obj.id).removeClass('border-bottom-blue');
 
@@ -503,8 +551,9 @@ var controller = {
                             });
 
                             $("#dvTutorial" + selectedIndex.toString()).fadeIn('slow', 'linear');
+                            $("#dvTutorial" + selectedIndex.toString()).css({ marginBottom: '0%' });
                             $("#dvTutorial" + (parseInt(selectedIndex) + 1).toString()).fadeIn('slow', 'linear');
-
+                            $("#dvTutorial" + (parseInt(selectedIndex) + 1).toString()).css({ marginBottom: '0%' });
                         });
                         modalTutorialNavBar.isLoaded = true;
                         $(uiViewModel.dvLoading).hide();
@@ -515,6 +564,47 @@ var controller = {
                 $(uiViewModel.modal.modalTutorial).modal('show');
             }
         })
+
+        $(uiViewModel.MFA.btnValidaGoogleAuth).click(async function (event) {
+
+            if (model.ValidateGoogleAuthForm(event)) {
+                await util.Request.GetRequest(event, url.getValidateGoogleAuth
+                    + "?"
+                    + "userUniqueKey=" + $(uiViewModel.MFA.hfUserUniqueKey).val()
+                    + "&securityCode=" + $(uiViewModel.MFA.txtSecuriyCode).val()
+
+                    , function (data) {
+                    
+                        data = JSON.parse(data);
+                       
+                        if (data == true)
+                            view.ShowModal(event, true, "O código está correto.");
+                        else
+                            view.ShowModal(event, false, "O código está incorreto.");
+                    });
+
+            }
+            else {
+                view.ShowModal(event, false, "O campo do código de segurança deve ser preenchido.");
+            }
+        });
+
+        $(uiViewModel.MFA.btnCancelarGoogleAuth).click(async function (event) {
+            $(uiViewModel.MFA.btnValidaGoogleAuth).hide();
+            $(uiViewModel.MFA.btnCancelarGoogleAuth).hide();
+            $(uiViewModel.MFA.dvMFA).hide();
+            $(uiViewModel.dvRemember).show();
+            $(uiViewModel.dvPassword).show();
+            $(uiViewModel.btnLogin).show();
+
+            $(uiViewModel.lblRemember).show();
+            $(uiViewModel.btnEsqueciMinhaSenha).show();
+
+            $(uiViewModel.dvLogin).fadeIn('show', 'linear');
+            $(viewModel.usuario).text('');
+            $(viewModel.senha).text('');
+        });
+
     },
     PostDataLogin: function (event) {
         var model = {
@@ -526,33 +616,58 @@ var controller = {
 
         util.Request.PostRequest(event, url.postDataLogin, model,
             function (data) {
-                
-                if (data.isValid == false) {
+
+                if (data.isSuccess == false) {
                     view.ShowModal(event, false, data.message);
                 }
                 else {
-                    $(uiViewModel.captcha.txtCaptcha).text('');
 
-                    $(uiViewModel.captcha.imgCaptcha).css({
-                        "background-image": "url(" + data.captchaImagePath + ")",
-                        "height": "40px",
-                        "width": "33%",
-                        "background-repeat": "no-repeat",
-                        "border-radius": "8px",
-                        "margin-top": "3%",
-                        "margin-left": "33%",
-                        "margin-bottom": "3%"
-                    });
+                  /// if ($(viewModel.remember).is(":checked")) {
+                  ///     util.Session.setLocalStorageItem(data.fileNameCaptcha, data.captchaCode)
+                  /// }
 
-                    $(uiViewModel.captcha.txtCaptcha).text('');
-                    $(uiViewModel.storage.catpchaCodeKey).val(data.fileNameCaptcha);
-                    util.Session.setLocalStorageItem(data.fileNameCaptcha, data.captchaCode)
-                    $(uiViewModel.captcha.dvCaptcha).fadeIn('slow', 'linear');
+                    if (uiViewModel.Key_2FA_Google) {
+                        $(uiViewModel.MFA.txtSecuriyCode).text('');
+                        $(uiViewModel.MFA.imgBarcodeImageUrl).fadeIn('slow', 'linear');
+                        $(uiViewModel.MFA.imgBarcodeImageUrl).attr('src', data.barcodeImageUrl);
+                        $(uiViewModel.MFA.hfUserUniqueKey).val(data.userUniqueKey);
+                        $(uiViewModel.MFA.pSetupCode).text("Secret Key: " + data.setupCode)
+                        $(uiViewModel.MFA.dvMFA).fadeIn('slow', 'linear');
+                        $(uiViewModel.MFA.btnValidaGoogleAuth).fadeIn('slow', 'linear')
+                        $(uiViewModel.MFA.btnCancelarGoogleAuth).fadeIn('slow', 'linear')
+
+                        $(uiViewModel.dvRemember).hide();
+                        $(uiViewModel.dvPassword).hide();
+                        $(uiViewModel.dvLogin).hide();
+                    }
+                    else {
+                        view.DisabledTextBoxField(true, uiViewModel.componentTextboxLogin, viewModel.usuario);
+                        view.DisabledTextBoxField(true, uiViewModel.componentTextboxPassword, viewModel.senha);
+
+                        $(uiViewModel.captcha.txtCaptcha).text('');
+
+                        $(uiViewModel.captcha.imgCaptcha).css({
+                            "background-image": "url(" + data.captchaImagePath + ")",
+                            "height": "40px",
+                            "width": "33%",
+                            "background-repeat": "no-repeat",
+                            "border-radius": "8px",
+                            "margin-top": "3%",
+                            "margin-left": "33%",
+                            "margin-bottom": "3%"
+                        });
+
+                        $(uiViewModel.captcha.txtCaptcha).text('');
+                        $(uiViewModel.storage.catpchaCodeKey).val(data.fileNameCaptcha);
+                        util.Session.setLocalStorageItem(data.fileNameCaptcha, data.captchaCode)
+                        $(uiViewModel.captcha.dvCaptcha).fadeIn('slow', 'linear');
+                        $(uiViewModel.captcha.btnEntraCaptcha).fadeIn('slow', 'linear');
+                        $(uiViewModel.captcha.btnCancelarCaptcha).fadeIn('slow', 'linear')
+                    }
+
                     $(uiViewModel.lblRemember).hide();
                     $(uiViewModel.btnEsqueciMinhaSenha).hide();
                     $(uiViewModel.btnLogin).hide();
-                    $(uiViewModel.captcha.btnEntraCaptcha).fadeIn('slow', 'linear');
-                    $(uiViewModel.captcha.btnCancelarCaptcha).fadeIn('slow', 'linear');
                 }
             });
     },

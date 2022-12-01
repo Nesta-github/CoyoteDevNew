@@ -15,6 +15,10 @@
 
 body {
     overflow: hidden;
+    font-family: 'Gudea-Regular';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
 }
 
 .popupTutorial {
@@ -193,6 +197,61 @@ a {
     .col-c1:hover {
         /*border: 2px #6DB0ED solid;*/
     }
+/* DISABLE*/
+
+.col-c1-disable {
+    width: 100%;
+    height: 45px;
+    line-height: 43px;
+    margin: auto auto 10px auto;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    vertical-align: middle;
+    background: none;
+    border-radius: 13px;
+    position: relative;
+    padding: 0px;
+    border: 1px solid #C8C8C8;
+}
+
+    .col-c1-disable label {
+        font-family: Gudea-Regular;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12pt;
+        line-height: 22px;
+        letter-spacing: -0.02em;
+        color: #C8C8C8;
+    }
+
+    .col-c1-disable .c-left {
+        width: 50%;
+        float: left;
+        position: absolute;
+        padding-left: 20px;
+        z-index: 2;
+        background: #FFFF;
+        height: 100%;
+        /*opcional*/
+        border-radius: 12px;
+       /* border: 1px solid #959595;*/
+    }
+
+    .col-c1-disable .c-right {
+        width: 100%;
+        float: right;
+        display: flex;
+        position: absolute;
+        /*z-index: 98;*/
+        height: 100%;
+        padding-right: 20px;
+        justify-content: flex-end
+    }
+
+    .col-c1-disable:hover {
+        /*border: 2px #6DB0ED solid;*/
+    }
 
 input[type="text"].dxeEditAreaSys::placeholder, input[type="password"].dxeEditAreaSys::placeholder {
     color: #82BBEF;
@@ -200,7 +259,7 @@ input[type="text"].dxeEditAreaSys::placeholder, input[type="password"].dxeEditAr
 }
 
 .dxeTextBox_COYOTE {
-    color: #C8C8C8 !important;
+    color: #C8C8C8;
     font-family: Gudea-Regular;
     font-style: normal;
     font-weight: normal;
@@ -220,7 +279,7 @@ input[type="text"].dxeEditAreaSys, input[type="password"].dxeEditAreaSys {
     font-size: 12pt !important;
     line-height: 22px;
     letter-spacing: -0.02em;
-    color: #fff !important;
+    color: #fff;
     text-align: right;
     background-color: #3B95E5;
     width: 100%;
@@ -613,13 +672,13 @@ p.popupAlertaFeedback {
 }
 
 i.sucesso {
-    font-size: 30pt;
+    font-size: 95px;
     color: white;
     margin-right: 10px;
 }
 
 i.erro {
-    font-size: 40pt;
+    font-size:95px;
     color: white;
     margin-top: 13px;
 }
@@ -714,7 +773,7 @@ i.erro {
 
 /*------------- POP-UP - Recuperar Senha ---------------*/
 .popupRecoveryPassword:not(p) {
-    border-radius: 13px;
+    border-radius: 35px;
     border: 0px solid !important;
     background-color: #ffffff !important;
     box-shadow: 0px 4px 16px 0 rgb(0 0 0 / 16%);
@@ -791,9 +850,66 @@ p.popupRecoveryPassword {
     overflow-y: auto;
 }
 
+.modal-tutorial {
+    position: absolute !important;
+    top: 10% !important;
+    right: 0% !important;
+    bottom: 0% !important;
+    left: -10% !important;
 
+}
+
+.modal-recuperacao-senha {
+    position: absolute !important;
+    top: 10% !important;
+    right: 0% !important;
+    bottom: 0% !important;
+    left: -20% !important;
+}
+
+/*.fade.show {
+    background: black !important;
+    opacity: 0.7;
+   
+}
+*/
 @media screen and (max-width: 992px) {
     #navbarNavAltMarkup {
         clear: both;
     }
+}
+
+#dvLoading {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: block;
+    opacity: 0.7;
+    background-color: #fff;
+    z-index: 99;
+    text-align: center;
+}
+
+.title-recuperacao-senha {
+    font-family: 'Gudea';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 79px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #3B95E5;
+}
+
+
+
+/* Change the white to any color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #3B95E5 inset !important;
+    
 }

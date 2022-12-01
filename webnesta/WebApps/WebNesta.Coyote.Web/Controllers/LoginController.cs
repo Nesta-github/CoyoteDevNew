@@ -1,11 +1,13 @@
 ﻿using Google.Authenticator;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Localization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using WebNesta.Coyote.Web.Configuration;
@@ -23,21 +25,22 @@ namespace WebNesta.Coyote.Web.Controllers
         private readonly ILoginService _loginService;
         private readonly IModuloService _moduloService;
         private readonly IStringLocalizer<WebNesta.Coyote.Web.App_GlobalResources.Login> _localizer;
-        public LoginController(ILoginService loginService, IStringLocalizer<WebNesta.Coyote.Web.App_GlobalResources.Login> localizer, IModuloService moduloService)
+        private readonly IConfiguration _configuration;
+
+        public LoginController(ILoginService loginService, IStringLocalizer<WebNesta.Coyote.Web.App_GlobalResources.Login> localizer, IModuloService moduloService, IConfiguration configuration)
         {
             _loginService = loginService;
             _tela = ObjectLabel.Login;
             _controllerNameTutorial = ControllerTutorialName.Login;
             _localizer = localizer;
             _moduloService = moduloService;
+            _configuration = configuration;
             //_requestContext = new LoginUrlRequest();
         }
         public IActionResult Index()
         {
             return View();
         }
-
-
 
         [HttpGet]
         [Route("login/GetDataLogin")]
@@ -54,18 +57,17 @@ namespace WebNesta.Coyote.Web.Controllers
             var enumDesc = _tela.DescriptionAttr();
             var responseVersion = await _loginService.GetObjectVersion(enumDesc);
             model.TelaVersion = responseVersion.Title;
+            model.Key_2FAGoogle = _configuration.GetValue<bool>("GoogleAuthenticator:2FA_Google");
 
-            #region 3 - GOOGLE E FORMS AUTH
-            //model.Key_2FAGoogle = _configuration.GetValue<bool>("AppSettingsConfiguration:2FA_Google");
-            //
-            //model.Valida = false;
-            #endregion
+            var lembrarAcesso = HttpContext.User.Identities.Where(wh => wh.AuthenticationType == "UsuarioLogado").FirstOrDefault();
 
-            //((Microsoft.AspNetCore.Http.DefaultHttpContext)HttpContext).User.Identities
-            if (HttpContext.User.Identity.IsAuthenticated)
+            if (lembrarAcesso != null && lembrarAcesso.Claims != null && lembrarAcesso.Claims.Count() > 0)
             {
-                model.UserName = HttpContext.User.Identity.Name;
+                model.UserName = lembrarAcesso.Claims.Where(wh => wh.Type == "LembrarAcesso").FirstOrDefault().Value;
             }
+            var captchaViewModel = new LoginResponseViewModel();
+
+            model.CaptchaImagePath = GenerateCaptcha(captchaViewModel);
 
             return Json(model);
         }
@@ -85,28 +87,47 @@ namespace WebNesta.Coyote.Web.Controllers
 
             bool parseRemember = remember;
 
-            loginResponseViewModel.IsSuccess = true;//response.IsValid;
+            loginResponseViewModel.IsSuccess = response.IsValid;
             loginResponseViewModel.Message = response.Message;
-           
-            if (response.IsValid)
+
+            if (loginResponseViewModel.IsSuccess)
             {
+                var lembrarAcesso = HttpContext.User.Identities.Where(wh => wh.AuthenticationType == "UsuarioLogado").FirstOrDefault();
+
                 if (parseRemember)
                 {
-                    var userClaims = new List<Claim>()
+                    if (lembrarAcesso == null)
                     {
-                        new Claim(ClaimTypes.Name, username),
-                    };
-                    var minhaIdentity = new ClaimsIdentity(userClaims, "LembraAcesso");
-                    var userPrincipal = new ClaimsPrincipal(new[] { minhaIdentity });
+                        var userClaims = new List<Claim>()
+                        {
+                            new Claim("LembrarAcesso",username),
+                        };
 
-                    //cria o cookie
-                    HttpContext.SignInAsync(userPrincipal);
+                        var minhaIdentity = new ClaimsIdentity(userClaims, "UsuarioLogado");
+                        var userPrincipal = new ClaimsPrincipal(new[] { minhaIdentity });
+
+                        //cria o cookie
+                        HttpContext.SignInAsync(userPrincipal);
+                    }
                 }
+                else
+                {
+                    if (lembrarAcesso != null && lembrarAcesso.Claims != null && lembrarAcesso.Claims.Count() > 0)
+                    {
+                       // var claimValue = lembrarAcesso.Claims.Where(wh => wh.Type == "LembrarAcesso").FirstOrDefault().Value = "nao";
+                         
+                    }
+                }
+                var key2FAGoogle = _configuration.GetValue<bool>("GoogleAuthenticator:2FA_Google");
 
-                loginResponseViewModel.CaptchaImagePath = GenerateCaptcha(loginResponseViewModel);
+                if (!key2FAGoogle)
+                    loginResponseViewModel.CaptchaImagePath = GenerateCaptcha(loginResponseViewModel);
+                else
+                    GoogleAuthenticator(username.ToUpper(), _configuration.GetValue<string>("GoogleAuthenticator:Key"), loginResponseViewModel);
             }
-            
-            return Json(response);
+
+
+            return Json(loginResponseViewModel);
         }
 
         [HttpPost]
@@ -221,8 +242,6 @@ string.Concat("/img/captcha/", DateTime.Now.Year, "-", DateTime.Now.Month, "-", 
             var enumControllerNameTutorial = _controllerNameTutorial.DescriptionAttr();
             lang = "pt-BR";
             var responseTutorial = await _moduloService.GetTutorial(lang, enumControllerNameTutorial);
-            //     model.TelaVersion = responseVersion.Title;
-
 
             return Json(responseTutorial);
         }
@@ -231,11 +250,32 @@ string.Concat("/img/captcha/", DateTime.Now.Year, "-", DateTime.Now.Month, "-", 
 
         #region GOOGLE AUTHENTICATOR
 
-        [HttpGet]
-        public IActionResult GoogleAuthenticator()
+        public void GoogleAuthenticator(string userId, string mfaKey, LoginResponseViewModel model)
         {
-            TwoFactorAuthenticator twoFactorAuthenticator = new TwoFactorAuthenticator();
-            return null;
+            var twoFactorAuthenticator = new TwoFactorAuthenticator();
+
+            model.UserUniqueKey = (userId + mfaKey);
+            var setupInfo = twoFactorAuthenticator
+                    .GenerateSetupCode("Nesta Authenticator", "Coyote Contracts", model.UserUniqueKey, false);
+            model.BarcodeImageUrl = setupInfo.QrCodeSetupImageUrl;
+            model.SetupCode = setupInfo.ManualEntryKey;
+        }
+
+        [HttpGet]
+        [Route("login/ValidateGoogleAuth")]
+        public IActionResult ValidateGoogleAuth(string userUniqueKey, string securitycode)
+        {
+            var validate = Verify2FA(userUniqueKey, securitycode);
+
+            return Json(validate);
+        }
+
+        public bool Verify2FA(string _UserUniqueKey, string token)
+        {
+            TwoFactorAuthenticator tfa = new TwoFactorAuthenticator();
+            string UserUniqueKey = _UserUniqueKey;
+            bool isValid = tfa.ValidateTwoFactorPIN(UserUniqueKey, token);
+            return isValid;
         }
         #endregion
 

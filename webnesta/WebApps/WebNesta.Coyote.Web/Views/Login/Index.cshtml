@@ -1,5 +1,4 @@
-﻿
-@model WebNesta.Coyote.Web.ViewModel.LoginViewModel
+﻿@model WebNesta.Coyote.Web.ViewModel.LoginViewModel
 @using Microsoft.AspNetCore.Mvc.Localization
 @inject IViewLocalizer Localizer
 
@@ -23,7 +22,7 @@
     </div>
 
     <div style="display:none" class="row justify-content-center">
-        <!--Url.Action("SignIn", "Login",new { provider = "google" })-->
+
         <a href="/Login/SignIn?provider=google" class="col-5 btn_login_external mr-2">
             <p>Google</p>
             <i class="fab fa-google"></i>
@@ -35,24 +34,9 @@
         </a>
 
     </div>
-@*
-    <div class="row m-2">
 
-        <div class="col-5">
-            <hr />
-        </div>
-
-        <div class="col-2 ou">
-            <span>@WebNesta.Coyote.Web.App_GlobalResources.Login.ResourceManager.GetString("label_2")</span>
-        </div>
-
-        <div class="col-5">
-            <hr />
-        </div>
-    </div>*@
-
-    <div class="row">
-        <div class="col-c1">
+    <div id="dvLogin" class="row">
+        <div id="componentTextboxLogin" class="col-c1">
             <div class="c-left">
                 <label>@WebNesta.Coyote.Web.App_GlobalResources.Login.ResourceManager.GetString("label_3"):</label>
             </div>
@@ -65,27 +49,23 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-c1">
+    <div id="dvPassword" class="row">
+        <div id="componentTextboxPassword" class="col-c1">
             <div class="c-left">
                 <label class="">@WebNesta.Coyote.Web.App_GlobalResources.Login.ResourceManager.GetString("label_4"):</label>
             </div>
             <div class="c-right">
                 <div class="dxeTextBoxSys dxeTextBox_COYOTE dxeTextBoxDefaultWidthSys">
                     <div class="dxic" style="border: none !important;width:100%;">
-                        
+
                         <input type="password" id="txtPassword" class="dxeEditArea_COYOTE dxeEditAreaSys" style="border: none !important;" placeholder="Clique Aqui" />
                     </div>
                 </div>
             </div>
         </div>
-    </div> 
-    
-    <div class="row m-2">
-        <span class="text-danger">@*ViewBag.MsgErrorLogin*@</span>
     </div>
 
-    <div class="row opts-login">
+    <div id="dvRemember" class="row opts-login" style="margin-top: 5px;">
         <div class="col-6 p-0">
             <label id="lblRemember" class="container" style="font-size: 12px;">
                 <input type="checkbox" id="chkRemember" name="remember">
@@ -97,7 +77,61 @@
             <a href="#" id="btnEsqueciMinhaSenha" class="link_esqueci">@WebNesta.Coyote.Web.App_GlobalResources.Login.ResourceManager.GetString("label_6")</a>
         </div>
     </div>
-    
+
+
+    <div id="dvMFA" style="display:none" class="row">
+
+
+        <div class="col-12 pb-2 text-center">
+            <p class="instruction" style="margin:unset !important">@WebNesta.Coyote.Web.App_GlobalResources.Login.label_google_1</p>
+
+        </div>
+        <div class="col-12 pb-2 text-center">
+            <p style="
+font-family: 'Gudea-Regular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;
+    text-align: center;
+    color: #959595;
+    MARGIN-BOTTOM: 2REM;">
+                Por favor, realize o download do app Google<br />
+                Authenticator no seu celular e escaneie o código QR abaixo:
+                @*WebNesta.Coyote.Web.App_GlobalResources.Login.label_google_2*@
+            </p>
+            <img id="imgBarcodeImageUrl" src="" />
+        </div>
+        <div class="col-12 pb-2 text-center">
+            <p id="pSetupCode"
+               style="    width: auto;
+    font-family: 'Gudea-Regular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 23px;
+    color: #959595;
+    MARGIN-BOTTOM: 2REM;">
+                @WebNesta.Coyote.Web.App_GlobalResources.Login.label_google_3
+            </p>
+        </div>
+
+
+        <div style="width: 431.33px" class="col-c1">
+            <div class="c-left">
+                <label class="">@WebNesta.Coyote.Web.App_GlobalResources.Login.label_google_4</label>
+            </div>
+            <div class="c-right">
+                <div class="dxeTextBoxSys dxeTextBox_COYOTE dxeTextBoxDefaultWidthSys">
+                    <div class="dxic">
+                        <input type="text" id="txtSecuriyCode" class="dxeEditArea_COYOTE dxeEditAreaSys" placeholder="Clique aqui" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input type="hidden" id="hfUserUniqueKey" name="hfUserUniqueKey" />
+    </div>
+
     <div id="dvCaptcha" style="display:none" class="row">
         <div class="col-12" style="text-align: center;">
             <img src="~/img/refresh.png" style="cursor:pointer" id="lkbRefreshCaptcha" />
@@ -107,12 +141,13 @@
         </div>
         <div class="col-c1">
             <div class="c-left">
+                <label>Digite o código acima</label>
             </div>
             <div class="c-right">
                 <div class="dxeTextBoxSys dxeTextBox_COYOTE dxeTextBoxDefaultWidthSys">
                     <div class="dxic">
-                        <input type="text" id="txtCaptcha" class="dxeEditArea_COYOTE dxeEditAreaSys" placeholder="Digite o código CAPTCHA acima:" />
-                        <input type="hidden" id="hfCatpchaCodeKey"/>
+                        <input type="text" id="txtCaptcha" class="dxeEditArea_COYOTE dxeEditAreaSys" placeholder="Clique aqui:" />
+                        <input type="hidden" id="hfCatpchaCodeKey" />
                     </div>
                 </div>
             </div>
@@ -120,88 +155,15 @@
     </div>
 
 
+
     <div class="row">
-        <input type="button" class="btn_login text-center" name="btnLogin" value="Login" id="btnLogin" />
-        <input type="button" style="display:none;" class="btn_login text-center" name="btnEntraCaptcha" value="Entrar" id="btnEntraCaptcha" />
-        <input type="button" style="display:none;" class="btn_login text-center" name="btnCancelarCaptcha" value="Cancelar" id="btnCancelarCaptcha" />
+        <div class="col-12 text-center">
+            <input type="button" class="btn_login text-center" name="btnLogin" value="Entrar" id="btnLogin" />
+            <input type="button" style="display:none;margin: 3% 25PX 3% 0%;" class="btn_login text-center" name="btnEntraCaptcha" value="Entrar" id="btnEntraCaptcha" />
+            <input type="button" style="display:none;" class="btn_login text-center" name="btnCancelarCaptcha" value="Cancelar" id="btnCancelarCaptcha" />
+            <input type="button" style="display:none;margin: 3% 25PX 3% 0%;" class="btn_login text-center" name="Entrar" value="Entrar" id="btnValidaGoogleAuth" />
+            <input type="button" style="display:none;" class="btn_login text-center" name="btnCancelarGoogleAuth" value="Cancelar" id="btnCancelarGoogleAuth" />
+        </div>
     </div>
-
-    @* GOOGLE E CAPTCHA ANALISAR
-
-        if (ViewBag.Valida)
-        {
-        if (Convert.ToBoolean(System.Web.Configuration.WebConfigurationManager.AppSettings["2FA_Google"]))
-        {
-        <input type="hidden" name="UserUniqueKey" value="@ViewBag.UserUniqueKey" />
-        <div class="twofa-google mb-3">
-
-        <div class="row">
-        <div class="col-7 pb-2">
-        <p class="instruction">WebNesta.Coyote.WebApp.App_GlobalResources.Login.ResourceManager.GetString("label_google_1")</p>
-        <p class="instruction2">WebNesta.Coyote.WebApp.App_GlobalResources.Login.ResourceManager.GetString("label_google_2")"</p>
-        </div>
-        <div class="col-5 p-0 text-center">
-        <img src="@ViewBag.BarcodeImageUrl" />
-        </div>
-        </div>
-
-        <div class="row">
-        <div class="col-12 p-2">
-        <p class="instruction2 code mb-0 pl-2">WebNesta.Coyote.WebApp.App_GlobalResources.Login.ResourceManager.GetString("label_google_3") ViewBag.SetupCode</p>
-        </div>
-        </div>
-
-        <div class="row">
-        <div class="col-12">
-        <div class="col-c1" style="width: 100%; max-width: 100%; margin: auto auto 5px auto; ">
-        <div class="c-left">
-        <label class="">WebNesta.Coyote.WebApp.App_GlobalResources.Login.ResourceManager.GetString("label_google_4")</label>
-        </div>
-        <div class="c-right">
-        @Html.DevExpress().TextBox(settings =>
-        {
-        settings.Theme = "COYOTE";
-        settings.Name = "securitycode";
-        settings.ClientEnabled = true;
-        settings.Properties.ValidationSettings.Display = Display.None;
-        settings.Properties.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithTooltip;
-        }).GetHtml()
-        </div>
-        </div>
-
-        </div>
-        </div>
-        </div>
-        }
-        else
-        {
-        <div class="row captcha">
-        JÁ COMENTADO
-        @Html.DevExpress().Captcha(settings =>
-        {
-        settings.Theme = "COYOTE";
-        settings.Name = "Captcha";
-        settings.CallbackRouteValues = new { Controller = "Login", Action = "CaptchaPartial" };
-        settings.CharacterSet = "qwertyuioplkjhgfdsamnbvcxz12345678";
-        settings.CodeLength = 5;
-        settings.RefreshButton.Position = DevExpress.Web.Captcha.ControlPosition.Top;
-        settings.RefreshButton.Image.Url = "~/img/refresh.png";
-        settings.RefreshButton.Text = "";
-        settings.CodeLength = 5;
-        settings.TextBox.Position = DevExpress.Web.Captcha.ControlPosition.Bottom;
-        settings.TextBox.LabelText = "Digite o código acima: ";
-        settings.ValidationSettings.Display = Display.None;
-        settings.ValidationSettings.ErrorDisplayMode = ErrorDisplayMode.ImageWithText;
-        settings.ValidationSettings.RequiredField.IsRequired = true;
-        settings.ValidationSettings.ErrorText = "Input the code";
-        }).GetHtml()
-        EXISTENTE
-        Html.Action("CaptchaPartial")
-        </div>
-        }
-        <div class="row" style="margin: auto auto 0px auto; ">
-        <input type="submit" class="btn_login text-center" name="validar" value="WebNesta.Coyote.WebApp.App_GlobalResources.Login.ResourceManager.GetString("label_7")">
-        </div>
-        }*@
 
 </form>

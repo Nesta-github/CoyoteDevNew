@@ -72,7 +72,7 @@ namespace WebNesta.Coyote.Geral.Domain.Service
                 {
                     var code = StringUtil.RandomString(8);
 
-                    var result = _repository.ResetCredential(userAccount.USEMAILU, code);
+                    var result = _repository.ResetCredential(userCredential.USIDUSUA, code);
 
                     //RESGATA A SENHA
                     var userAccountNewPassword = _repository.GetAccountByEmail(emailRecoveryPassword);

@@ -19,27 +19,28 @@
 </head>
 <body>
 
-    <div id="dvLoading" class="loading">
-        <img src="/img/loading.gif" alt=""
-             style="left: 45%;top: 30%;position: absolute;width: 10%;" />
+    <div id="dvLoading">
+        <img src="/img/spinner-loading-2.svg" alt="" style="left: 40%;top: 30%;position: absolute;width: 15%;z-index: 99999999999999 !important;" />
     </div>
     <!-- MODAL - SUCCESS -->
     <div class="modal fade" id="myModal" style="z-index:999999999999999999999999999 !important" role="dialog">
         <div class="modal-dialog ">
 
-            <div id="dvModalSuccess" style="display:none" class="modal-content popupAlertaFeedback">
-
-
+            <div id="dvModalSuccess" style="display:none;border-radius: 32px;padding: 15px;" class="modal-content popupAlertaFeedback">
                 <div class="modal-header border-0 p-0 pr-2">
-                    <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+                    <button type="button" class="close text-white"
+                            style="z-index: 99999999999999999999999;color:#c8c8c8;position: absolute;top: 15%;right: 7%;cursor:pointer;"
+                            data-dismiss="modal">
+                        &times;
+                    </button>
                 </div>
-                <div class="modal-body" style="top: -1vh; left: 0;">
+                <div class="modal-body">
                     <div class="row">
-                        <div class="col-2">
-                            <i class="fas fa-check-circle sucesso"></i>
+                        <div class="col-3">
+                            <i class="fas fa-check-circle sucesso" style="margin-top:unset !important"></i>
                         </div>
-                        <div class="col-10">
-                            <p id="dvModalTitleSuccess" class="popupAlertaFeedback" style="font-size: 30px; font-weight: bold;">
+                        <div class="col-9" style="padding-top: 8px;">
+                            <p id="dvModalTitleSuccess" class="popupAlertaFeedback" style="font-size: 30px; font-weight: bold;margin-bottom: 16px;">
                                 @WebNesta.Coyote.Web.App_GlobalResources.GlobalResource.ResourceManager.GetString("alert_success") !
                             </p>
                             <p id="dvModalMessageSuccess" class="popupAlertaFeedback"></p>
@@ -48,17 +49,19 @@
                 </div>
             </div>
 
-            <div id="dvModalError" style="display:none" class="modal-content popupAlertaFeedback erro">
+            <div id="dvModalError" style="display:none;border-radius: 32px;" class="modal-content popupAlertaFeedback erro">
                 <div class="modal-header border-0 p-0 pr-2">
-                    <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+                    <button type="button" class="close text-white"
+                            style="z-index: 99999999999999999999999;color:#c8c8c8;position: absolute;top: 15%;right: 7%;cursor:pointer;"
+                            data-dismiss="modal">&times;</button>
                 </div>
-                <div class="modal-body" style="top: -1vh; left: 0;">
+                <div class="modal-body">
                     <div class="row">
-                        <div class="col-2">
-                            <i class="fas fa-times-circle erro"></i>
+                        <div class="col-3">
+                            <i class="fas fa-times-circle erro" style="margin-top:unset !important"></i>
                         </div>
-                        <div class="col-10">
-                            <p id="dvModalTitleError" class="popupAlertaFeedback" style="font-size: 30px; font-weight: bold;">Oops</p>
+                        <div class="col-9" style="padding-top: 8px;">
+                            <p id="dvModalTitleError" class="popupAlertaFeedback" style="font-size: 30px; font-weight: bold;margin-bottom: 16px;">Oops</p>
                             <p id="dvModalMessageError" class="popupAlertaFeedback"></p>
                         </div>
                     </div>
@@ -69,17 +72,18 @@
     </div>
     <!-- FIM - MODAL - SUCCESS -->
     <!-- INICIO - MODAL - RECOVERY PASSWORD -->
-    <div class="modal fade" id="modalRecoveryPassword" style="z-index:999999 !important" role="dialog">
+    <div class="modal fade modal-recuperacao-senha" id="modalRecoveryPassword" style="z-index:999999 !important;width: 125%;" role="dialog">
         <div class="modal-dialog">
-            <div class="modal-content popupRecoveryPassword" style="width:952px;height:824px">
+            <div class="modal-content popupRecoveryPassword" style="width:952px;height:560px">
 
                 <div class="modal-header border-0 p-0 pr-2">
-                    <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+                    <button type="button" class="close" data-dismiss="modal" style="z-index: 99999999999999999999999;color:#c8c8c8;position: absolute;top: 5%;right: 7%;cursor:pointer;">&times;</button>
                 </div>
-                <div class="modal-body" style="top: -1vh; left: 0;">
+                <div class="modal-body" style="top: -1vh;left: 0;padding: 50px; padding-top: 85px;  padding-bottom: 60px;">
                     <div class="row">
                         <div class="col-12">
-                            <p class="popupRecoveryPassword" style="font-size: 30px; font-weight: bold;text-align:center">
+                            <p class="titulo" style="text-align:center">
+                                @*style="text-align:center;font-family:'Gudea-Regular';font-size: 30px; font-weight: bold;"*@
                                 Recuperação de senha
                             </p>
 
@@ -87,14 +91,16 @@
                     </div>
                     <div class="row">
                         <div class="col-12 text-center">
-                            @*style="text-align:center;"*@
-                            <p class="popupRecoveryPasswordDescription" style="width:100%">
+                            <p class="popupRecoveryPasswordDescription" style=" font-family: 'Gudea-Regular';width:100%;padding-top: 0%;padding-bottom: 0%;margin-top: 5%;">
                                 Insira seu e-mail para a <br />recuperar sua senha:
                             </p>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-c1">
+                        <div class="col-c1" style="margin-top: 3%;width: 35%;">
+                             <div class="c-left">
+                                <label>Email:</label>
+                            </div>
                             <div class="c-right">
                                 <div class="dxeTextBoxSys dxeTextBox_COYOTE dxeTextBoxDefaultWidthSys" style="border: none !important;">
                                     <div class="dxic" style="border: none !important;width:100%;">
@@ -105,10 +111,10 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-12 text-center">
+                        <div class="col-12 text-center" style="margin-top: 3%;">
 
                             <input type="button" class="btn_login text-center" name="btnRecuperarSenha" value="Recuperar" id="btnRecuperarSenha" />
-                            <input type="button" class="btn_login text-center" name="btnCancelarRecuperarSenha" value="Cancelar" id="btnCancelarRecuperarSenha" />
+                            <input type="button" class="btn_login text-center" style="margin-left: 24px;" name="btnCancelarRecuperarSenha" value="Cancelar" id="btnCancelarRecuperarSenha" />
 
                         </div>
                     </div>
@@ -118,37 +124,39 @@
     </div>
     <!-- FIM - MODAL - RECOVERY PASSWORD -->
     <!-- INICIO - MODAL - TUTORIAL -->
-    <div class="modal fade" id="modalTutorial" style="z-index:999999 !important" role="dialog">
+    <div class="modal fade modal-tutorial" id="modalTutorial" style="z-index:999999 !important" role="dialog">
         <div class="modal-dialog">
-            <div class="modal-content popupRecoveryPassword" style="width:952px;height:auto">
+            <div class="modal-content popupRecoveryPassword" style="width:1020px;height:auto">
 
                 <div class="modal-header border-0 p-0 pr-2">
-                    <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
+                    <button type="button" class="close" style="z-index: 99999999999999999999999;color:#c8c8c8;position: absolute;top: 5%;right: 7%;cursor:pointer;" data-dismiss="modal">
+                        &times;
+                    </button>
                 </div>
-                <div class="modal-body" style="top: -1vh; left: 0;">
+                <div class="modal-body" style="top: -1vh;left: 0;padding: 50px; padding-top: 70px;padding-bottom: 60px;">
                     @*<div class="row">*@
-                        <div class="col-12">
-                            <p id="popupTutorialTitle" class="popupRecoveryPassword"
-                               style="font-size: 30px; font-weight: bold;text-align:left">
-                                Tutorial
-                            </p>
-                        </div>
-                   
-                        <div class="col-12" style="padding-right: 0px;padding-left: 0px;">
-                           
-                            <nav class="navbar navbar-fixed-top navbar-expand-lg navbar-light">
-                               
-                                <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="border-bottom: 1px solid rgba(0,0,0,.1);">
-                                    <div class="navbar-nav float-lg-right">
+                    <div class="col-12">
+                        <p id="popupTutorialTitle" class="popupRecoveryPassword"
+                           style="font-size: 30px; font-weight: bold;text-align:left">
+                            Guia Rápido - Login
+                        </p>
+                    </div>
+
+                    <div class="col-12" style="padding-right: 0px;padding-left: 0px;">
+
+                        <nav class="navbar navbar-fixed-top navbar-expand-lg navbar-light">
+
+                            <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="border-bottom: 1px solid rgba(0,0,0,.1);">
+                                <div class="navbar-nav float-lg-right">
                                     <div style="width: 730px;"></div>
-                                        @*  <a class="nav-item nav-link" style="border-bottom: 2px solid rgba(0,0,0,.1);width:40px !important;text-align:center;" href="#">1</a>
-                                        <a class="nav-item nav-link" style="border-bottom: 2px solid rgba(0,0,0,.1);width:40px !important;text-align:center;" href="#">2</a>
-                                        <a class="nav-item nav-link" style="border-bottom: 2px solid rgba(0,0,0,.1);width:40px !important;text-align:center;" href="#">3</a>
-                                        <a class="nav-item nav-link" style="border-bottom: 2px solid rgba(0,0,0,.1);width:40px !important;text-align:center;" href="#">4</a>*@
-                                    </div>
+                                    @*  <a class="nav-item nav-link" style="border-bottom: 2px solid rgba(0,0,0,.1);width:40px !important;text-align:center;" href="#">1</a>
+                                    <a class="nav-item nav-link" style="border-bottom: 2px solid rgba(0,0,0,.1);width:40px !important;text-align:center;" href="#">2</a>
+                                    <a class="nav-item nav-link" style="border-bottom: 2px solid rgba(0,0,0,.1);width:40px !important;text-align:center;" href="#">3</a>
+                                    <a class="nav-item nav-link" style="border-bottom: 2px solid rgba(0,0,0,.1);width:40px !important;text-align:center;" href="#">4</a>*@
                                 </div>
-                            </nav>
-                        </div>
+                            </div>
+                        </nav>
+                    </div>
 
                     @*</div>*@
                     <div class="container">
