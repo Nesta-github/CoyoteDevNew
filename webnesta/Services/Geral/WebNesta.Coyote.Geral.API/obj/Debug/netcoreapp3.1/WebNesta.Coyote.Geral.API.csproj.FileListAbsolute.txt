@@ -6,8 +6,13 @@ E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.API\bi
 E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.API\bin\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.API.runtimeconfig.dev.json
 E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.API\bin\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.API.dll
 E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.API\bin\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.API.pdb
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
 E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.API\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.API\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.API\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
 E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.API\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
 E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.API\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
 E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.API\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
@@ -19,6 +24,8 @@ E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.API\bi
 E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.API\bin\Debug\netcoreapp3.1\WebNesta.Coyote.Core.pdb
 E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.API\bin\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Data.pdb
 E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.API\bin\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.Domain.pdb
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.API\bin\Debug\netcoreapp3.1\es\WebNesta.Coyote.Geral.Domain.resources.dll
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.API\bin\Debug\netcoreapp3.1\pt\WebNesta.Coyote.Geral.Domain.resources.dll
 E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.API\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.API.csproj.AssemblyReference.cache
 E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.API\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.API.GeneratedMSBuildEditorConfig.editorconfig
 E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Geral\WebNesta.Coyote.Geral.API\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Geral.API.AssemblyInfoInputs.cache

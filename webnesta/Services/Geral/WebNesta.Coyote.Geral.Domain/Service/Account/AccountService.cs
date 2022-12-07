@@ -1,12 +1,18 @@
-﻿using System;
+﻿using Microsoft.Extensions.Configuration;
+using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Reflection;
 using System.Reflection.Metadata.Ecma335;
+using System.Resources;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using WebNesta.Coyote.Core.Data;
 using WebNesta.Coyote.Core.Domain;
 using WebNesta.Coyote.Core.Utils;
+using WebNesta.Coyote.Geral.Domain.Resource;
 using WebNesta.Coyote.Geral.Domain.ViewModel;
 
 namespace WebNesta.Coyote.Geral.Domain.Service
@@ -14,9 +20,10 @@ namespace WebNesta.Coyote.Geral.Domain.Service
     public class AccountService : IDomainService, IDomainAccountService
     {
         public readonly IAccountRepository<UTUTISEN, TUSUSUARI> _repository;
-     
-        public AccountService(IAccountRepository<UTUTISEN, TUSUSUARI> repository)
+        public IConfiguration _config;
+        public AccountService(IAccountRepository<UTUTISEN, TUSUSUARI> repository, IConfiguration config)
         {
+            _config = config;
             _repository = repository;
         }
 
@@ -28,7 +35,7 @@ namespace WebNesta.Coyote.Geral.Domain.Service
             {
                 result = _repository.ValidateAccountAccess(username, password, lang);
 
-                if(!string.IsNullOrEmpty(result))
+                if (!string.IsNullOrEmpty(result))
                 {
                     var resultSplitted = result.Split("|");
 
@@ -45,14 +52,21 @@ namespace WebNesta.Coyote.Geral.Domain.Service
             }
         }
 
-        public ValidateViewModel RecoveryPassword(string emailRecoveryPassword)
+        public ValidateViewModel RecoveryPassword(string emailRecoveryPassword, string lang)
         // public async Task<ValidateViewModel> RecoveryPassword(string emailRecoveryPassword)
         {
             ValidateViewModel validateModel = null;
 
+            Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(lang);
+
+            var resourceLogin = new ResourceManager("WebNesta.Coyote.Geral.Domain.Resource.Login", Assembly.GetExecutingAssembly());
+           // resourceLogin localisationAssembly = Assembly.Load("WebNesta.Coyote.Geral.Domain");
+           // resourceLogin RM = new ResourceManager("WebNesta.Coyote.Geral.Domain.Resource.Login", localisationAssembly);
+           // var aaaaa = RM.GetString("String1");
+            
             if (string.IsNullOrEmpty(emailRecoveryPassword))
             {
-                validateModel = new ValidateViewModel(false, "E-mail deve ser preenchido.");
+                validateModel = new ValidateViewModel(false, resourceLogin.GetString("login_validacao_email_preenchido"));
                 return validateModel;
             }
 
@@ -60,7 +74,7 @@ namespace WebNesta.Coyote.Geral.Domain.Service
 
             if (userAccount == null || (userAccount != null && string.IsNullOrEmpty(userAccount.USIDUSUA)))
             {
-                validateModel = new ValidateViewModel(false, "Email não cadastrado.");
+                validateModel = new ValidateViewModel(false, resourceLogin.GetString("login_validacao_email_nao_cadastrado"));
                 return validateModel;
             }
 
@@ -78,18 +92,22 @@ namespace WebNesta.Coyote.Geral.Domain.Service
                     var userAccountNewPassword = _repository.GetAccountByEmail(emailRecoveryPassword);
 
                     //Gerenciador de notificações
-                    IDomainNotifyService notifyEmail = NotifyFactory.Create<NotifyEmailService>();
-                    IDomainNotifyService notifyWhatsApp = NotifyFactory.Create<NotifyWhatsAppService>();
+                    var notifyEmail = NotifyFactory.Create<NotifyEmailService>();
+                    notifyEmail.SetConfigurations(_config);
+                    notifyEmail.messageProperties.Init(null, null, null);
 
+                    var notifyWhatsApp = NotifyFactory.Create<NotifyWhatsAppService>();
+                    notifyWhatsApp.SetConfigurations(_config);
+                    
                     //ENVIAR O EMAIL
                     var taskSendEmail = System.Threading.Tasks.Task.Run(async () =>
                     {
                         notifyEmail.SendMessage(new Notify()
                         {
                             To = new List<string>() { userAccount.USEMAILU },
-                            Subject = "Recuperação de Senha",
-                            Body = string.Concat("<b>Olá, usuário Coyote!</b><br />Você solicitou a recuperação de senha do seu login Coyote Contracts.</p>",
-                                             "<br /><br /><p> Esta é sua senha provisória para acesso ao sistema: ", userAccountNewPassword.USNMPRUS),
+                            Subject = resourceLogin.GetString("login_label_recuperacao_senha"),
+                            Body = string.Concat(resourceLogin.GetString("login_email_subject_recuperacao_senha"),
+                                             resourceLogin.GetString("login_email_text_recuperacao_senha"), userAccountNewPassword.USNMPRUS),
                             RandomCode = code,
                             Reset = true
                         });
@@ -102,13 +120,13 @@ namespace WebNesta.Coyote.Geral.Domain.Service
                     //     {
                     //         PhoneTo = userAccount.USNUMCEL,
                     //         From= "Coyote Contracts",
-                    //         Message =  string.Format("Senha de acesso ao sistema foi recuperada. \n*{0}*", code)
+                    //         Message =  string.Format(resourceLogin.GetString("login_whatsapp_text_recuperacao_senha"), code)
                     //     });
                     // });
 
                     taskSendEmail.Wait();
                     // taskSendWhatsApp.Wait();
-                    validateModel = new ValidateViewModel(true, "Enviado e-mail com senha temporária.");
+                    validateModel = new ValidateViewModel(true, resourceLogin.GetString("login_whatsapp_senha_enviada"));
                     //message = "Enviado e-mail com senha temporária.";
                 }
             }

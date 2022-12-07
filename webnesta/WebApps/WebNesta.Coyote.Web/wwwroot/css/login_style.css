@@ -35,7 +35,7 @@ body {
 
 .card_tutorial {
     margin-top: 5%;
-    margin-bottom: 5%;
+  /*  margin-bottom: 5%;*/
 }
 
 #nav.paging-div {
@@ -370,6 +370,9 @@ input[type="password"].dxeEditAreaSys:active {
 .container input:checked ~ .checkmark {
     background-color: #3B95E5;
     border: none;
+    outline: 3px solid #ffff;
+    outline-offset: -4px;
+
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -654,7 +657,7 @@ form {
 .popupAlertaFeedback:not(p) {
     border-radius: 13px;
     border: 0px solid !important;
-    background-color: #3B95E5 !important;
+    background-color: #4DA33F !important;
     box-shadow: 0px 4px 16px 0 rgb(0 0 0 / 16%);
     margin-top: 5px;
 }
@@ -879,7 +882,7 @@ p.popupRecoveryPassword {
     }
 }
 
-#dvLoading {
+/*#dvLoading {
     width: 100%;
     height: 100%;
     top: 0;
@@ -892,6 +895,20 @@ p.popupRecoveryPassword {
     text-align: center;
 }
 
+.dvLoadingText {
+    position: absolute;
+    top: 53%;
+    left: 44%;
+    font-family: 'Gudea Regular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 40px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #3B95E5;
+}
+*/
 .title-recuperacao-senha {
     font-family: 'Gudea';
     font-style: normal;
@@ -912,4 +929,29 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 0 30px #3B95E5 inset !important;
     
+}
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 50px white inset; /* Change the color to your own background color */
+    -webkit-text-fill-color: #FFFF;
+}
+
+    input:-webkit-autofill:focus {
+        -webkit-box-shadow: /*your box-shadow*/,0 0 0 50px white inset;
+        -webkit-text-fill-color: #FFFF
+    }
+
+
+.c-loader {
+    animation: is-rotating 1s infinite;
+    border: 20px solid #e5e5e5;
+    border-radius: 50%;
+    border-top-color: #82BBEF;
+    height: 60vh;
+    width: 60vh;
+}
+
+@keyframes is-rotating {
+    to {
+        transform: rotate(1turn);
+    }
 }

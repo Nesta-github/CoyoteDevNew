@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.Configuration;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net.Http;
@@ -11,7 +12,18 @@ namespace WebNesta.Coyote.Geral.Domain.Service
 {
     public class NotifyEmailService : IDomainNotifyService
     {
-        public NotifyEmailService() { messageProperties = new NotifyPropertiesEmail(); messageProperties.Init(null, null, null); }
+        public IConfiguration _config;
+        
+        public NotifyEmailService() 
+        {
+          
+        }
+
+        public void SetConfigurations(IConfiguration config)
+        {
+            _config = config;
+            messageProperties = new NotifyPropertiesEmail(_config);
+        }
         public NotifyPropertiesEmail messageProperties { get; set; }
         public async Task SendMessage(Notify mainProperties)
         {
@@ -72,11 +84,11 @@ namespace WebNesta.Coyote.Geral.Domain.Service
                     if (!string.IsNullOrEmpty(messageProperties.Anexo))
                         message.Attachments.Add(new Attachment(messageProperties.Anexo));
 
-                    var server = "smtp.gmail.com";
-                    var user = "suporte@webnesta.com";
-                    var pwd = "08@Qa6*bhCn22%Nov";
-                    var port = "587";
-                    var enableSSL = "true";
+                    var server = _config.GetValue<string>("WebNestaApiGeral:Notify:EmailServer");//"smtp.gmail.com"; 
+                    var user = _config.GetValue<string>("WebNestaApiGeral:Notify:EmailFrom");//"suporte@webnesta.com"; "From"
+                    var pwd = _config.GetValue<string>("WebNestaApiGeral:Notify:EmailPassword");//"08@Qa6*bhCn22%Nov";
+                    var port = _config.GetValue<string>("WebNestaApiGeral:Notify:EmailPort");// "587";
+                    var enableSSL = _config.GetValue<string>("WebNestaApiGeral:Notify:EmailEnableSSL");//"true";
 
                     //send the message
                     using (var smtp = new SmtpClient())

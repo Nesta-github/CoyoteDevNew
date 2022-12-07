@@ -1,5 +1,6 @@
 ﻿using Google.Authenticator;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Localization;
@@ -26,7 +27,7 @@ namespace WebNesta.Coyote.Web.Controllers
         private readonly IModuloService _moduloService;
         private readonly IStringLocalizer<WebNesta.Coyote.Web.App_GlobalResources.Login> _localizer;
         private readonly IConfiguration _configuration;
-
+       
         public LoginController(ILoginService loginService, IStringLocalizer<WebNesta.Coyote.Web.App_GlobalResources.Login> localizer, IModuloService moduloService, IConfiguration configuration)
         {
             _loginService = loginService;
@@ -59,6 +60,9 @@ namespace WebNesta.Coyote.Web.Controllers
             model.TelaVersion = responseVersion.Title;
             model.Key_2FAGoogle = _configuration.GetValue<bool>("GoogleAuthenticator:2FA_Google");
 
+            CookieOptions options = new CookieOptions();
+            options.Expires = DateTime.Now.AddSeconds(10);
+
             var lembrarAcesso = HttpContext.User.Identities.Where(wh => wh.AuthenticationType == "UsuarioLogado").FirstOrDefault();
 
             if (lembrarAcesso != null && lembrarAcesso.Claims != null && lembrarAcesso.Claims.Count() > 0)
@@ -67,7 +71,7 @@ namespace WebNesta.Coyote.Web.Controllers
             }
             var captchaViewModel = new LoginResponseViewModel();
 
-            model.CaptchaImagePath = GenerateCaptcha(captchaViewModel);
+            model.Captcha = GenerateCaptcha();
 
             return Json(model);
         }
@@ -114,8 +118,8 @@ namespace WebNesta.Coyote.Web.Controllers
                 {
                     if (lembrarAcesso != null && lembrarAcesso.Claims != null && lembrarAcesso.Claims.Count() > 0)
                     {
-                       // var claimValue = lembrarAcesso.Claims.Where(wh => wh.Type == "LembrarAcesso").FirstOrDefault().Value = "nao";
-                         
+                        // var claimValue = lembrarAcesso.Claims.Where(wh => wh.Type == "LembrarAcesso").FirstOrDefault().Value = "nao";
+
                     }
                 }
                 var key2FAGoogle = _configuration.GetValue<bool>("GoogleAuthenticator:2FA_Google");
@@ -132,10 +136,11 @@ namespace WebNesta.Coyote.Web.Controllers
 
         [HttpPost]
         [Route("login/RecoveryPassword")]
-        public async Task<IActionResult> RecoveryPassword(string emailRecoveryPassword)
+        public async Task<IActionResult> RecoveryPassword(string emailRecoveryPassword, string lang)
         {
             var emailRecoveryViewModel = new RecoveryPasswordViewModel();
             emailRecoveryViewModel.Email = emailRecoveryPassword;
+            emailRecoveryViewModel.Lang = lang;
 
             var response = await _loginService.RecoveryPassword(emailRecoveryViewModel);
             return Json(response);
@@ -223,6 +228,47 @@ string.Concat("/img/captcha/", DateTime.Now.Year, "-", DateTime.Now.Month, "-", 
                 }
 
                 return fileNameFullFrontEnd;
+            }
+            catch (Exception ex)
+            {
+                var message = ex.Message;
+                throw;
+            }
+        }
+        public CaptchaViewModel GenerateCaptcha()
+        {
+            try
+            {
+                var model = new CaptchaViewModel();
+                var directory = string.Concat("wwwroot/img/captcha/", DateTime.Now.Year, "-", DateTime.Now.Month, "-", DateTime.Now.Day);
+                var fileName = Guid.NewGuid();
+                var fileNameFull = string.Concat(directory, "/", fileName, ".jpg");
+                var fileNameFullFrontEnd =
+string.Concat("/img/captcha/", DateTime.Now.Year, "-", DateTime.Now.Month, "-", DateTime.Now.Day, "/", fileName, ".jpg");
+                System.IO.Directory.CreateDirectory(directory);
+                System.IO.File.Copy(@"wwwroot/img/captcha/captcha-model.jpg", fileNameFull);
+
+                string code = ImageFactory.CreateCode(5);
+
+                var codeClaim = new Claim("captchaCode", code);
+
+                using (FileStream fs = System.IO.File.OpenWrite(fileNameFull))
+
+                //(code, 50, 150, 30, 0/*10*/)
+                using (Stream picStream = ImageFactory.BuildImage(code,
+                    40, //heigth
+                    98, //width
+                    19, //font-size
+                    3)) //distorção curva
+                {
+                    picStream.CopyTo(fs);
+                }
+
+                model.CaptchaImagePath = fileNameFullFrontEnd;
+                model.CaptchaCode = code;
+                model.FileNameCaptcha = fileName.ToString();
+
+                return model;
             }
             catch (Exception ex)
             {

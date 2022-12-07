@@ -70,6 +70,69 @@ namespace WebNesta.Coyote.Web.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Password recovery.
+        /// </summary>
+        public static string label_10 {
+            get {
+                return ResourceManager.GetString("label_10", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter your email for.
+        /// </summary>
+        public static string label_11 {
+            get {
+                return ResourceManager.GetString("label_11", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to recover your password.
+        /// </summary>
+        public static string label_12 {
+            get {
+                return ResourceManager.GetString("label_12", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        public static string label_13 {
+            get {
+                return ResourceManager.GetString("label_13", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recovery.
+        /// </summary>
+        public static string label_14 {
+            get {
+                return ResourceManager.GetString("label_14", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string label_15 {
+            get {
+                return ResourceManager.GetString("label_15", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quick Guide - Login.
+        /// </summary>
+        public static string label_16 {
+            get {
+                return ResourceManager.GetString("label_16", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to or.
         /// </summary>
         public static string label_2 {
@@ -124,6 +187,24 @@ namespace WebNesta.Coyote.Web.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enter the code from above.
+        /// </summary>
+        public static string label_8 {
+            get {
+                return ResourceManager.GetString("label_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All rights reserved for Somnium Tecnologia S. A..
+        /// </summary>
+        public static string label_9 {
+            get {
+                return ResourceManager.GetString("label_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enter the code from above:.
         /// </summary>
         public static string label_captcha_1 {
@@ -151,7 +232,7 @@ namespace WebNesta.Coyote.Web.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please download and install Google Authenticator on your device.
+        ///   Looks up a localized string similar to Please download the Google app.
         /// </summary>
         public static string label_google_2 {
             get {
@@ -160,7 +241,7 @@ namespace WebNesta.Coyote.Web.App_GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Secret Key:.
+        ///   Looks up a localized string similar to Authenticator on your mobile phone and scan the QR code below.
         /// </summary>
         public static string label_google_3 {
             get {
@@ -174,6 +255,105 @@ namespace WebNesta.Coyote.Web.App_GlobalResources {
         public static string label_google_4 {
             get {
                 return ResourceManager.GetString("label_google_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Click Here.
+        /// </summary>
+        public static string tooltip_btn_action {
+            get {
+                return ResourceManager.GetString("tooltip_btn_action", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The captcha code field entered is different..
+        /// </summary>
+        public static string validacao_CampoCodigoCaptchaInformadoDiferente {
+            get {
+                return ResourceManager.GetString("validacao_CampoCodigoCaptchaInformadoDiferente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The code field must be filled in..
+        /// </summary>
+        public static string validacao_CampoCodigoDeveSerPreenchido {
+            get {
+                return ResourceManager.GetString("validacao_CampoCodigoDeveSerPreenchido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The security code field must be filled in..
+        /// </summary>
+        public static string validacao_CampoCodigoSegurancaDeveSerPreenchido {
+            get {
+                return ResourceManager.GetString("validacao_CampoCodigoSegurancaDeveSerPreenchido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Code must be filled..
+        /// </summary>
+        public static string validacao_CodigoDeveSerPreenchido {
+            get {
+                return ResourceManager.GetString("validacao_CodigoDeveSerPreenchido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email must be filled..
+        /// </summary>
+        public static string validacao_EmailDeveSerPreenchido {
+            get {
+                return ResourceManager.GetString("validacao_EmailDeveSerPreenchido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter.
+        /// </summary>
+        public static string validacao_Entrar {
+            get {
+                return ResourceManager.GetString("validacao_Entrar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid email format..
+        /// </summary>
+        public static string validacao_FormatoEmailInvalido {
+            get {
+                return ResourceManager.GetString("validacao_FormatoEmailInvalido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Next.
+        /// </summary>
+        public static string validacao_Proximo {
+            get {
+                return ResourceManager.GetString("validacao_Proximo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User, Password and Code must be filled..
+        /// </summary>
+        public static string validacao_UsuarioSenhaCodigoDeveSerPreenchido {
+            get {
+                return ResourceManager.GetString("validacao_UsuarioSenhaCodigoDeveSerPreenchido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User and Password must be filled..
+        /// </summary>
+        public static string validacao_UsuarioSenhaDeveSerPreenchido {
+            get {
+                return ResourceManager.GetString("validacao_UsuarioSenhaDeveSerPreenchido", resourceCulture);
             }
         }
     }

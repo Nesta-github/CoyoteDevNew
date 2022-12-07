@@ -120,6 +120,27 @@
   <data name="label_1" xml:space="preserve">
     <value>I Need Help</value>
   </data>
+  <data name="label_10" xml:space="preserve">
+    <value>Password recovery</value>
+  </data>
+  <data name="label_11" xml:space="preserve">
+    <value>Enter your email for</value>
+  </data>
+  <data name="label_12" xml:space="preserve">
+    <value>recover your password</value>
+  </data>
+  <data name="label_13" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="label_14" xml:space="preserve">
+    <value>Recovery</value>
+  </data>
+  <data name="label_15" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="label_16" xml:space="preserve">
+    <value>Quick Guide - Login</value>
+  </data>
   <data name="label_2" xml:space="preserve">
     <value>or</value>
   </data>
@@ -138,6 +159,12 @@
   <data name="label_7" xml:space="preserve">
     <value>Validate</value>
   </data>
+  <data name="label_8" xml:space="preserve">
+    <value>Enter the code from above</value>
+  </data>
+  <data name="label_9" xml:space="preserve">
+    <value>All rights reserved for Somnium Tecnologia S. A.</value>
+  </data>
   <data name="label_captcha_1" xml:space="preserve">
     <value>Enter the code from above:</value>
   </data>
@@ -148,12 +175,45 @@
     <value>Google Authenticator</value>
   </data>
   <data name="label_google_2" xml:space="preserve">
-    <value>Please download and install Google Authenticator on your device</value>
+    <value>Please download the Google app</value>
   </data>
   <data name="label_google_3" xml:space="preserve">
-    <value>Secret Key:</value>
+    <value>Authenticator on your mobile phone and scan the QR code below</value>
   </data>
   <data name="label_google_4" xml:space="preserve">
     <value>Security Code</value>
+  </data>
+  <data name="tooltip_btn_action" xml:space="preserve">
+    <value>Click Here</value>
+  </data>
+  <data name="validacao_CampoCodigoCaptchaInformadoDiferente" xml:space="preserve">
+    <value>The captcha code field entered is different.</value>
+  </data>
+  <data name="validacao_CampoCodigoDeveSerPreenchido" xml:space="preserve">
+    <value>The code field must be filled in.</value>
+  </data>
+  <data name="validacao_CampoCodigoSegurancaDeveSerPreenchido" xml:space="preserve">
+    <value>The security code field must be filled in.</value>
+  </data>
+  <data name="validacao_CodigoDeveSerPreenchido" xml:space="preserve">
+    <value>Code must be filled.</value>
+  </data>
+  <data name="validacao_EmailDeveSerPreenchido" xml:space="preserve">
+    <value>Email must be filled.</value>
+  </data>
+  <data name="validacao_Entrar" xml:space="preserve">
+    <value>Enter</value>
+  </data>
+  <data name="validacao_FormatoEmailInvalido" xml:space="preserve">
+    <value>Invalid email format.</value>
+  </data>
+  <data name="validacao_Proximo" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="validacao_UsuarioSenhaCodigoDeveSerPreenchido" xml:space="preserve">
+    <value>User, Password and Code must be filled.</value>
+  </data>
+  <data name="validacao_UsuarioSenhaDeveSerPreenchido" xml:space="preserve">
+    <value>User and Password must be filled.</value>
   </data>
 </root>

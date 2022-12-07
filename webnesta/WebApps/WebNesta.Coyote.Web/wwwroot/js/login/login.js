@@ -61,8 +61,7 @@ var uiViewModel = {
         dvCaptcha: "#dvCaptcha",
         imgCaptcha: "#imgCaptcha",
         txtCaptcha: "#txtCaptcha",
-        btnEntraCaptcha: "#btnEntraCaptcha",
-        btnCancelarCaptcha: "#btnCancelarCaptcha"
+        btnEntraCaptcha: "#btnEntraCaptcha"
     },
     MFA: {
         dvMFA: "#dvMFA",
@@ -100,10 +99,27 @@ var url = {
     getValidateGoogleAuth: "login/ValidateGoogleAuth"
 }
 
+var messages =
+{
+    hfUsuarioSenhaDeveSerPreenchido: '#hfUsuarioSenhaDeveSerPreenchido', // "Usuário e Senha deve ser preenchido."
+    hfCodigoDeveSerPreenchido: '#hfCodigoDeveSerPreenchido', // "Código deve ser preenchido."
+    hfUsuarioSenhaCodigoDeveSerPreenchido: '#hfUsuarioSenhaCodigoDeveSerPreenchido', // "Usuário, Senha e o Código deve ser preenchido."
+    hfEmailDeveSerPreenchido: '#hfEmailDeveSerPreenchido', //  "E-mail deve ser preenchido."
+    hfFormatoEmailInvalido: '#hfFormatoEmailInvalido', //  "Formato de email inválido."
+    hfProximo: '#hfProximo', //  'Próximo'
+    hfEntrar: '#hfEntrar', //  'Entrar'
+    hfCampoCodigoCaptchaInformadoDiferente: '#hfCampoCodigoCaptchaInformadoDiferente', //  '"O campo do código captcha informado é  diferente."
+    hfCampoCodigoDeveSerPreenchido: '#hfCampoCodigoDeveSerPreenchido', //  "O campo do código deve ser preenchido."
+    hfCampoCodigoSegurancaDeveSerPreenchido: '#hfCampoCodigoSegurancaDeveSerPreenchido', //  "O campo do código de segurança deve ser preenchido."
+
+}
+
 var util =
 {
     Request: {
         GetRequest: async function (event, url, callback) {
+            $(uiViewModel.dvLoading).show();
+
             return new Promise((resolve, reject) => {
                 let xhr = new XMLHttpRequest();
                 xhr.onreadystatechange = function () {
@@ -282,14 +298,31 @@ var model = {
         return isFormValid;
     },
     Login: async function (event) {
+        
         ////EXIBIR MODAL
-        if (!model.ValidateForm(event)) {
-            view.LoadingComponent(event, false);
-            view.ShowModal(event, true, "Usuário e Senha inválidos.");
+        var formValidate = model.ValidateForm(event);
+        var formValidateCaptcha = model.ValidateCaptchaForm(event);
+        var errorMessage = '';
+        console.log($(messages.hfUsuarioSenhaDeveSerPreenchido).val())
+        if (!formValidate) {
+            errorMessage += $(messages.hfUsuarioSenhaDeveSerPreenchido).val();
         }
+
+        if (!formValidateCaptcha) {
+            if (formValidate)
+                errorMessage = $(messages.hfCodigoDeveSerPreenchido).val();
+            else
+                errorMessage = $(messages.hfUsuarioSenhaCodigoDeveSerPreenchido).val();
+        }
+
+        if (!formValidate || !formValidateCaptcha) {
+            view.LoadingComponent(event, false);
+            view.ShowModal(event, false, errorMessage);
+        } 
         else {
-            //POST
-            await controller.PostDataLogin(event);
+       
+            model.ValidateCaptcha(event)
+            //await controller.PostDataLogin(event);
         }
     },
     RecoveryPassword: async function (event) {
@@ -297,12 +330,12 @@ var model = {
         ////EXIBIR MODAL
         if (!model.ValidateFormRecoveryPassword(event)) {
             view.LoadingComponent(event, false);
-            view.ShowModal(event, false, "E-mail deve ser preenchido.");
+            view.ShowModal(event, false, $(messages.hfEmailDeveSerPreenchido).val());
         }
         else {
             if (!util.Validate.FieldEmail(viewModelEsqueciSenha.emailRecoveryPassword)) {
                 view.LoadingComponent(event, false);
-                view.ShowModal(event, false, "Formato de email inválido.");
+                view.ShowModal(event, false, $(messages.hfFormatoEmailInvalido).val());
             }
             else
                 //POST
@@ -310,7 +343,7 @@ var model = {
         }
     },
     DataLoadCallback: function (data) {
-
+  
         var responseObject = util.Request.ParseResponse(data)
 
         if (responseObject != null) {
@@ -336,17 +369,50 @@ var model = {
                 util.Validate.FieldEnable(true, uiViewModel.btnLogin)
             }
 
-            if (uiViewModel.Key_2FA_Google) {
+            //trata o captcha
+             //view.DisabledTextBoxField(true, uiViewModel.componentTextboxLogin, viewModel.usuario);
+             //view.DisabledTextBoxField(true, uiViewModel.componentTextboxPassword, viewModel.senha);
+            
+             $(uiViewModel.captcha.txtCaptcha).text('');
+          
+             $(uiViewModel.captcha.imgCaptcha).css({
+                 "background-image": "url(" + responseObject.captcha.captchaImagePath + ")",
+                 "height": "40px",
+                 "width": "33%",
+                 "background-repeat": "no-repeat",
+                 "border-radius": "8px",
+                 "margin-top": "3%",
+                 "margin-left": "33%",
+                 "margin-bottom": "3%"
+             });
+          
+             $(uiViewModel.captcha.txtCaptcha).text('');
+            $(uiViewModel.storage.catpchaCodeKey).val(responseObject.captcha.fileNameCaptcha);
+            util.Session.setLocalStorageItem(responseObject.captcha.fileNameCaptcha, responseObject.captcha.captchaCode)
+             $(uiViewModel.captcha.dvCaptcha).fadeIn('slow', 'linear');
+             $(uiViewModel.captcha.btnEntraCaptcha).fadeIn('slow', 'linear');
+             //$(uiViewModel.captcha.btnCancelarCaptcha).fadeIn('slow', 'linear')
 
-                $(uiViewModel.captcha.btnEntraCaptcha).remove()
-                $(uiViewModel.captcha.btnCancelarCaptcha).remove()
-                $(uiViewModel.captcha.dvCaptcha).remove();
+            //EXCLUIR
+            $(uiViewModel.captcha.btnEntraCaptcha).remove();    
+
+            console.log('uiViewModel.Key_2FA_Google'); console.log(uiViewModel.Key_2FA_Google)
+            if (uiViewModel.Key_2FA_Google) {
+                $(uiViewModel.btnLogin).attr('value', $(messages.hfProximo).val());
+            } else {
+                $(uiViewModel.btnLogin).attr('value', $(messages.hfEntrar).val());
             }
-            else {
-                $(uiViewModel.MFA.btnValidaGoogleAuth).remove()
-                $(uiViewModel.MFA.btnCancelarGoogleAuth).remove()
-                $(uiViewModel.MFA.dvMFA).remove();
-            }
+          // if (uiViewModel.Key_2FA_Google) {
+          //
+          //     $(uiViewModel.captcha.btnEntraCaptcha).remove()
+          //     $(uiViewModel.captcha.btnCancelarCaptcha).remove()
+          //     $(uiViewModel.captcha.dvCaptcha).remove();
+          // }
+          // else {
+          //     $(uiViewModel.MFA.btnValidaGoogleAuth).remove()
+          //     $(uiViewModel.MFA.btnCancelarGoogleAuth).remove()
+          //     $(uiViewModel.MFA.dvMFA).remove();
+          // }
         }
 
         view.LoadingComponent(event, false);
@@ -363,6 +429,103 @@ var model = {
 
         return isFormValidRecoveryPassword;
     },
+    ValidateCaptcha: async function (event) {
+        var codeCaptcha =
+            util.Session.getLocalStorageItem($(uiViewModel.storage.catpchaCodeKey).val());
+      
+        if (model.ValidateCaptchaForm(event)) {
+
+            if ($(uiViewModel.captcha.txtCaptcha).val() == codeCaptcha) {
+                await util.Request.GetRequest(event, url.getValidateCaptcha + "?oldCaptcha=" + $(uiViewModel.storage.catpchaCodeKey).val(), 
+
+                  function (data) {
+             
+                      util.Session.removeLocalStorageItem($(uiViewModel.storage.catpchaCodeKey).val());
+                      $(uiViewModel.storage.catpchaCodeKey).val('');
+
+                      var model = {
+                          "username": $(viewModel.usuario).val(),
+                          "password": $(viewModel.senha).val(),
+                          "remember": $(viewModel.remember).is(":checked"),
+                          "lang": globalModal.lang
+                      };
+                    
+                      util.Request.PostRequest(event, url.postDataLogin, model,
+                          function (data) {
+                              console.log('PostRequest callback')
+                              console.log(data)
+                              if (data.isSuccess == false) {
+                                  $(uiViewModel.dvLoading).hide();
+                                  view.ShowModal(event, false, data.message);
+                              }
+                              else {
+
+                                  /// if ($(viewModel.remember).is(":checked")) {
+                                  ///     util.Session.setLocalStorageItem(data.fileNameCaptcha, data.captchaCode)
+                                  /// }
+                                  $(uiViewModel.captcha.dvCaptcha).hide();
+                                  if (uiViewModel.Key_2FA_Google) {
+                                      $(uiViewModel.MFA.txtSecuriyCode).text('');
+                                      $(uiViewModel.MFA.imgBarcodeImageUrl).fadeIn('slow', 'linear');
+                                      $(uiViewModel.MFA.imgBarcodeImageUrl).attr('src', data.barcodeImageUrl);
+                                      $(uiViewModel.MFA.hfUserUniqueKey).val(data.userUniqueKey);
+                                      $(uiViewModel.MFA.pSetupCode).text("Secret Key: " + data.setupCode)
+                                      $(uiViewModel.MFA.dvMFA).fadeIn('slow', 'linear');
+                                      $(uiViewModel.MFA.btnValidaGoogleAuth).fadeIn('slow', 'linear')
+                                      $(uiViewModel.MFA.btnCancelarGoogleAuth).fadeIn('slow', 'linear')
+
+                                      $(uiViewModel.dvRemember).hide();
+                                      $(uiViewModel.dvPassword).hide();
+                                      $(uiViewModel.dvLogin).hide();
+                                  }
+                                  else {
+                                      view.ShowModal(event, true, "Redirecionar PARA A HOME");
+                                  }
+                                  // else {
+                                  //     view.DisabledTextBoxField(true, uiViewModel.componentTextboxLogin, viewModel.usuario);
+                                  //     view.DisabledTextBoxField(true, uiViewModel.componentTextboxPassword, viewModel.senha);
+                                  //
+                                  //     $(uiViewModel.captcha.txtCaptcha).text('');
+                                  //
+                                  //     $(uiViewModel.captcha.imgCaptcha).css({
+                                  //         "background-image": "url(" + data.captchaImagePath + ")",
+                                  //         "height": "40px",
+                                  //         "width": "33%",
+                                  //         "background-repeat": "no-repeat",
+                                  //         "border-radius": "8px",
+                                  //         "margin-top": "3%",
+                                  //         "margin-left": "33%",
+                                  //         "margin-bottom": "3%"
+                                  //     });
+                                  //
+                                  //     $(uiViewModel.captcha.txtCaptcha).text('');
+                                  //     $(uiViewModel.storage.catpchaCodeKey).val(data.fileNameCaptcha);
+                                  //     util.Session.setLocalStorageItem(data.fileNameCaptcha, data.captchaCode)
+                                  //     $(uiViewModel.captcha.dvCaptcha).fadeIn('slow', 'linear');
+                                  //     $(uiViewModel.captcha.btnEntraCaptcha).fadeIn('slow', 'linear');
+                                  //     $(uiViewModel.captcha.btnCancelarCaptcha).fadeIn('slow', 'linear')
+                                  // }
+
+                                  $(uiViewModel.lblRemember).hide();
+                                  $(uiViewModel.btnEsqueciMinhaSenha).hide();
+                                  $(uiViewModel.btnLogin).hide();
+                                  $(uiViewModel.dvLoading).hide();
+                              }
+                          });
+                  });
+
+            }
+            else {
+                await util.Request.GetRequest(event, url.getRefreshCaptcha + "?oldCaptcha=" + $(uiViewModel.storage.catpchaCodeKey).val()
+                    , model.RefreshCaptchaCallback);
+                view.ShowModal(event, false, $(messages.hfCampoCodigoCaptchaInformadoDiferente).val());
+            }
+        }
+        else {
+            view.LoadingComponent(event, false);
+            view.ShowModal(event, false, $(messages.hfCampoCodigoDeveSerPreenchido).val());
+        }
+    },
     CaptchaCallBack: function (data) {
         $(uiViewModel.captcha.txtCaptcha).text('');
 
@@ -372,9 +535,9 @@ var model = {
 
         $(uiViewModel.btnLogin).hide();
         $(uiViewModel.captcha.btnEntraCaptcha).show();
-        $(uiViewModel.captcha.btnCancelarCaptcha).show();
+        //$(uiViewModel.captcha.btnCancelarCaptcha).show();
     },
-    RefreshCaptchaCallback: function (data) {
+    RefreshCaptchaCallback:  function (data) {
 
         data = JSON.parse(data);
 
@@ -393,6 +556,8 @@ var model = {
             "margin-left": "33%",
             "margin-bottom": "3%"
         });
+
+        $(uiViewModel.dvLoading).hide();
     },
     ValidateGoogleAuthForm: function (event) {
         var isValidateGoogleAuthForm =
@@ -409,7 +574,7 @@ var controller = {
     },
     RegisterEvents: async function (event) {
 
-        $(uiViewModel.btnLogin).click(function (event) { model.Login(event); });
+        $(uiViewModel.btnLogin).click(function (event) { view.LoadingComponent(event, true); model.Login(event); });
 
         $(uiViewModel.btnEsqueciMinhaSenha).click(function (event) { view.ShowModalRecoveryPassword(event); });
 
@@ -444,28 +609,28 @@ var controller = {
                 else {
                     await util.Request.GetRequest(event, url.getRefreshCaptcha + "?oldCaptcha=" + $(uiViewModel.storage.catpchaCodeKey).val()
                         , model.RefreshCaptchaCallback);
-                    view.ShowModal(event, false, "O campo do código captcha informado é  diferente.");
+                    view.ShowModal(event, false, $(messages.hfCampoCodigoCaptchaInformadoDiferente).val());
                 }
             }
             else {
-                view.ShowModal(event, false, "O campo do código deve ser preenchido.");
+                view.ShowModal(event, false, $(messages.hfCampoCodigoDeveSerPreenchido).val());
             }
         });
 
-        $(uiViewModel.captcha.btnCancelarCaptcha).click(async function (event) {
-            view.DisabledTextBoxField(false, uiViewModel.componentTextboxLogin, viewModel.usuario);
-            view.DisabledTextBoxField(false, uiViewModel.componentTextboxPassword, viewModel.senha);
-            util.Session.removeLocalStorageItem($(uiViewModel.storage.catpchaCodeKey).val());
-            $(uiViewModel.storage.catpchaCodeKey).val('');
-            $(uiViewModel.captcha.btnEntraCaptcha).hide();
-            $(uiViewModel.captcha.btnCancelarCaptcha).hide();
-            $(uiViewModel.captcha.dvCaptcha).fadeOut('slow', 'linear');
-            $(uiViewModel.captcha.imgCaptcha).attr('src', '');
-            $(uiViewModel.captcha.txtCaptcha).text('');
-            $(uiViewModel.lblRemember).show();
-            $(uiViewModel.btnEsqueciMinhaSenha).show();
-            $(uiViewModel.btnLogin).show();
-        });
+        //$(uiViewModel.captcha.btnCancelarCaptcha).click(async function (event) {
+        //    view.DisabledTextBoxField(false, uiViewModel.componentTextboxLogin, viewModel.usuario);
+        //    view.DisabledTextBoxField(false, uiViewModel.componentTextboxPassword, viewModel.senha);
+        //    util.Session.removeLocalStorageItem($(uiViewModel.storage.catpchaCodeKey).val());
+        //    $(uiViewModel.storage.catpchaCodeKey).val('');
+        //    $(uiViewModel.captcha.btnEntraCaptcha).hide();
+        //    $(uiViewModel.captcha.btnCancelarCaptcha).hide();
+        //    $(uiViewModel.captcha.dvCaptcha).fadeOut('slow', 'linear');
+        //    $(uiViewModel.captcha.imgCaptcha).attr('src', '');
+        //    $(uiViewModel.captcha.txtCaptcha).text('');
+        //    $(uiViewModel.lblRemember).show();
+        //    $(uiViewModel.btnEsqueciMinhaSenha).show();
+        //    $(uiViewModel.btnLogin).show();
+        //});
 
         $(uiViewModel.btnAjudaLogin).click(async function (event) {
 
@@ -525,7 +690,7 @@ var controller = {
                                                 data.tutostep[index].tutoiimg.length > 0) ?
                                                 '<img src="data:image/png;base64, ' + data.tutostep[index].tutoiimg + '" class="img_tutorial" />' : '')
                                         .replace("{4}", video)
-                                        .replace("{5}", !isFirstArrayElement ? 'style="display:none;margin-bottom: 0%;"' : '')
+                                        .replace("{5}", !isFirstArrayElement ? 'style="display:none;margim-bottom:0% !important;"' : 'style="margim-bottom:0% !important;"')
                                         .replace("{6}", 'dvTutorial' + index)); 
                                 }
                             }
@@ -585,7 +750,7 @@ var controller = {
 
             }
             else {
-                view.ShowModal(event, false, "O campo do código de segurança deve ser preenchido.");
+                view.ShowModal(event, false, $(messages.hfCampoCodigoSegurancaDeveSerPreenchido).val());
             }
         });
 
@@ -601,9 +766,16 @@ var controller = {
             $(uiViewModel.btnEsqueciMinhaSenha).show();
 
             $(uiViewModel.dvLogin).fadeIn('show', 'linear');
+            $(uiViewModel.captcha.dvCaptcha).fadeIn('show', 'linear');
             $(viewModel.usuario).text('');
             $(viewModel.senha).text('');
+            $(uiViewModel.captcha.txtCaptcha).val('');
+            $(uiViewModel.captcha.txtCaptcha).text('');
+
+            await util.Request.GetRequest(event, url.getRefreshCaptcha + "?oldCaptcha=" + $(uiViewModel.storage.catpchaCodeKey).val()
+                , model.RefreshCaptchaCallback);
         });
+      
 
     },
     PostDataLogin: function (event) {
@@ -640,30 +812,30 @@ var controller = {
                         $(uiViewModel.dvPassword).hide();
                         $(uiViewModel.dvLogin).hide();
                     }
-                    else {
-                        view.DisabledTextBoxField(true, uiViewModel.componentTextboxLogin, viewModel.usuario);
-                        view.DisabledTextBoxField(true, uiViewModel.componentTextboxPassword, viewModel.senha);
-
-                        $(uiViewModel.captcha.txtCaptcha).text('');
-
-                        $(uiViewModel.captcha.imgCaptcha).css({
-                            "background-image": "url(" + data.captchaImagePath + ")",
-                            "height": "40px",
-                            "width": "33%",
-                            "background-repeat": "no-repeat",
-                            "border-radius": "8px",
-                            "margin-top": "3%",
-                            "margin-left": "33%",
-                            "margin-bottom": "3%"
-                        });
-
-                        $(uiViewModel.captcha.txtCaptcha).text('');
-                        $(uiViewModel.storage.catpchaCodeKey).val(data.fileNameCaptcha);
-                        util.Session.setLocalStorageItem(data.fileNameCaptcha, data.captchaCode)
-                        $(uiViewModel.captcha.dvCaptcha).fadeIn('slow', 'linear');
-                        $(uiViewModel.captcha.btnEntraCaptcha).fadeIn('slow', 'linear');
-                        $(uiViewModel.captcha.btnCancelarCaptcha).fadeIn('slow', 'linear')
-                    }
+                  // else {
+                  //     view.DisabledTextBoxField(true, uiViewModel.componentTextboxLogin, viewModel.usuario);
+                  //     view.DisabledTextBoxField(true, uiViewModel.componentTextboxPassword, viewModel.senha);
+                  //
+                  //     $(uiViewModel.captcha.txtCaptcha).text('');
+                  //
+                  //     $(uiViewModel.captcha.imgCaptcha).css({
+                  //         "background-image": "url(" + data.captchaImagePath + ")",
+                  //         "height": "40px",
+                  //         "width": "33%",
+                  //         "background-repeat": "no-repeat",
+                  //         "border-radius": "8px",
+                  //         "margin-top": "3%",
+                  //         "margin-left": "33%",
+                  //         "margin-bottom": "3%"
+                  //     });
+                  //
+                  //     $(uiViewModel.captcha.txtCaptcha).text('');
+                  //     $(uiViewModel.storage.catpchaCodeKey).val(data.fileNameCaptcha);
+                  //     util.Session.setLocalStorageItem(data.fileNameCaptcha, data.captchaCode)
+                  //     $(uiViewModel.captcha.dvCaptcha).fadeIn('slow', 'linear');
+                  //     $(uiViewModel.captcha.btnEntraCaptcha).fadeIn('slow', 'linear');
+                  //     $(uiViewModel.captcha.btnCancelarCaptcha).fadeIn('slow', 'linear')
+                  // }
 
                     $(uiViewModel.lblRemember).hide();
                     $(uiViewModel.btnEsqueciMinhaSenha).hide();
@@ -672,7 +844,9 @@ var controller = {
             });
     },
     PostDataRecoveryPassword: function (event) {
-        var model = { "emailRecoveryPassword": $(viewModelEsqueciSenha.emailRecoveryPassword).val() };
+        var model = {
+            "emailRecoveryPassword": $(viewModelEsqueciSenha.emailRecoveryPassword).val()
+            , "lang": globalModal.lang     };
 
         util.Request.PostRequest(event, url.getRecoveryPassword, model,
             function (data) {

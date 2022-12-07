@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.Configuration;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -11,11 +12,15 @@ namespace WebNesta.Coyote.Geral.Data
 {
     public class ModuloRepository : IModuloRepository<Modulo, Tutorial>
     {
+        private IConfiguration _config;
+
         private string ConnectionString;
-        public ModuloRepository()
+        public ModuloRepository(IConfiguration config)
         {
-            ConnectionString = "Data Source=177.153.236.228;Initial Catalog=COYOTE_DEV;User id=COYOTE_DEV;Password=%c0y0t3_DEV#";
+            _config = config;
+            ConnectionString = _config.GetValue<string>("Data:DefaultConnection:ConnectionString");
         }
+
         public List<Modulo> ListarTuto(string lang)
         {
             try

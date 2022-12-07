@@ -39,13 +39,6 @@ namespace WebNesta.Coyote.Web.Configuration
 
             app.UseIdentityConfiguration();
 
-            var supportedCultures = new[] { new CultureInfo("pt-BR") };
-            app.UseRequestLocalization(new RequestLocalizationOptions
-            {
-                DefaultRequestCulture = new RequestCulture("pt-BR"),
-                SupportedCultures = supportedCultures,
-                SupportedUICultures = supportedCultures
-            });
 
             app.UseMiddleware<ExceptionMiddleware>();
 

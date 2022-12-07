@@ -11,6 +11,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebNesta.Coyote.Web.Configuration;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
 
 namespace WebNesta.Coyote.Web
 {
@@ -56,13 +58,28 @@ namespace WebNesta.Coyote.Web
              .AddDataAnnotationsLocalization()
              .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            services.AddAuthentication("CookieAuthentication")
-       .AddCookie("CookieAuthentication", config =>
+
+            services.Configure<RequestLocalizationOptions>(
+       opt =>
        {
-           config.Cookie.Name = "UserLoginCookie";
-           config.LoginPath = "/Login";
-           config.AccessDeniedPath = "/Login";
+           var supportCulteres = new List<CultureInfo>
+           {
+                new CultureInfo("en"),
+                new CultureInfo("br"),
+                new CultureInfo("es")
+           };
+           opt.DefaultRequestCulture = new RequestCulture("br");
+           opt.SupportedCultures = supportCulteres;
+           opt.SupportedUICultures = supportCulteres;
        });
+
+            services.AddAuthentication("CookieAuthentication")
+            .AddCookie("CookieAuthentication", config =>
+            {
+                config.Cookie.Name = "UserLoginCookie";
+                config.LoginPath = "/Login";
+                config.AccessDeniedPath = "/Login";
+            });
 
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
 

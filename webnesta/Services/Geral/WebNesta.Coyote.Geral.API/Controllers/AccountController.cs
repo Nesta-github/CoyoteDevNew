@@ -76,7 +76,7 @@ namespace WebNesta.Coyote.Geral.API.Controllers
             if (model != null && !string.IsNullOrEmpty(model.Email))
             {
                 //response = await _accountService.RecoveryPassword(model.Email);
-                validateViewModel =  _accountService.RecoveryPassword(model.Email);
+                validateViewModel =  _accountService.RecoveryPassword(model.Email, model.Lang);
             }
 
             return validateViewModel;

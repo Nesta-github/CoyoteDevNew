@@ -5,56 +5,59 @@ using System.Data;
 using System.Text;
 using WebNesta.Coyote.Core.Data;
 using WebNesta.Coyote.Geral.Domain;
+using Microsoft.Extensions.Configuration;
 
 namespace WebNesta.Coyote.Geral.Data
 {
     public class VersionRepository : IRepository, IVersionRepository
     {
+        private IConfiguration _config;
+
         private string ConnectionString;
-        public VersionRepository()
+        public VersionRepository(IConfiguration config)
         {
-            ConnectionString = "Data Source=177.153.236.228;Initial Catalog=COYOTE_DEV;User id=COYOTE_DEV;Password=%c0y0t3_DEV#";
+            _config = config;
+            ConnectionString = _config.GetValue<string>("Data:DefaultConnection:ConnectionString");
         }
+
         public string GetVersion(string page)
         {
             try
             {
 
-            
-            var result = string.Empty;
-
-            using (var connection = new SqlConnection(this.ConnectionString))
-            {
-                var query = @"select dbo.nesta_fn_Get_Object_Version(@p_Object_Name)";
-
-                connection.Open();
-
-                using (var command = new SqlCommand(query, connection))
+                var result = string.Empty;
+                using (var connection = new SqlConnection(this.ConnectionString))
                 {
-                 //   command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("p_Object_Name", page);
-                    SqlParameter outputIdParam = new SqlParameter("@r_result ", SqlDbType.NVarChar, 50)
+                    var query = @"select dbo.nesta_fn_Get_Object_Version(@p_Object_Name)";
+
+                    connection.Open();
+
+                    using (var command = new SqlCommand(query, connection))
                     {
-                        Direction = ParameterDirection.Output
-                    };
+                        //   command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("p_Object_Name", page);
+                        SqlParameter outputIdParam = new SqlParameter("@r_result ", SqlDbType.NVarChar, 50)
+                        {
+                            Direction = ParameterDirection.Output
+                        };
 
-                    command.Parameters.Add(outputIdParam);
-                    //command.ExecuteNonQuery();
-                 //   result = outputIdParam.Value.ToString();
+                        command.Parameters.Add(outputIdParam);
+                        //command.ExecuteNonQuery();
+                        //   result = outputIdParam.Value.ToString();
 
-                     using (SqlDataReader rdr = command.ExecuteReader())
-                     {
-                         while (rdr.Read())
-                         {
-                             result = !rdr.IsDBNull(0) ? rdr.GetString(0) : null;
-                         }
-                     }
+                        using (SqlDataReader rdr = command.ExecuteReader())
+                        {
+                            while (rdr.Read())
+                            {
+                                result = !rdr.IsDBNull(0) ? rdr.GetString(0) : null;
+                            }
+                        }
+                    }
+
+                    connection.Close();
                 }
 
-                connection.Close();
-            }
-
-            return result;
+                return result;
             }
             catch (Exception ex)
             {
