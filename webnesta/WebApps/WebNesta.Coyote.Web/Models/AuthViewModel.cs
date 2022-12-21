@@ -1,6 +1,9 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
+using System.Collections.Generic;
+
+
 namespace WebNesta.Coyote.Web.Models
 {
     public class AuthViewModel
@@ -15,5 +18,8 @@ namespace WebNesta.Coyote.Web.Models
         [Display(Name = "Password")]
         public string Password { get; set; }
         public string Lang { get; set; }
+
+
+       
     }
 }

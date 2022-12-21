@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\WebNesta.Coyote.Core\WebNesta.Coyote.Core.csproj" />
+    <ProjectReference Include="..\WebNesta.Coyote.Componente.Data\WebNesta.Coyote.Componente.Data.csproj" />
+    <ProjectReference Include="..\WebNesta.Coyote.Componente.Domain\WebNesta.Coyote.Componente.Domain.csproj" />
+  </ItemGroup>
+
+
+</Project>

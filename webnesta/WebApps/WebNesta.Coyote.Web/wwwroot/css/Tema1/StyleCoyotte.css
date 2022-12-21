@@ -3287,3 +3287,72 @@ i.erro {
     width: 60vh !important;
     height: 20vh !important;
 }
+
+
+
+/* MODAL COMPONENT */
+
+
+.titulo {
+    margin: auto auto 10px auto;
+    letter-spacing: -0.02em;
+    color: #3B95E5;
+  
+}
+
+.modal-component {
+    position: absolute !important;
+    top: 10% !important;
+    right: 0% !important;
+    bottom: 0% !important;
+    left: -20% !important;
+}
+
+
+.popupComponent:not(p) {
+    border-radius: 35px;
+    border: 0px solid !important;
+    background-color: #ffffff !important;
+    box-shadow: 0px 4px 16px 0 rgb(0 0 0 / 16%);
+    margin-top: 5px;
+}
+
+    .popupComponent:not(p).erro {
+        background-color: #DC6B6B !important;
+        padding: 15px;
+    }
+
+p.popupComponent {
+    margin-bottom: 2px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #3B95E5;
+}
+
+.popupComponentDescription {
+    padding-top: 12%;
+    padding-bottom: 12%;
+    width: 167px;
+    height: 44px;
+    font-family: 'Gudea';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    /* Gray 2 */
+    color: #959595;
+}
+
+.textbox-coyote {
+    box-sizing: border-box;
+    position: absolute;
+    left: 0%;
+    right: -0.08%;
+    top: 15.09%;
+    bottom: 0.81%;
+    /* Gray 3 */
+    border: 1px solid #C8C8C8;
+    border-radius: 10px;
+}

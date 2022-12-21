@@ -231,6 +231,28 @@ var util =
         },
         removeLocalStorageItem: function (key) {
             return localStorage.removeItem(key);
+        },
+        setCookie: function (name, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        },
+        getCookie: function (name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        },
+        eraseCookie: function (name) {
+            document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
         }
     }
 }
@@ -252,14 +274,14 @@ var view = {
 
             if (isSuccess) {
                 $(uiViewModel.modal.dvModalSuccess).show();
-                $(uiViewModel.modal.dvModalMessageSuccess).text(message);
+                $(uiViewModel.modal.dvModalMessageSuccess).html(message);
                 $(uiViewModel.modal.dvModalTitleSuccess).fadeIn('slow', 'linear');
                 $(uiViewModel.modal.dvModalMessageSuccess).fadeIn('slow', 'linear');
 
             }
             else {
                 $(uiViewModel.modal.dvModalError).show();
-                $(uiViewModel.modal.dvModalMessageError).text(message);
+                $(uiViewModel.modal.dvModalMessageError).html(message);
                 $(uiViewModel.modal.dvModalTitleError).fadeIn('slow', 'linear');
                 $(uiViewModel.modal.dvModalMessageError).fadeIn('slow', 'linear');
             }
@@ -274,7 +296,7 @@ var view = {
     DisabledTextBoxField: function (isDisabled, componentFieldId, textboxFieldId) {
         if (isDisabled) {
             $(textboxFieldId).css({ color: '#C8C8C8 !important', backgroundColor: "#ffff !important" });
-            $(textboxFieldId).attr('disabled','disabled');
+            $(textboxFieldId).attr('disabled', 'disabled');
             $(componentFieldId).removeClass("col-c1");
             $(componentFieldId).addClass("col-c1-disable");
         }
@@ -298,12 +320,12 @@ var model = {
         return isFormValid;
     },
     Login: async function (event) {
-        
+
         ////EXIBIR MODAL
         var formValidate = model.ValidateForm(event);
         var formValidateCaptcha = model.ValidateCaptchaForm(event);
         var errorMessage = '';
-        console.log($(messages.hfUsuarioSenhaDeveSerPreenchido).val())
+       
         if (!formValidate) {
             errorMessage += $(messages.hfUsuarioSenhaDeveSerPreenchido).val();
         }
@@ -318,9 +340,9 @@ var model = {
         if (!formValidate || !formValidateCaptcha) {
             view.LoadingComponent(event, false);
             view.ShowModal(event, false, errorMessage);
-        } 
+        }
         else {
-       
+
             model.ValidateCaptcha(event)
             //await controller.PostDataLogin(event);
         }
@@ -343,7 +365,7 @@ var model = {
         }
     },
     DataLoadCallback: function (data) {
-  
+
         var responseObject = util.Request.ParseResponse(data)
 
         if (responseObject != null) {
@@ -353,10 +375,13 @@ var model = {
 
             $(uiViewModel.pageVersion).text(responseObject.telaVersion);
 
-            if (responseObject.userName !== undefined && responseObject.userName != null
-                && responseObject.userName.length > 0) {
-                $(viewModel.usuario).text(responseObject.userName);
-                $(viewModel.usuario).val(responseObject.userName);
+
+            var lembrarAcessoCookie = util.Session.getCookie('LembrarAcesso');
+           
+            if (lembrarAcessoCookie !== undefined && lembrarAcessoCookie != null
+                && lembrarAcessoCookie.length > 0) {
+                $(viewModel.usuario).text(lembrarAcessoCookie);
+                $(viewModel.usuario).val(lembrarAcessoCookie);
                 $(viewModel.remember).prop("checked", true);
             }
 
@@ -370,49 +395,49 @@ var model = {
             }
 
             //trata o captcha
-             //view.DisabledTextBoxField(true, uiViewModel.componentTextboxLogin, viewModel.usuario);
-             //view.DisabledTextBoxField(true, uiViewModel.componentTextboxPassword, viewModel.senha);
-            
-             $(uiViewModel.captcha.txtCaptcha).text('');
-          
-             $(uiViewModel.captcha.imgCaptcha).css({
-                 "background-image": "url(" + responseObject.captcha.captchaImagePath + ")",
-                 "height": "40px",
-                 "width": "33%",
-                 "background-repeat": "no-repeat",
-                 "border-radius": "8px",
-                 "margin-top": "3%",
-                 "margin-left": "33%",
-                 "margin-bottom": "3%"
-             });
-          
-             $(uiViewModel.captcha.txtCaptcha).text('');
+            //view.DisabledTextBoxField(true, uiViewModel.componentTextboxLogin, viewModel.usuario);
+            //view.DisabledTextBoxField(true, uiViewModel.componentTextboxPassword, viewModel.senha);
+
+            $(uiViewModel.captcha.txtCaptcha).text('');
+
+            $(uiViewModel.captcha.imgCaptcha).css({
+                "background-image": "url(" + responseObject.captcha.captchaImagePath + ")",
+                "height": "40px",
+                "width": "33%",
+                "background-repeat": "no-repeat",
+                "border-radius": "8px",
+                "margin-top": "3%",
+                "margin-left": "33%",
+                "margin-bottom": "3%"
+            });
+
+            $(uiViewModel.captcha.txtCaptcha).text('');
             $(uiViewModel.storage.catpchaCodeKey).val(responseObject.captcha.fileNameCaptcha);
             util.Session.setLocalStorageItem(responseObject.captcha.fileNameCaptcha, responseObject.captcha.captchaCode)
-             $(uiViewModel.captcha.dvCaptcha).fadeIn('slow', 'linear');
-             $(uiViewModel.captcha.btnEntraCaptcha).fadeIn('slow', 'linear');
-             //$(uiViewModel.captcha.btnCancelarCaptcha).fadeIn('slow', 'linear')
+            $(uiViewModel.captcha.dvCaptcha).fadeIn('slow', 'linear');
+            $(uiViewModel.captcha.btnEntraCaptcha).fadeIn('slow', 'linear');
+            //$(uiViewModel.captcha.btnCancelarCaptcha).fadeIn('slow', 'linear')
 
             //EXCLUIR
-            $(uiViewModel.captcha.btnEntraCaptcha).remove();    
+            $(uiViewModel.captcha.btnEntraCaptcha).remove();
 
-            console.log('uiViewModel.Key_2FA_Google'); console.log(uiViewModel.Key_2FA_Google)
+           
             if (uiViewModel.Key_2FA_Google) {
                 $(uiViewModel.btnLogin).attr('value', $(messages.hfProximo).val());
             } else {
                 $(uiViewModel.btnLogin).attr('value', $(messages.hfEntrar).val());
             }
-          // if (uiViewModel.Key_2FA_Google) {
-          //
-          //     $(uiViewModel.captcha.btnEntraCaptcha).remove()
-          //     $(uiViewModel.captcha.btnCancelarCaptcha).remove()
-          //     $(uiViewModel.captcha.dvCaptcha).remove();
-          // }
-          // else {
-          //     $(uiViewModel.MFA.btnValidaGoogleAuth).remove()
-          //     $(uiViewModel.MFA.btnCancelarGoogleAuth).remove()
-          //     $(uiViewModel.MFA.dvMFA).remove();
-          // }
+            // if (uiViewModel.Key_2FA_Google) {
+            //
+            //     $(uiViewModel.captcha.btnEntraCaptcha).remove()
+            //     $(uiViewModel.captcha.btnCancelarCaptcha).remove()
+            //     $(uiViewModel.captcha.dvCaptcha).remove();
+            // }
+            // else {
+            //     $(uiViewModel.MFA.btnValidaGoogleAuth).remove()
+            //     $(uiViewModel.MFA.btnCancelarGoogleAuth).remove()
+            //     $(uiViewModel.MFA.dvMFA).remove();
+            // }
         }
 
         view.LoadingComponent(event, false);
@@ -432,87 +457,101 @@ var model = {
     ValidateCaptcha: async function (event) {
         var codeCaptcha =
             util.Session.getLocalStorageItem($(uiViewModel.storage.catpchaCodeKey).val());
-      
+
         if (model.ValidateCaptchaForm(event)) {
 
             if ($(uiViewModel.captcha.txtCaptcha).val() == codeCaptcha) {
-                await util.Request.GetRequest(event, url.getValidateCaptcha + "?oldCaptcha=" + $(uiViewModel.storage.catpchaCodeKey).val(), 
+                await util.Request.GetRequest(event, url.getValidateCaptcha + "?oldCaptcha=" + $(uiViewModel.storage.catpchaCodeKey).val(),
 
-                  function (data) {
-             
-                      util.Session.removeLocalStorageItem($(uiViewModel.storage.catpchaCodeKey).val());
-                      $(uiViewModel.storage.catpchaCodeKey).val('');
+                    function (data) {
 
-                      var model = {
-                          "username": $(viewModel.usuario).val(),
-                          "password": $(viewModel.senha).val(),
-                          "remember": $(viewModel.remember).is(":checked"),
-                          "lang": globalModal.lang
-                      };
-                    
-                      util.Request.PostRequest(event, url.postDataLogin, model,
-                          function (data) {
-                              console.log('PostRequest callback')
-                              console.log(data)
-                              if (data.isSuccess == false) {
-                                  $(uiViewModel.dvLoading).hide();
-                                  view.ShowModal(event, false, data.message);
-                              }
-                              else {
+                        util.Session.removeLocalStorageItem($(uiViewModel.storage.catpchaCodeKey).val());
+                        $(uiViewModel.storage.catpchaCodeKey).val('');
 
-                                  /// if ($(viewModel.remember).is(":checked")) {
-                                  ///     util.Session.setLocalStorageItem(data.fileNameCaptcha, data.captchaCode)
-                                  /// }
-                                  $(uiViewModel.captcha.dvCaptcha).hide();
-                                  if (uiViewModel.Key_2FA_Google) {
-                                      $(uiViewModel.MFA.txtSecuriyCode).text('');
-                                      $(uiViewModel.MFA.imgBarcodeImageUrl).fadeIn('slow', 'linear');
-                                      $(uiViewModel.MFA.imgBarcodeImageUrl).attr('src', data.barcodeImageUrl);
-                                      $(uiViewModel.MFA.hfUserUniqueKey).val(data.userUniqueKey);
-                                      $(uiViewModel.MFA.pSetupCode).text("Secret Key: " + data.setupCode)
-                                      $(uiViewModel.MFA.dvMFA).fadeIn('slow', 'linear');
-                                      $(uiViewModel.MFA.btnValidaGoogleAuth).fadeIn('slow', 'linear')
-                                      $(uiViewModel.MFA.btnCancelarGoogleAuth).fadeIn('slow', 'linear')
+                        var model = {
+                            "username": $(viewModel.usuario).val(),
+                            "password": $(viewModel.senha).val(),
+                            "remember": $(viewModel.remember).is(":checked"),
+                            "lang": globalModal.lang
+                        };
 
-                                      $(uiViewModel.dvRemember).hide();
-                                      $(uiViewModel.dvPassword).hide();
-                                      $(uiViewModel.dvLogin).hide();
-                                  }
-                                  else {
-                                      view.ShowModal(event, true, "Redirecionar PARA A HOME");
-                                  }
-                                  // else {
-                                  //     view.DisabledTextBoxField(true, uiViewModel.componentTextboxLogin, viewModel.usuario);
-                                  //     view.DisabledTextBoxField(true, uiViewModel.componentTextboxPassword, viewModel.senha);
-                                  //
-                                  //     $(uiViewModel.captcha.txtCaptcha).text('');
-                                  //
-                                  //     $(uiViewModel.captcha.imgCaptcha).css({
-                                  //         "background-image": "url(" + data.captchaImagePath + ")",
-                                  //         "height": "40px",
-                                  //         "width": "33%",
-                                  //         "background-repeat": "no-repeat",
-                                  //         "border-radius": "8px",
-                                  //         "margin-top": "3%",
-                                  //         "margin-left": "33%",
-                                  //         "margin-bottom": "3%"
-                                  //     });
-                                  //
-                                  //     $(uiViewModel.captcha.txtCaptcha).text('');
-                                  //     $(uiViewModel.storage.catpchaCodeKey).val(data.fileNameCaptcha);
-                                  //     util.Session.setLocalStorageItem(data.fileNameCaptcha, data.captchaCode)
-                                  //     $(uiViewModel.captcha.dvCaptcha).fadeIn('slow', 'linear');
-                                  //     $(uiViewModel.captcha.btnEntraCaptcha).fadeIn('slow', 'linear');
-                                  //     $(uiViewModel.captcha.btnCancelarCaptcha).fadeIn('slow', 'linear')
-                                  // }
+                        util.Request.PostRequest(event, url.postDataLogin, model,
+                            function (data) {
+                                console.log('PostRequest callback')
+                                console.log(data)
+                                if (data.isSuccess == false) {
+                                    $(uiViewModel.dvLoading).hide();
+                                    view.ShowModal(event, false, data.message);
+                                }
+                                else {
 
-                                  $(uiViewModel.lblRemember).hide();
-                                  $(uiViewModel.btnEsqueciMinhaSenha).hide();
-                                  $(uiViewModel.btnLogin).hide();
-                                  $(uiViewModel.dvLoading).hide();
-                              }
-                          });
-                  });
+                                    /// if ($(viewModel.remember).is(":checked")) {
+                                    ///     util.Session.setLocalStorageItem(data.fileNameCaptcha, data.captchaCode)
+                                    /// }
+
+                                    var lembrarAcessoCookie = util.Session.getCookie('LembrarAcesso');
+
+                                    if ($(viewModel.remember).is(":checked")) {
+
+                                        if (!(lembrarAcessoCookie !== undefined && lembrarAcessoCookie != null && lembrarAcessoCookie.length > 0)) {
+                                            util.Session.setCookie('LembrarAcesso', $(viewModel.usuario).val(), 30);
+                                        }
+                                    } else {
+                                        if (lembrarAcessoCookie !== undefined && lembrarAcessoCookie != null && lembrarAcessoCookie.length > 0) {
+                                            util.Session.eraseCookie('LembrarAcesso');
+                                        }
+                                    }
+
+                                    $(uiViewModel.captcha.dvCaptcha).hide();
+                                    if (uiViewModel.Key_2FA_Google) {
+                                        $(uiViewModel.MFA.txtSecuriyCode).text('');
+                                        $(uiViewModel.MFA.imgBarcodeImageUrl).fadeIn('slow', 'linear');
+                                        $(uiViewModel.MFA.imgBarcodeImageUrl).attr('src', data.barcodeImageUrl);
+                                        $(uiViewModel.MFA.hfUserUniqueKey).val(data.userUniqueKey);
+                                        $(uiViewModel.MFA.pSetupCode).text("Secret Key: " + data.setupCode)
+                                        $(uiViewModel.MFA.dvMFA).fadeIn('slow', 'linear');
+                                        $(uiViewModel.MFA.btnValidaGoogleAuth).fadeIn('slow', 'linear')
+                                        $(uiViewModel.MFA.btnCancelarGoogleAuth).fadeIn('slow', 'linear')
+
+                                        $(uiViewModel.dvRemember).hide();
+                                        $(uiViewModel.dvPassword).hide();
+                                        $(uiViewModel.dvLogin).hide();
+                                    }
+                                    else {
+                                        view.ShowModal(event, true, "Redirecionar PARA A HOME");
+                                    }
+                                    // else {
+                                    //     view.DisabledTextBoxField(true, uiViewModel.componentTextboxLogin, viewModel.usuario);
+                                    //     view.DisabledTextBoxField(true, uiViewModel.componentTextboxPassword, viewModel.senha);
+                                    //
+                                    //     $(uiViewModel.captcha.txtCaptcha).text('');
+                                    //
+                                    //     $(uiViewModel.captcha.imgCaptcha).css({
+                                    //         "background-image": "url(" + data.captchaImagePath + ")",
+                                    //         "height": "40px",
+                                    //         "width": "33%",
+                                    //         "background-repeat": "no-repeat",
+                                    //         "border-radius": "8px",
+                                    //         "margin-top": "3%",
+                                    //         "margin-left": "33%",
+                                    //         "margin-bottom": "3%"
+                                    //     });
+                                    //
+                                    //     $(uiViewModel.captcha.txtCaptcha).text('');
+                                    //     $(uiViewModel.storage.catpchaCodeKey).val(data.fileNameCaptcha);
+                                    //     util.Session.setLocalStorageItem(data.fileNameCaptcha, data.captchaCode)
+                                    //     $(uiViewModel.captcha.dvCaptcha).fadeIn('slow', 'linear');
+                                    //     $(uiViewModel.captcha.btnEntraCaptcha).fadeIn('slow', 'linear');
+                                    //     $(uiViewModel.captcha.btnCancelarCaptcha).fadeIn('slow', 'linear')
+                                    // }
+
+                                    $(uiViewModel.lblRemember).hide();
+                                    $(uiViewModel.btnEsqueciMinhaSenha).hide();
+                                    $(uiViewModel.btnLogin).hide();
+                                    $(uiViewModel.dvLoading).hide();
+                                }
+                            });
+                    });
 
             }
             else {
@@ -537,7 +576,7 @@ var model = {
         $(uiViewModel.captcha.btnEntraCaptcha).show();
         //$(uiViewModel.captcha.btnCancelarCaptcha).show();
     },
-    RefreshCaptchaCallback:  function (data) {
+    RefreshCaptchaCallback: function (data) {
 
         data = JSON.parse(data);
 
@@ -568,7 +607,10 @@ var model = {
 }
 
 var controller = {
-    Init: function (event) { controller.GetDataLogin(event); },
+    Init: function (event) {
+        controller.GetDataLogin(event);
+
+    },
     GetDataLogin: async function (event) {
         await util.Request.GetRequest(event, url.getDataLogin, model.DataLoadCallback);
     },
@@ -641,7 +683,7 @@ var controller = {
                 await util.Request.GetRequest(event, url.getTutorial + "?lang=" + globalModal.lang
                     , function (data) {
                         data = JSON.parse(data);
-                    
+
                         if (data.tutostep !== undefined && data.tutostep != null && data.tutostep.length > 0) {
 
                             var isFirstArrayElement = true;
@@ -691,7 +733,7 @@ var controller = {
                                                 '<img src="data:image/png;base64, ' + data.tutostep[index].tutoiimg + '" class="img_tutorial" />' : '')
                                         .replace("{4}", video)
                                         .replace("{5}", !isFirstArrayElement ? 'style="display:none;margim-bottom:0% !important;"' : 'style="margim-bottom:0% !important;"')
-                                        .replace("{6}", 'dvTutorial' + index)); 
+                                        .replace("{6}", 'dvTutorial' + index));
                                 }
                             }
                         }
@@ -739,9 +781,9 @@ var controller = {
                     + "&securityCode=" + $(uiViewModel.MFA.txtSecuriyCode).val()
 
                     , function (data) {
-                    
+
                         data = JSON.parse(data);
-                       
+
                         if (data == true)
                             view.ShowModal(event, true, "O código está correto.");
                         else
@@ -775,14 +817,14 @@ var controller = {
             await util.Request.GetRequest(event, url.getRefreshCaptcha + "?oldCaptcha=" + $(uiViewModel.storage.catpchaCodeKey).val()
                 , model.RefreshCaptchaCallback);
         });
-      
+
 
     },
     PostDataLogin: function (event) {
         var model = {
             "username": $(viewModel.usuario).val(),
             "password": $(viewModel.senha).val(),
-            "remember": $(viewModel.remember).is(":checked"),
+            //"remember": $(viewModel.remember).is(":checked"),
             "lang": globalModal.lang
         };
 
@@ -794,9 +836,9 @@ var controller = {
                 }
                 else {
 
-                  /// if ($(viewModel.remember).is(":checked")) {
-                  ///     util.Session.setLocalStorageItem(data.fileNameCaptcha, data.captchaCode)
-                  /// }
+                    /// if ($(viewModel.remember).is(":checked")) {
+                    ///     util.Session.setLocalStorageItem(data.fileNameCaptcha, data.captchaCode)
+                    /// }
 
                     if (uiViewModel.Key_2FA_Google) {
                         $(uiViewModel.MFA.txtSecuriyCode).text('');
@@ -812,30 +854,30 @@ var controller = {
                         $(uiViewModel.dvPassword).hide();
                         $(uiViewModel.dvLogin).hide();
                     }
-                  // else {
-                  //     view.DisabledTextBoxField(true, uiViewModel.componentTextboxLogin, viewModel.usuario);
-                  //     view.DisabledTextBoxField(true, uiViewModel.componentTextboxPassword, viewModel.senha);
-                  //
-                  //     $(uiViewModel.captcha.txtCaptcha).text('');
-                  //
-                  //     $(uiViewModel.captcha.imgCaptcha).css({
-                  //         "background-image": "url(" + data.captchaImagePath + ")",
-                  //         "height": "40px",
-                  //         "width": "33%",
-                  //         "background-repeat": "no-repeat",
-                  //         "border-radius": "8px",
-                  //         "margin-top": "3%",
-                  //         "margin-left": "33%",
-                  //         "margin-bottom": "3%"
-                  //     });
-                  //
-                  //     $(uiViewModel.captcha.txtCaptcha).text('');
-                  //     $(uiViewModel.storage.catpchaCodeKey).val(data.fileNameCaptcha);
-                  //     util.Session.setLocalStorageItem(data.fileNameCaptcha, data.captchaCode)
-                  //     $(uiViewModel.captcha.dvCaptcha).fadeIn('slow', 'linear');
-                  //     $(uiViewModel.captcha.btnEntraCaptcha).fadeIn('slow', 'linear');
-                  //     $(uiViewModel.captcha.btnCancelarCaptcha).fadeIn('slow', 'linear')
-                  // }
+                    // else {
+                    //     view.DisabledTextBoxField(true, uiViewModel.componentTextboxLogin, viewModel.usuario);
+                    //     view.DisabledTextBoxField(true, uiViewModel.componentTextboxPassword, viewModel.senha);
+                    //
+                    //     $(uiViewModel.captcha.txtCaptcha).text('');
+                    //
+                    //     $(uiViewModel.captcha.imgCaptcha).css({
+                    //         "background-image": "url(" + data.captchaImagePath + ")",
+                    //         "height": "40px",
+                    //         "width": "33%",
+                    //         "background-repeat": "no-repeat",
+                    //         "border-radius": "8px",
+                    //         "margin-top": "3%",
+                    //         "margin-left": "33%",
+                    //         "margin-bottom": "3%"
+                    //     });
+                    //
+                    //     $(uiViewModel.captcha.txtCaptcha).text('');
+                    //     $(uiViewModel.storage.catpchaCodeKey).val(data.fileNameCaptcha);
+                    //     util.Session.setLocalStorageItem(data.fileNameCaptcha, data.captchaCode)
+                    //     $(uiViewModel.captcha.dvCaptcha).fadeIn('slow', 'linear');
+                    //     $(uiViewModel.captcha.btnEntraCaptcha).fadeIn('slow', 'linear');
+                    //     $(uiViewModel.captcha.btnCancelarCaptcha).fadeIn('slow', 'linear')
+                    // }
 
                     $(uiViewModel.lblRemember).hide();
                     $(uiViewModel.btnEsqueciMinhaSenha).hide();
@@ -846,7 +888,8 @@ var controller = {
     PostDataRecoveryPassword: function (event) {
         var model = {
             "emailRecoveryPassword": $(viewModelEsqueciSenha.emailRecoveryPassword).val()
-            , "lang": globalModal.lang     };
+            , "lang": globalModal.lang
+        };
 
         util.Request.PostRequest(event, url.getRecoveryPassword, model,
             function (data) {

@@ -11,6 +11,7 @@ using System.Linq;
 using System.Security;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using WebNesta.Coyote.Geral.Domain.ViewModel;
 using WebNesta.Coyote.Web.Configuration;
 using WebNesta.Coyote.Web.Extensions;
 using WebNesta.Coyote.Web.Models;
@@ -19,23 +20,22 @@ using WebNesta.Coyote.Web.ViewModel;
 
 namespace WebNesta.Coyote.Web.Controllers
 {
-    public class LoginController : Controller
+    public class LoginController : BaseController
     {
-        private readonly ObjectLabel _tela;
+
         private readonly ControllerTutorialName _controllerNameTutorial;
         private readonly ILoginService _loginService;
         private readonly IModuloService _moduloService;
-        private readonly IStringLocalizer<WebNesta.Coyote.Web.App_GlobalResources.Login> _localizer;
         private readonly IConfiguration _configuration;
-       
-        public LoginController(ILoginService loginService, IStringLocalizer<WebNesta.Coyote.Web.App_GlobalResources.Login> localizer, IModuloService moduloService, IConfiguration configuration)
+
+        public LoginController(ILoginService loginService, IModuloService moduloService, IConfiguration configuration)
         {
-            _loginService = loginService;
-            _tela = ObjectLabel.Login;
-            _controllerNameTutorial = ControllerTutorialName.Login;
-            _localizer = localizer;
-            _moduloService = moduloService;
             _configuration = configuration;
+            _loginService = loginService;
+            SetTela(ObjectLabel.Login);
+            _controllerNameTutorial = ControllerTutorialName.Login;
+            _moduloService = moduloService;
+            
             //_requestContext = new LoginUrlRequest();
         }
         public IActionResult Index()
@@ -55,7 +55,7 @@ namespace WebNesta.Coyote.Web.Controllers
             }
 
             var model = new LoginViewModel();
-            var enumDesc = _tela.DescriptionAttr();
+            var enumDesc = GetTela().DescriptionAttr();
             var responseVersion = await _loginService.GetObjectVersion(enumDesc);
             model.TelaVersion = responseVersion.Title;
             model.Key_2FAGoogle = _configuration.GetValue<bool>("GoogleAuthenticator:2FA_Google");
@@ -63,12 +63,12 @@ namespace WebNesta.Coyote.Web.Controllers
             CookieOptions options = new CookieOptions();
             options.Expires = DateTime.Now.AddSeconds(10);
 
-            var lembrarAcesso = HttpContext.User.Identities.Where(wh => wh.AuthenticationType == "UsuarioLogado").FirstOrDefault();
-
-            if (lembrarAcesso != null && lembrarAcesso.Claims != null && lembrarAcesso.Claims.Count() > 0)
-            {
-                model.UserName = lembrarAcesso.Claims.Where(wh => wh.Type == "LembrarAcesso").FirstOrDefault().Value;
-            }
+            // var lembrarAcesso = HttpContext.User.Identities.Where(wh => wh.AuthenticationType == "UsuarioLogado").FirstOrDefault();
+            //
+            // if (lembrarAcesso != null && lembrarAcesso.Claims != null && lembrarAcesso.Claims.Count() > 0)
+            // {
+            //     model.UserName = lembrarAcesso.Claims.Where(wh => wh.Type == "LembrarAcesso").FirstOrDefault().Value;
+            // }
             var captchaViewModel = new LoginResponseViewModel();
 
             model.Captcha = GenerateCaptcha();
@@ -79,55 +79,68 @@ namespace WebNesta.Coyote.Web.Controllers
         //[AllowAnonymous]
         [HttpPost]
         [Route("login/Autentica")]
-        public async Task<IActionResult> Autentica(string username, string password, bool remember, string lang)
+        public async Task<IActionResult> Autentica(string username, string password, string lang)
         {
             var authViewModel = new AuthViewModel();
             var loginResponseViewModel = new LoginResponseViewModel();
+            ValidateViewModel response = null;
+
             authViewModel.UserName = username;
             authViewModel.Password = password;
             authViewModel.Lang = lang;
 
-            var response = await _loginService.Login(authViewModel);
+            var validacao = GetModelErrors(authViewModel);
 
-            bool parseRemember = remember;
-
-            loginResponseViewModel.IsSuccess = response.IsValid;
-            loginResponseViewModel.Message = response.Message;
-
-            if (loginResponseViewModel.IsSuccess)
+            if (validacao != null && validacao.Count() > 0)
             {
-                var lembrarAcesso = HttpContext.User.Identities.Where(wh => wh.AuthenticationType == "UsuarioLogado").FirstOrDefault();
+                loginResponseViewModel.Message = GetModelErrorMessage(validacao.ToList());
+                loginResponseViewModel.IsSuccess = false;
+            }
+            else
+            {
+                response = await _loginService.Login(authViewModel);
 
-                if (parseRemember)
+                //bool parseRemember = remember;
+
+                loginResponseViewModel.IsSuccess = response.IsValid;
+                loginResponseViewModel.Message = response.Message;
+
+                if (loginResponseViewModel.IsSuccess)
                 {
-                    if (lembrarAcesso == null)
-                    {
-                        var userClaims = new List<Claim>()
-                        {
-                            new Claim("LembrarAcesso",username),
-                        };
+                    //  var lembrarAcesso = HttpContext.User.Identities.Where(wh => wh.AuthenticationType == "UsuarioLogado").FirstOrDefault();
+                    //
+                    // if (parseRemember)
+                    // {
+                    //     if (lembrarAcesso == null)
+                    //     {
+                    //         var userClaims = new List<Claim>()
+                    //         {
+                    //             new Claim("LembrarAcesso",username),
+                    //         };
+                    //
+                    //         var minhaIdentity = new ClaimsIdentity(userClaims, "UsuarioLogado");
+                    //         var userPrincipal = new ClaimsPrincipal(new[] { minhaIdentity });
+                    //
+                    //         //cria o cookie
+                    //         HttpContext.SignInAsync(userPrincipal);
+                    //     }
+                    // }
+                    // else
+                    // {
+                    //     if (lembrarAcesso != null && lembrarAcesso.Claims != null && lembrarAcesso.Claims.Count() > 0)
+                    //     {
+                    //         // var claimValue = lembrarAcesso.Claims.Where(wh => wh.Type == "LembrarAcesso").FirstOrDefault().Value = "nao";
+                    //
+                    //     }
+                    // }
 
-                        var minhaIdentity = new ClaimsIdentity(userClaims, "UsuarioLogado");
-                        var userPrincipal = new ClaimsPrincipal(new[] { minhaIdentity });
+                    var key2FAGoogle = _configuration.GetValue<bool>("GoogleAuthenticator:2FA_Google");
 
-                        //cria o cookie
-                        HttpContext.SignInAsync(userPrincipal);
-                    }
+                    if (!key2FAGoogle)
+                        loginResponseViewModel.CaptchaImagePath = GenerateCaptcha(loginResponseViewModel);
+                    else
+                        GoogleAuthenticator(username.ToUpper(), _configuration.GetValue<string>("GoogleAuthenticator:Key"), loginResponseViewModel);
                 }
-                else
-                {
-                    if (lembrarAcesso != null && lembrarAcesso.Claims != null && lembrarAcesso.Claims.Count() > 0)
-                    {
-                        // var claimValue = lembrarAcesso.Claims.Where(wh => wh.Type == "LembrarAcesso").FirstOrDefault().Value = "nao";
-
-                    }
-                }
-                var key2FAGoogle = _configuration.GetValue<bool>("GoogleAuthenticator:2FA_Google");
-
-                if (!key2FAGoogle)
-                    loginResponseViewModel.CaptchaImagePath = GenerateCaptcha(loginResponseViewModel);
-                else
-                    GoogleAuthenticator(username.ToUpper(), _configuration.GetValue<string>("GoogleAuthenticator:Key"), loginResponseViewModel);
             }
 
 
@@ -141,6 +154,8 @@ namespace WebNesta.Coyote.Web.Controllers
             var emailRecoveryViewModel = new RecoveryPasswordViewModel();
             emailRecoveryViewModel.Email = emailRecoveryPassword;
             emailRecoveryViewModel.Lang = lang;
+            //ValidateViewModel response = null;
+
 
             var response = await _loginService.RecoveryPassword(emailRecoveryViewModel);
             return Json(response);
@@ -205,8 +220,6 @@ string.Concat("/img/captcha/", DateTime.Now.Year, "-", DateTime.Now.Month, "-", 
                 System.IO.File.Copy(@"wwwroot/img/captcha/captcha-model.jpg", fileNameFull);
 
                 string code = ImageFactory.CreateCode(5);
-
-                var codeClaim = new Claim("captchaCode", code);
 
                 using (FileStream fs = System.IO.File.OpenWrite(fileNameFull))
 
@@ -324,13 +337,5 @@ string.Concat("/img/captcha/", DateTime.Now.Year, "-", DateTime.Now.Month, "-", 
             return isValid;
         }
         #endregion
-
-
-        [HttpGet]
-        [Route("login/GetTela")]
-        public IActionResult GetTela()
-        {
-            return View();
-        }
     }
 }

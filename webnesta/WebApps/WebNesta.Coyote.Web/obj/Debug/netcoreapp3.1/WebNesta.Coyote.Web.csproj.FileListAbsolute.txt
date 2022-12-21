@@ -370,3 +370,9 @@ E:\ProjetoAlex\CoyoteDevNew\webnesta\WebApps\WebNesta.Coyote.Web\obj\Debug\netco
 E:\ProjetoAlex\CoyoteDevNew\webnesta\WebApps\WebNesta.Coyote.Web\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Web.dll
 E:\ProjetoAlex\CoyoteDevNew\webnesta\WebApps\WebNesta.Coyote.Web\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Web.pdb
 E:\ProjetoAlex\CoyoteDevNew\webnesta\WebApps\WebNesta.Coyote.Web\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Web.genruntimeconfig.cache
+E:\ProjetoAlex\CoyoteDevNew\webnesta\WebApps\WebNesta.Coyote.Web\obj\Debug\netcoreapp3.1\Razor\Views\Component\Index.cshtml.g.cs
+E:\ProjetoAlex\CoyoteDevNew\webnesta\WebApps\WebNesta.Coyote.Web\bin\Debug\netcoreapp3.1\DevExtreme.AspNet.Core.dll
+E:\ProjetoAlex\CoyoteDevNew\webnesta\WebApps\WebNesta.Coyote.Web\bin\Debug\netcoreapp3.1\DevExtreme.AspNet.Data.dll
+E:\ProjetoAlex\CoyoteDevNew\webnesta\WebApps\WebNesta.Coyote.Web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+E:\ProjetoAlex\CoyoteDevNew\webnesta\WebApps\WebNesta.Coyote.Web\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+E:\ProjetoAlex\CoyoteDevNew\webnesta\WebApps\WebNesta.Coyote.Web\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll

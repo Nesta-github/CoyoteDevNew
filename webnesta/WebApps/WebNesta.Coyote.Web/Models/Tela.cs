@@ -14,7 +14,9 @@ namespace WebNesta.Coyote.Web.Models
         [Description("Documento")]
         Documento = 1,
         [Description("Home")]
-        Home = 2,
+        Home = 2, 
+        [Description("Componente")]
+        Componente = 3,
     } 
     
     public enum ControllerTutorialName

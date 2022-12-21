@@ -1,0 +1,15 @@
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Componente\WebNesta.Coyote.Componente.Data\bin\Debug\netcoreapp3.1\WebNesta.Coyote.Componente.Data.deps.json
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Componente\WebNesta.Coyote.Componente.Data\bin\Debug\netcoreapp3.1\WebNesta.Coyote.Componente.Data.dll
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Componente\WebNesta.Coyote.Componente.Data\bin\Debug\netcoreapp3.1\WebNesta.Coyote.Componente.Data.pdb
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Componente\WebNesta.Coyote.Componente.Data\bin\Debug\netcoreapp3.1\WebNesta.Coyote.Componente.Domain.dll
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Componente\WebNesta.Coyote.Componente.Data\bin\Debug\netcoreapp3.1\WebNesta.Coyote.Core.dll
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Componente\WebNesta.Coyote.Componente.Data\bin\Debug\netcoreapp3.1\WebNesta.Coyote.Core.pdb
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Componente\WebNesta.Coyote.Componente.Data\bin\Debug\netcoreapp3.1\WebNesta.Coyote.Componente.Domain.pdb
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Componente\WebNesta.Coyote.Componente.Data\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Componente.Data.csproj.AssemblyReference.cache
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Componente\WebNesta.Coyote.Componente.Data\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Componente.Data.GeneratedMSBuildEditorConfig.editorconfig
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Componente\WebNesta.Coyote.Componente.Data\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Componente.Data.AssemblyInfoInputs.cache
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Componente\WebNesta.Coyote.Componente.Data\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Componente.Data.AssemblyInfo.cs
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Componente\WebNesta.Coyote.Componente.Data\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Componente.Data.csproj.CoreCompileInputs.cache
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Componente\WebNesta.Coyote.Componente.Data\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Componente.Data.csproj.CopyComplete
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Componente\WebNesta.Coyote.Componente.Data\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Componente.Data.dll
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Componente\WebNesta.Coyote.Componente.Data\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Componente.Data.pdb

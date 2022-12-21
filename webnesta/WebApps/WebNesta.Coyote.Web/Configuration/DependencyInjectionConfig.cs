@@ -10,6 +10,7 @@ namespace WebNesta.Coyote.Web.Configuration
         {
             services.AddHttpClient<ILoginService, LoginService>();
             services.AddHttpClient<IModuloService, ModuloService>();
+            services.AddHttpClient<IComponentService, ComponentService>();
         }
     }
 }

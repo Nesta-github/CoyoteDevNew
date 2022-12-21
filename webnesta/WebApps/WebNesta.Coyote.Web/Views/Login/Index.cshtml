@@ -1,6 +1,5 @@
 ﻿@model WebNesta.Coyote.Web.ViewModel.LoginViewModel
 @using Microsoft.AspNetCore.Mvc.Localization
-@inject IViewLocalizer Localizer
 
 @{
     ViewBag.Title = "Index";
@@ -9,7 +8,6 @@
 
 <form method="post" autocomplete="off" action="/Login/Index">
 
-    <!--Html.AntiForgeryToken() -->
     <div class="row" style="padding-left: 50px; padding-right: 50px; margin-top: -10px;">
         <label class="titulo">Login</label>
     </div>

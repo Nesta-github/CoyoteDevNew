@@ -1,48 +1,668 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿@*using WebNesta_CapitalMarket.Models;
+using WebNesta_CapitalMarket.Helper;
+{
+    WebNesta_CapitalMarket.Models.Login login = ViewBag.Login as WebNesta_CapitalMarket.Models.Login;
+
+    WebNesta_CapitalMarket.Models.Home home;
+
+    if (ViewBag.Home == null)
+    {
+        home = new WebNesta_CapitalMarket.Models.Home();
+    }
+    else
+    {
+        home = ViewBag.Home as WebNesta_CapitalMarket.Models.Home;
+    }
+}*@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - WebNesta.Coyote.Web</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Coyote Contracts - Nesta</title>
+    @* Html.DevExpress().GetStyleSheets(
+    new StyleSheet { ExtensionSuite = ExtensionSuite.NavigationAndLayout, Theme = "COYOTE" },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.Editors, Theme = "COYOTE" },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.HtmlEditor, Theme = "COYOTE" },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.CardView, Theme = "COYOTE" },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.GridView, Theme = "COYOTE" },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.PivotGrid, Theme = "COYOTE" },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.Chart, Theme = "COYOTE" },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.Report, Theme = "COYOTE" },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.Scheduler, Theme = "COYOTE" },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.TreeList, Theme = "COYOTE" },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.Dashboard, Theme = "COYOTE" },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.All, Theme = "COYOTE" },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.RichEdit, Theme = "COYOTE" }
+    )
+    *@
+    @* 1 - antigo
+    Styles.Render("~/Content/css")
+    Scripts.Render("~/bundles/modernizr")
+    Scripts.Render("~/bundles/jquery")
+    Scripts.Render("~/bundles/bootstrap")
+    --------------------------------------
+    *@
+    <link href="~/css/all.min.css" rel="stylesheet" />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/fontawesome.min.css" rel="stylesheet" />
+
+    <script src="~/lib/jquery/jquery-3.5.1.js"></script>
+    <script src="~/lib/jquery/jquery-ui.js"></script>
+@*    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>*@
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+    <script src="~/js/util/util.js"></script>
+    <script src="~/js/masterpage/masterpage.js"></script>
+
+    <script src="~/devextreme/js/dx.all.js"></script>
+    <script src="~/devextreme/js/aspnet/dx.aspnet.mvc.js"></script>
+    <script src="~/devextreme/js/aspnet/dx.aspnet.data.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="~/devextreme/css/dx.common.css" />
+    <link rel="stylesheet" type="text/css" href="~/devextreme/css/dx.custom-nesta.css" />
+
+    <link href="~/css/Tema1/StyleCoyotte.css" rel="stylesheet" />
+   @* <link href="~/css/Tema1/Site.css" rel="stylesheet" />*@
+    <link href="~/css/Tema1/SiteResponsivo.css" rel="stylesheet" />
+    <link href="~/css/Tema1/StyleDashBoard.css" rel="stylesheet" />
+    <link href="~/css/Tema1/StyleEditorDEX.css" rel="stylesheet" />
+    <link href="~/css/Tema1/StyleFloatingDev.css" rel="stylesheet" />
+    <link href="~/css/Tema1/StyleGridView.css" rel="stylesheet" />
+    <link href="~/css/Tema1/StyleMenuDEX.css" rel="stylesheet" />
+    <link href="~/css/Tema1/pretty-checkbox.min.css" rel="stylesheet" />
+
+    @*   {
+    if (Session["theme"] == null)
+    {
+    <link href="~/Content/Tema1/StyleCoyotte.css" rel="stylesheet" />
+    <link href="~/Content/Tema1/Site.css" rel="stylesheet" />
+    <link href="~/Content/Tema1/SiteResponsivo.css" rel="stylesheet" />
+    <link href="~/Content/Tema1/StyleDashBoard.css" rel="stylesheet" />
+    <link href="~/Content/Tema1/StyleEditorDEX.css" rel="stylesheet" />
+    <link href="~/Content/Tema1/StyleFloatingDev.css" rel="stylesheet" />
+    <link href="~/Content/Tema1/StyleGridView.css" rel="stylesheet" />
+    <link href="~/Content/Tema1/StyleMenuDEX.css" rel="stylesheet" />
+    <link href="~/Content/Tema1/pretty-checkbox.min.css" rel="stylesheet" />
+    }
+    else
+    {
+    int cont = Convert.ToInt32(Session["theme"].ToString());
+    if (cont == 1)
+    {
+    <link href="~/Content/Tema1/StyleCoyotte.css" rel="stylesheet" />
+    <link href="~/Content/Tema1/Site.css" rel="stylesheet" />
+    <link href="~/Content/Tema1/SiteResponsivo.css" rel="stylesheet" />
+    <link href="~/Content/Tema1/StyleDashBoard.css" rel="stylesheet" />
+    <link href="~/Content/Tema1/StyleEditorDEX.css" rel="stylesheet" />
+    <link href="~/Content/Tema1/StyleFloatingDev.css" rel="stylesheet" />
+    <link href="~/Content/Tema1/StyleGridView.css" rel="stylesheet" />
+    <link href="~/Content/Tema1/StyleMenuDEX.css" rel="stylesheet" />
+    <link href="~/Content/Tema1/pretty-checkbox.min.css" rel="stylesheet" />
+    }
+    else if (cont == 2)
+    {
+    <link href="~/Content/Tema2/StyleCoyotte.css" rel="stylesheet" />
+    <link href="~/Content/Tema2/Site.css" rel="stylesheet" />
+    <link href="~/Content/Tema2/SiteResponsivo.css" rel="stylesheet" />
+    <link href="~/Content/Tema2/StyleDashBoard.css" rel="stylesheet" />
+    <link href="~/Content/Tema2/StyleEditorDEX.css" rel="stylesheet" />
+    <link href="~/Content/Tema2/StyleFloatingDev.css" rel="stylesheet" />
+    <link href="~/Content/Tema2/StyleGridView.css" rel="stylesheet" />
+    <link href="~/Content/Tema2/StyleMenuDEX.css" rel="stylesheet" />
+    <link href="~/Content/Tema2/pretty-checkbox.min.css" rel="stylesheet" />
+    }
+    else
+    {
+    <link href="~/Content/Tema1/StyleCoyotte.css" rel="stylesheet" />
+    <link href="~/Content/Tema1/Site.css" rel="stylesheet" />
+    <link href="~/Content/Tema1/SiteResponsivo.css" rel="stylesheet" />
+    <link href="~/Content/Tema1/StyleDashBoard.css" rel="stylesheet" />
+    <link href="~/Content/Tema1/StyleEditorDEX.css" rel="stylesheet" />
+    <link href="~/Content/Tema1/StyleFloatingDev.css" rel="stylesheet" />
+    <link href="~/Content/Tema1/StyleGridView.css" rel="stylesheet" />
+    <link href="~/Content/Tema1/StyleMenuDEX.css" rel="stylesheet" />
+    <link href="~/Content/Tema1/pretty-checkbox.min.css" rel="stylesheet" />
+    }
+    }
+    }
+    *@
+
+
+    @* @Html.DevExpress().GetScripts(
+    new Script { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+    new Script { ExtensionSuite = ExtensionSuite.Editors },
+    new Script { ExtensionSuite = ExtensionSuite.CardView },
+    new Script { ExtensionSuite = ExtensionSuite.GridView },
+    new Script { ExtensionSuite = ExtensionSuite.Chart },
+    new Script { ExtensionSuite = ExtensionSuite.Scheduler },
+    new Script { ExtensionSuite = ExtensionSuite.Dashboard },
+    new Script { ExtensionSuite = ExtensionSuite.TreeList },
+    new Script { ExtensionSuite = ExtensionSuite.All },
+    new Script { ExtensionSuite = ExtensionSuite.RichEdit }
+    )*@
 </head>
+
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WebNesta.Coyote.Web</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
+
+    @*    @Html.DevExpress().LoadingPanel(settings =>
+    {
+    settings.Name = "LoadingPanel";
+    settings.Theme = "COYOTE";
+    settings.Modal = true;
+    settings.Text = "";
+    settings.Images.LoadingPanel.Url = "~/img/loading2.gif";
+    }).GetHtml()*@
+
+
+
+    @*Html.Partial("~/Views/Shared/_menuPartial.cshtml")
+    Html.Partial("~/Views/Shared/_tutorialsPartial.cshtml")
+    Html.Partial("~/Views/Shared/_popupAcoes.cshtml")
+    Html.Partial("~/Views/Shared/_linksPartial.cshtml")
+    Html.Partial("~/Views/Shared/_profilePartial.cshtml")
+    Html.Partial("~/Views/Shared/_popupSobrePartial.cshtml")
+    Html.Partial("~/Views/Shared/_popupFotoUploadPartial.cshtml")
+
+    if (ViewBag.IDCapaContra != null)
+    {
+    Html.Action("popupViewContrato","CapaContrato", new { ID = ViewBag.IDCapaContra })
+    }*@
+
+    <!-- Modal -->
+    <!-- MODAL - SUCCESS -->
+    <div class="modal fade modal-component" id="myModal" style="z-index:999999999999999999999999999 !important" role="dialog">
+        <div class="modal-dialog ">
+
+            <div id="dvModalSuccess" style="display:none;border-radius: 32px;padding: 15px;" class="modal-content popupAlertaFeedback">
+                <div class="modal-header border-0 p-0 pr-2">
+                    <button type="button" class="close text-white"
+                            style="z-index: 99999999999999999999999;color: #c8c8c8;position: absolute;top: 18px; right: 30px; cursor: pointer;"
+                            data-dismiss="modal">
+                        &times;
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row" style="display: table;">
+                        <div class="col-3" style="display: table-cell;vertical-align: middle;">
+                            <i class="fas fa-check-circle sucesso" style="margin-top:unset !important"></i>
+                        </div>
+                        <div class="col-9" style="padding-top: 8px;display: table-cell;vertical-align: middle;">
+                            <p id="dvModalTitleSuccess" class="popupAlertaFeedback" style="font-size: 30px; font-weight: bold;margin-bottom: 16px;">
+                                @WebNesta.Coyote.Web.App_GlobalResources.GlobalResource.ResourceManager.GetString("alert_success") !
+                            </p>
+                            <p id="dvModalMessageSuccess" class="popupAlertaFeedback"></p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+
+            <div id="dvModalError" style="display:none;border-radius: 32px;" class="modal-content popupAlertaFeedback erro">
+                <div class="modal-header border-0 p-0 pr-2">
+                    <button type="button" class="close text-white"
+                            style="z-index: 99999999999999999999999;
+    color: #c8c8c8;
+    position: absolute;
+    top: 18px;
+    right: 30px;
+    cursor: pointer;"
+                            data-dismiss="modal">
+                        &times;
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row" style="display: table;">
+                        <div class="col-3" style="display: table-cell;vertical-align: middle;">
+                            <i class="fas fa-times-circle erro" style="margin-top:unset !important"></i>
+                        </div>
+                        <div class="col-9" style="padding-top: 8px;display: table-cell;vertical-align: middle;">
+                            <p id="dvModalTitleError" class="popupAlertaFeedback" style="font-size: 30px; font-weight: bold;margin-bottom: 16px;">Oops</p>
+                            <p id="dvModalMessageError" class="popupAlertaFeedback"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - WebNesta.Coyote.Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+
+    @*   <input type="hidden" id="hdnSession"
+    data-value="Request.RequestContext.HttpContext.Session["lang"]" />*@
+
+    <div class="container-fluid">
+
+        <!-- Linha geral que separa botões esq, conteúdo da página e widgets -->
+        <div class="row">
+
+            <!-- Coluna esq botões do sistema -->
+            <div class="col-12 col-sm-1 p-4 btn-col">
+
+                <div class="row mb-5">
+                    <a href="#" class="button" id="col-menu"><i class="fas fa-bars"></i></a>
+                </div>
+
+                <div class="row">
+                    <a href="#" class="button" id="col-tutorials">
+                        <i class="fas fa-question-circle"></i>
+                        <span class="tooltip">@WebNesta.Coyote.Web.App_GlobalResources.GlobalResource.tooltip_btn_tutorial</span>
+                    </a>
+                </div>
+
+                <div class="row my-3">
+                    <a href="#" class="button" id="col-acoes">
+                        <i class="fas fa-plus"></i>
+                        <span class="tooltip">@WebNesta.Coyote.Web.App_GlobalResources.GlobalResource.tooltip_btn_action</span>
+                    </a>
+                </div>
+
+                <div class="row">
+                    <a href="#" class="button" id="col-links">
+                        <i class="fas fa-compass"></i>
+                        <span class="tooltip">@WebNesta.Coyote.Web.App_GlobalResources.GlobalResource.tooltip_btn_links</span>
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Coluna central com o conteúdo da página -->
+            <div class="col-11 col-sm-9 p-5 bg-all mt-3">
+
+                <!-- Linha dos títulos e pesquisa -->
+                <div class="row header">
+                    @*
+                    <!-- Coluna dos títulos -->
+                    if (Html.Controller().ToUpper() == "HOME" || Html.Controller().ToUpper() == "PROFILE")
+                    {
+
+                    if (Html.Controller().ToUpper() == "PROFILE")
+                    {
+
+                    if (string.IsNullOrEmpty(ViewBag.ImageAvatar))
+                    {
+
+                    <div class="col-2 ml-2 user-iniciais">
+                    <span>@ViewBag.AvatarIniciais</span>
+                    @if (Convert.ToBoolean(ViewBag.Alterar))
+                    {
+                    <div class="rounded-circle profile-btn-header" onclick="popupFotoUpload.Show();"><i class="fas fa-camera"></i></div>
+                    }
+                    </div>
+                    }
+                    else
+                    {
+                    <div class="col-2 ml-2 user-img">
+                    <img class="rounded-circle" alt="Profile" src="@ViewBag.ImageAvatar">
+                    @if (Convert.ToBoolean(ViewBag.Alterar))
+                    {
+                    <div class="rounded-circle profile-btn-header" onclick="popupFotoUpload.Show();"><i class="fas fa-camera"></i></div>
+                    }
+                    </div>
+                    }
+
+                    <div class="col-md-4 ml-4">
+                    <div class="row">
+                    <h1>@ViewBag.Title</h1>
+                    </div>
+                    <div class="row">
+                    <h2>@ViewBag.SubTitle</h2>
+                    </div>
+                    </div>
+
+                    }
+                    else
+                    {
+                    if (string.IsNullOrEmpty(ViewBag.ImageAvatar))
+                    {
+                    <div class="col-2 ml-2 user-iniciais" id="col-profile">
+                    <span>@ViewBag.AvatarIniciais</span>
+                    <div class="rounded-circle profile-btn-header"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    }
+                    else
+                    {
+                    <div class="col-2 ml-2 user-img" id="col-profile">
+                    <img class="rounded-circle" alt="Profile" src="@ViewBag.ImageAvatar">
+                    <div class="rounded-circle profile-btn-header"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    }
+
+                    <div class="col-md-7 ml-4">
+                    <div class="row">
+                    <h1>@ViewBag.Title</h1>
+                    </div>
+                    <div class="row">
+                    <h2>@ViewBag.SubTitle</h2>
+                    </div>
+                    </div>
+
+                    }
+
+                    if (Html.Controller().ToUpper() == "PROFILE")
+                    {
+                    <div class="col ml-2">
+                    @using (Html.BeginForm("ChangeTheme", "Base", FormMethod.Post, new { @class = "row float-right" }))
+                    {
+                    Html.DevExpress().HyperLink(settings =>
+                    {
+                    settings.Name = "chat";
+                    settings.Theme = "COYOTE";
+                    settings.NavigateUrl = @Url.Action("Index", "Chat");
+                    settings.ControlStyle.CssClass = "button mr-3 ajust-button-profile";
+                    settings.Properties.Text = "<i class=\"fas fa-comments\"></i><span class=\"tooltip-b\">" + Resources.GlobalResource.menu_profile_lbl_1 + "</span>";
+                    settings.EncodeHtml = false;
+                    }).GetHtml()
+
+                    Html.DevExpress().HyperLink(settings =>
+                    {
+                    settings.Name = "notify";
+                    settings.Theme = "COYOTE";
+                    settings.NavigateUrl = @Url.Action("Index", "Notify");
+                    settings.ControlStyle.CssClass = "button mr-3 ajust-button-profile";
+                    settings.Properties.Text = "<i class=\"fas fa-bell\"></i><span class=\"tooltip-b\">" + Resources.GlobalResource.menu_profile_lbl_2 + "</span>";
+                    settings.EncodeHtml = false;
+                    }).GetHtml()
+
+
+                    <input type="hidden" name="Controller" value="@ViewBag.CurrentController" />
+                    <input type="submit" class="d-none" id="ChangeThemebtn" />
+
+                    if (Session["theme"].ToString() == "1")
+                    {
+                    Html.DevExpress().HyperLink(settings =>
+                    {
+                    settings.Name = "tema";
+                    settings.Theme = "COYOTE";
+                    settings.NavigateUrl = "#";
+                    settings.ControlStyle.CssClass = "button mr-3 ajust-button-profile";
+                    settings.Properties.ClientSideEvents.Click = "function(s,e){$('#ChangeThemebtn').trigger('click');}";
+                    settings.Properties.Text = "<i class=\"fas fa-adjust\"></i><span class=\"tooltip-b\">" + Resources.GlobalResource.menu_profile_lbl_4_1 + "</span>";
+                    settings.EncodeHtml = false;
+                    }).GetHtml()
+
+                    }
+                    else if (Session["theme"].ToString() == "2")
+                    {
+                    Html.DevExpress().HyperLink(settings =>
+                    {
+                    settings.Name = "tema";
+                    settings.Theme = "COYOTE";
+                    settings.NavigateUrl = "#";
+                    settings.ControlStyle.CssClass = "button mr-3 ajust-button-profile";
+                    settings.Properties.ClientSideEvents.Click = "function(s,e){$('#ChangeThemebtn').trigger('click');}";
+                    settings.Properties.Text = "<i class=\"fas fa-sun\"></i><span class=\"tooltip-b\">" + Resources.GlobalResource.menu_profile_lbl_4_2 + "</span>";
+                    settings.EncodeHtml = false;
+                    }).GetHtml()
+                    }
+
+
+
+
+
+                    Html.DevExpress().HyperLink(settings =>
+                    {
+                    settings.Name = "widgets";
+                    settings.Theme = "COYOTE";
+                    settings.NavigateUrl = @Url.Action("Index", "Widget");
+                    settings.ControlStyle.CssClass = "button mr-3 ajust-button-profile";
+                    settings.Properties.Text = "<i class=\"fas fa-columns\"></i><span class=\"tooltip-b\">Widgets</span>";
+                    settings.EncodeHtml = false;
+                    }).GetHtml()
+
+                    Html.DevExpress().HyperLink(settings =>
+                    {
+                    settings.Name = "suporte";
+                    settings.Theme = "COYOTE";
+                    settings.NavigateUrl = "https://api.whatsapp.com/send?phone=" + Resources.GlobalResource.numero_nestabot;
+                    settings.ControlStyle.CssClass = "button mr-3 ajust-button-profile";
+                    settings.Properties.Text = "<i class=\"fab fa-whatsapp\" style=\"font-weight: bold; \"></i><span class=\"tooltip-b\">" + Resources.GlobalResource.tooltip_btn_nestabot + "</span>";
+                    settings.EncodeHtml = false;
+                    }).GetHtml()
+
+                    Html.DevExpress().HyperLink(settings =>
+                    {
+                    settings.Name = "_modulos";
+                    settings.Theme = "COYOTE";
+                    settings.NavigateUrl = @Url.Action("Index", "Modulo");
+                    settings.ControlStyle.CssClass = "button mr-3 ajust-button-profile";
+                    settings.Properties.Text = "<i class=\"fas fa-window-restore\"></i><span class=\"tooltip-b\">" + Resources.GlobalResource.menu_profile_lbl_6 + "</span>";
+                    settings.EncodeHtml = false;
+                    }).GetHtml()
+
+                    Html.DevExpress().HyperLink(settings =>
+                    {
+                    settings.Name = "sobre";
+                    settings.Theme = "COYOTE";
+                    settings.NavigateUrl = "#";
+                    settings.ControlStyle.CssClass = "button ajust-button-profile";
+                    settings.Properties.Text = "<i class=\"fas fa-desktop\"></i><span class=\"tooltip-b\">" + Resources.GlobalResource.menu_profile_lbl_8 + "</span>";
+                    settings.Properties.ClientSideEvents.Click = "function(s,e){ profilePartial.Hide(); popupSobre.Show();}";
+                    settings.EncodeHtml = false;
+                    }).GetHtml()
+                    }
+                    </div>
+                    }
+                    }
+                    else
+                    {
+                    <div class="col-md-6 border-bottom header">
+
+                    <div class="row">
+                    <h1>@ViewBag.Title</h1>
+                    </div>
+
+                    <div class="row">
+                    <h2>@ViewBag.SubTitle</h2>
+                    </div>
+                    </div>
+                    }*@
+
+                    <!-- Coluna das pesquisas -->
+                    @*  RenderSection("Search", required: false)*@
+
+                </div>
+
+                <!-- Coluna do conteúdo -->
+                @* if (ViewBag.TemRolagem == null)
+                {*@
+                <div class="row mt-3">
+                    <div style="padding-right: 0; padding-left: 0;">
+                        @RenderBody()
+                    </div>
+                    @*    </div>
+                    }
+                    else
+                    {
+                    if (Convert.ToBoolean(ViewBag.TemRolagem) == true)
+                    {
+                    <div class="row mt-3 scroll render-body">
+                    <div>
+                    @RenderBody()
+                    </div>
+                    </div>
+                    }
+                    else
+                    {
+                    <div class="row mt-3">
+                    <div style="padding-right: 0; padding-left: 0;">
+                    @RenderBody()
+                    </div>
+                    </div>
+                    }
+                    }*@
+                    <!-- Linha dos botões da página -->
+                    <div class="row float-right bottom-btns">
+
+                        @*    RenderSection("Btn_Pages", required: false)*@
+
+
+                    </div>
+
+                </div>
+
+                <!-- Coluna dir perfil, logo e widgets -->
+                <div class="col-sm-2 p-5 bg-wid mt-3">
+
+                    <!-- Linha perfil e logo -->
+                    <div class="row border-bottom header">
+                        @* if (Html.Controller().ToUpper() == "HOME" || Html.Controller().ToUpper() == "PROFILE")
+                        {
+                        <!-- Coluna logo -->
+                        <div class="col-12 logo-details"></div>
+                        }
+                        else
+                        {
+                        if (string.IsNullOrEmpty(ViewBag.ImageAvatar))
+                        {
+                        <!-- Coluna perfil -->
+                        <div class="col-6 profile-iniciais" id="col-profile">
+                        <span>@ViewBag.AvatarIniciais</span>
+                        <div class="rounded-circle profile-btn-logo"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                        }
+                        else
+                        {
+                        <!-- Coluna perfil -->
+                        <div class="col-6 profile-logo" id="col-profile">
+                        <img class="rounded-circle" alt="Profile" src="@ViewBag.ImageAvatar" id="col-profile">
+                        <div class="rounded-circle profile-btn-logo"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                        }
+
+
+                        <!-- Coluna logo -->
+                        <div class="col logo-details"></div>
+                        }*@
+                    </div>
+
+
+                    <!-- Linhas widgets -->
+                    @* Html.Action("widgetViewer", "Base")*@
+
+                </div>
+            </div>
         </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @RenderSection("Scripts", required: false)
+
+</div>
+
+
+
+        <script type="text/javascript">
+
+            //$('.jquery-bottom-tooltip').tooltip({
+            //    placement: "bottom"
+            //});
+
+            //function vhTOpx(value) {
+            //    var w = window,
+            //        d = document,
+            //        e = d.documentElement,
+            //        g = d.getElementsByTagName('body')[0],
+            //        x = w.innerWidth || e.clientWidth || g.clientWidth,
+            //        y = w.innerHeight || e.clientHeight || g.clientHeight;
+
+            //    var result = (y * value) / 100;
+            //    return result;
+            //}
+
+            //$("#draggable1").draggable();
+            //$("#draggable2").draggable();
+            //$("#draggable3").draggable();
+            //$("#draggable4").draggable();
+            //$("#draggable5").draggable();
+            //$("#draggable6").draggable();
+            //$("#draggable7").draggable();
+            //$("#droppable").droppable({
+            //       drop: function (event, ui) {
+            //        var newItem = ui.draggable.find("input[name=tipoWidget]").val();
+            //        var controller = 'Html.Controller()';
+            //        var url = 'Url.Action("VincularWidget", "Base")';
+            //        url = url + "?newItemId=" + newItem + "&Controller=" + controller;
+            //        $.post(url);
+            //        location.reload();
+            //}
+            //});
+            //$(window).on("beforeunload ", function () {
+            //    LoadingPanel.Show();
+            //});
+
+
+            //let sidebar = document.querySelector(".sidebar");
+            //let divConteudo = document.querySelector("#conteudo");
+            //let searchBtn = document.querySelector(".bx-search");
+
+
+            ///*following are the code to change sidebar button(optional)*/
+            //function menuBtnChange() {
+            //    if (sidebar.classList.contains("open")) {
+            //        //closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");/*replacing the iocns class*/
+            //        closeBtn.classList.remove("bx-menu");
+            //        document.getElementById("conteudo_col1").classList.remove("col-10");
+            //        document.getElementById("conteudo_col1").classList.add("col-10_2");
+            //        closeBtn.classList.add("bx-menu-alt-right");
+            //        divConteudo.style.cssText += "padding-left:50px";
+            //        //document.getElementById("btn").style.transform = "rotate(180deg)";
+            //    } else {
+            //        //closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");/*replacing the iocns class*/
+            //        closeBtn.classList.remove("bx-menu-alt-right");
+            //        closeBtn.classList.add("bx-menu");
+            //        document.getElementById("conteudo_col1").classList.remove("col-10_2");
+            //        document.getElementById("conteudo_col1").classList.add("col-10");
+            //        divConteudo.removeAttribute("style");
+            //        //document.getElementById("btn").style.transform = "rotate(0deg)";
+            //    }
+            //}
+            //$(document).ready(function () {
+            //    $('.collapse')
+            //        .on('shown.bs.collapse', function (event) {
+            //            event.stopPropagation();
+            //            console.log("open");
+            //            $(this)
+            //                .parent()
+            //                .find(".fa-plus-square")
+            //                .removeClass("fa-plus-square")
+            //                .addClass("fa-minus-square");
+            //        }).on('hidden.bs.collapse', function (event) {
+            //            console.log("closed");
+            //            event.stopPropagation();
+            //            $(this)
+            //                .parent()
+            //                .find(".fa-minus-square")
+            //                .removeClass("fa-minus-square")
+            //                .addClass("fa-plus-square");
+            //        });
+            //});
+
+            //function AlertaFeedback(tipo, msg) {
+            //    $("#myModal").modal();
+
+            //}
+
+            //function ShowHide(item) {
+            //    var x = document.getElementById(item);
+            //    if (x.style.display === "none") {
+            //        x.style.display = "block";
+            //    } else {
+            //        x.style.display = "none";
+            //    }
+            //}
+
+        </script>
+
+
+
+        @*
+        Scripts.Render("~/bundles/bootstrap")
+        RenderSection("scripts", required: false)
+
+        if (ViewBag.JavaScriptFunction != null)
+        {
+        <script type="text/javascript">
+        @Html.Raw(ViewBag.JavaScriptFunction)
+        </script>
+
+        }*@
 </body>
 </html>

@@ -1,0 +1,131 @@
+﻿@*@using DevExtreme.AspNet.Mvc*@
+@using Microsoft.AspNetCore.Mvc.Localization
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+
+    <div class="col-12">
+        <h5 class="ml-3 border-bottom pb-1">Componente</h5>
+        <a href="#" id="btnOpenModalInsertEditComponent" class="button">
+            <i class="fas fa-times"></i>
+            <span class="tooltip">Novo</span>
+        </a>
+
+        <div class="card-body" style="height: 500px; overflow: auto;">
+            <div id="gridContainer"></div>
+
+        </div>
+    </div>
+
+
+
+</div>
+
+<!-- INICIO - MODAL - INSERT/EDIT COMPONENT -->
+<div class="modal fade modal-component" id="modalInsertEditComponent" style="z-index:999999 !important;width: 125%;" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content popupComponent" style="width:952px;height:560px">
+
+            <div class="modal-header border-0 p-0 pr-2">
+                <button type="button" class="close" data-dismiss="modal"
+                        style="z-index: 99999999999999999999999;color:#c8c8c8;position: absolute;top: 5%;right: 7%;cursor:pointer;">
+                    &times;
+                </button>
+            </div>
+            <div class="modal-body" style="top: -1vh;left: 0;padding: 50px; padding-top: 85px;  padding-bottom: 60px;">
+                <div class="row">
+                    < class="col-12">
+                    <p class="popupComponent" style="text-align:center">
+                        Componente - Contratos Commodities Etanol
+                    </p>
+
+                    
+                </div>
+            </div>
+
+
+
+
+            <div class="container-fluid" style="padding: 0;">
+
+                <div class="container" style="padding: 0;">
+
+                    <div class="row mb-3">
+
+                        <div class="col-c3 gutter-margin-1" style="border: 1px solid;">
+                            <div class="c-left">
+                                <label>ID</label>
+                            </div>
+                            <div class="c-right">
+                                <input type="text" id="txtComponentId" class="text-right" placeholder="" />
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row mb-3">
+
+                        <div class="col-c3 gutter-margin-1" style="border: 1px solid;">
+                            <div class="c-left">
+                                <label>Modelo</label>
+                            </div>
+                            <div class="c-right">
+                                <select id="cbModelo" class="text-right" placeholder=""></select>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row mb-3">
+
+                        <div class="col-c3 gutter-margin-1" style="border: 1px solid;">
+                            <div class="c-left">
+                                <label>Componente</label>
+                            </div>
+                            <div class="c-right">
+                                <input type="text" id="txtComponenteDescricao" class="text-right" placeholder="" />
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row mb-3">
+
+                        <div class="col-c3 gutter-margin-1" style="border: 1px solid;">
+                            <div class="c-left">
+                                <label>Classe</label>
+                            </div>
+                            <div class="c-right">
+                                <select id="cbComponenteClasse" class="text-right" placeholder=""></select>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <div class="row">
+                <a href="#" id="btnCloseInsertComponent" class="button">
+                    <i class="fas fa-times"></i>
+                    <span class="tooltip">Cancelar</span>
+                </a>
+                <a href="#" id="btnInsertComponent" class="button">
+                    <i class="fas fa-save"></i>
+                    <span class="tooltip">Salvar</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script src="~/js/component/component.js"></script>

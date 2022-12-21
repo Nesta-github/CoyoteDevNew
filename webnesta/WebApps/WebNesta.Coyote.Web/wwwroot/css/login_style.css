@@ -774,6 +774,8 @@ i.erro {
     color: #82BBEF;
 }
 
+/* *************** */
+
 /*------------- POP-UP - Recuperar Senha ---------------*/
 .popupRecoveryPassword:not(p) {
     border-radius: 35px;

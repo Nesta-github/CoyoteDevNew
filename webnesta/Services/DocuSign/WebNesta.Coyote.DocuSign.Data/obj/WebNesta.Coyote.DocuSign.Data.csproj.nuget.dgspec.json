@@ -23,6 +23,8 @@
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Users\\Public\\Documents\\DevExpress Demos 20.1\\DevExtreme\\ASP.NET MVC Controls\\DevAV\\NuGet": {},
+          "E:\\DevExpress 20.1\\Components\\System\\Components\\packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

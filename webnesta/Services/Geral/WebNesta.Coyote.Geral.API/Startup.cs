@@ -15,6 +15,7 @@ using WebNesta.Coyote.Geral.Data;
 using WebNesta.Coyote.Geral.Domain;
 using WebNesta.Coyote.Geral.Domain.Service;
 
+
 namespace WebNesta.Coyote.Geral.API
 {
     public class Startup

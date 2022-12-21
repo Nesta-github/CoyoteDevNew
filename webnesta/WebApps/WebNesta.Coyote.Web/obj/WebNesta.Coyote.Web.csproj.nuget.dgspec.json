@@ -23,6 +23,8 @@
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Users\\Public\\Documents\\DevExpress Demos 20.1\\DevExtreme\\ASP.NET MVC Controls\\DevAV\\NuGet": {},
+          "E:\\DevExpress 20.1\\Components\\System\\Components\\packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -41,6 +43,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "DevExtreme.AspNet.Core": {
+              "target": "Package",
+              "version": "[20.1.7, )"
+            },
             "GoogleAuthenticator": {
               "target": "Package",
               "version": "[2.2.0, )"
