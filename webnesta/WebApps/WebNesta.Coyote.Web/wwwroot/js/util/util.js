@@ -138,6 +138,24 @@
                 }
             });
         }
+    },
+    Loading: function (event, isShow) {
+                if (isShow) {
+                    $("#dvLoading").show()
+                }
+                else {
+                    $("#dvLoading").hide()
+                }
+    },
+    Html: {
+        FillCombo: function (event, comboId, dataSource) {
+         
+            console.log(dataSource)
+            $.each(dataSource, function (key, value) {
+                
+                $(comboId).append($("<option></option>").val(value.id).html(value.descricao));
+            });
+        }
     }
 }
 
@@ -152,7 +170,7 @@ var modal =
         dvModalError: '#dvModalError',
         dvModalTitleError: '#dvModalTitleError',
         dvModalMessageError: '#dvModalMessageError',
-        ShowModal: function (event, isSuccess, message) {
+        ShowModal: function (isSuccess, message) {
 
             $(modal.validate.dvModalMessageSuccess).hide();
             $(modal.validate.dvModalMessageError).hide();
@@ -164,7 +182,7 @@ var modal =
             $(modal.validate.id).modal('show');
 
             setTimeout(function (event) {
-
+                console.log(modal.validate);
                 if (isSuccess) {
                     $(modal.validate.dvModalSuccess).show();
                     $(modal.validate.dvModalMessageSuccess).html(message);
@@ -180,6 +198,9 @@ var modal =
                 }
             }, 200)
         },
+        ShowModalDecision: function (isSuccess, headerLabel, successCallback) {
+            
+        }
     }
 
 }

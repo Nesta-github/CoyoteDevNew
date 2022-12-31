@@ -24,14 +24,13 @@ namespace WebNesta.Coyote.Web.Services
 
         public async Task<ResponseResultGeneric<ICollection<Component>>> GetAllComponent()
         {
-            var response = await _httpClient.GetAsync($"/component/GetAllComponent");
+           var response = await _httpClient.GetAsync($"/component/GetAllComponent");
             ResponseResultGeneric<ICollection<Component>> responseModel = null;
 
             TratarErrosResponse(response);
-           
-           
-              responseModel = await DeserializarObjetoResponse<ResponseResultGeneric<ICollection<Component>>>(response);
-           
+
+            responseModel = await DeserializarObjetoResponse<ResponseResultGeneric<ICollection<Component>>>(response);
+
             //  DeserializarObjetoResponse<ResponseResult>(response);
 
             //return new ResponseResult() { Title = result };
@@ -40,16 +39,82 @@ namespace WebNesta.Coyote.Web.Services
 
         public Task InsertComponent(ComponentViewModel componentViewModel)
         {
-            throw new NotImplementedException();
+            // await _httpClient.($"/component/Delete");
+            //DataComponentViewModel responseModel = null;
+
+            // TratarErrosResponse(response);
+
+
+            //responseModel = await DeserializarObjetoResponse<DataComponentViewModel>(response);
+
+            //  DeserializarObjetoResponse<ResponseResult>(response);
+
+            return null;
         }
 
         public Task UpdateComponent(ComponentViewModel componentViewModel)
         {
-            throw new NotImplementedException();
+            // await _httpClient.DeleteAsync($"/component/Delete");
+            //DataComponentViewModel responseModel = null;
+
+            // TratarErrosResponse(response);
+
+
+            //responseModel = await DeserializarObjetoResponse<DataComponentViewModel>(response);
+
+            //  DeserializarObjetoResponse<ResponseResult>(response);
+
+            //return new ResponseResult() { Title = result };
+            return null;
         }
         public Task DeleteComponent(int id)
         {
-            throw new NotImplementedException();
+            // await _httpClient.DeleteAsync($"/component/Delete");
+            //DataComponentViewModel responseModel = null;
+
+            // TratarErrosResponse(response);
+
+
+            //responseModel = await DeserializarObjetoResponse<DataComponentViewModel>(response);
+
+            //  DeserializarObjetoResponse<ResponseResult>(response);
+
+            //return new ResponseResult() { Title = result };
+            return null;
+        }
+
+        public async Task<ResponseResultGeneric<DataComponentViewModel>> GetData()
+        {
+            var response = await _httpClient.GetAsync($"/component/GetData");
+            ResponseResultGeneric<DataComponentViewModel>  responseModel = null;
+
+            TratarErrosResponse(response);
+
+
+            responseModel = await DeserializarObjetoResponse<ResponseResultGeneric<DataComponentViewModel>>(response);
+
+            //  DeserializarObjetoResponse<ResponseResult>(response);
+
+            //return new ResponseResult() { Title = result };
+            return responseModel;
+        }
+
+        public async Task<ResponseResultGeneric<ICollection<Component>>> GetComponentSearch(string term)
+        {
+            var response = string.IsNullOrEmpty(term) ? 
+                await _httpClient.GetAsync($"/component/GetAllComponent")
+                : await _httpClient.GetAsync($"/component/search/{term}");
+
+            ResponseResultGeneric<ICollection<Component>> responseModel = null;
+
+            TratarErrosResponse(response);
+
+            responseModel = await DeserializarObjetoResponse<ResponseResultGeneric<ICollection<Component>>>(response);
+
+            //  DeserializarObjetoResponse<ResponseResult>(response);
+
+            //return new ResponseResult() { Title = result };
+            return responseModel;
         }
     }
 }

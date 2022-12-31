@@ -7,8 +7,10 @@ namespace WebNesta.Coyote.Componente.Domain.Service
     public interface IComponentService<T>
     {
         Task<ValidateViewModel> DeleteComponent(int id);
-        Task<ICollection<T>> GetAllComponent();
+        ICollection<T> GetAllComponent();
         Task<ValidateViewModel> InsertComponent(ComponentViewModel model);
         Task<ValidateViewModel> UpdateComponent(ComponentViewModel model);
+        DataComponentViewModel GetData();
+        ICollection<T> GetComponentSearch(string term);
     }
 }

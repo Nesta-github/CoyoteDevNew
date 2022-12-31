@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using WebNesta.Coyote.Componente.Data;
 using WebNesta.Coyote.Componente.Domain;
 using WebNesta.Coyote.Componente.Domain.Service;
+using WebNesta.Coyote.Componente.Domain.ViewModel;
 using WebNesta.Coyote.Core.Data;
 
 namespace WebNesta.Coyote.Componente.API
@@ -30,8 +31,7 @@ namespace WebNesta.Coyote.Componente.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IComponentService<CHCOMPOT>, ComponentService>();
-            services.AddScoped<IComponentRepository<CHCOMPOT>, ComponentRepository>();
-
+            services.AddScoped<IComponentRepository<CHCOMPOT, ValidateViewModel, ComponentViewModel>, ComponentRepository>();
 
             services.AddCors();
             services.AddControllers();

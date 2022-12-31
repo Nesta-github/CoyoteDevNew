@@ -10,6 +10,8 @@ namespace WebNesta.Coyote.Web.Services
     {
         Task DeleteComponent(int id);
         Task<ResponseResultGeneric<ICollection<Component>>> GetAllComponent();
+        Task<ResponseResultGeneric<ICollection<Component>>> GetComponentSearch(string term);
+        Task<ResponseResultGeneric<DataComponentViewModel>> GetData();
         Task InsertComponent(ComponentViewModel componentViewModel);
         Task UpdateComponent(ComponentViewModel componentViewModel);
     }

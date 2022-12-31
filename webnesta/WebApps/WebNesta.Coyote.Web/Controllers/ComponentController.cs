@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Localization;
+using Microsoft.Extensions.Primitives;
 using System.Linq;
 using System.Threading.Tasks;
 using WebNesta.Coyote.Geral.Domain.ViewModel;
@@ -29,10 +30,25 @@ namespace WebNesta.Coyote.Web.Controllers
         }
 
         [HttpGet]
-        [Route("component/GetAllComponent")]
-        public async Task<IActionResult> GetAllComponent()
+        [Route("component/GetData")]
+        public async Task<IActionResult> GetData()
         {
-            var model = await _componentService.GetAllComponent();
+            
+            
+            var modelGrid = await _componentService.GetAllComponent();
+            var model = await _componentService.GetData();
+            model.Result.Componentes = modelGrid.Result.ToList();
+            return Json(model);
+        }
+        
+        [HttpGet]
+        [Route("component/search")]
+        public async Task<IActionResult> Search(string term)
+        {
+            if (term == null) term = string.Empty;
+
+            var model = await _componentService.GetComponentSearch(term);
+          
             return Json(model);
         }
 

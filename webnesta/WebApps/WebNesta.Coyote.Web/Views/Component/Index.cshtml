@@ -9,14 +9,28 @@
 <div class="row">
 
     <div class="col-12">
-        <h5 class="ml-3 border-bottom pb-1">Componente</h5>
+
         <a href="#" id="btnOpenModalInsertEditComponent" class="button">
             <i class="fas fa-times"></i>
             <span class="tooltip">Novo</span>
+
         </a>
+
 
         <div class="card-body" style="height: 500px; overflow: auto;">
             <div id="gridContainer"></div>
+            <div class="row" style="background: #F5F5F5;border-radius: 0px 0px 10px 10px;height: 43px;border:1px solid black">
+                <div class="col-12 text-right">
+                    <a href="#" style="float: left;" id="btnRefreshGrid" class="button">
+                        <i class="fas fa-times"></i>
+                        <span class="tooltip">Atualizar</span>
+                    </a>
+                    <a href="#" style="float: left;" id="btnExportGrid" class="button">
+                        <i class="fas fa-save"></i>
+                        <span class="tooltip">Exportar</span>
+                    </a>
+                </div>
+            </div>
 
         </div>
     </div>
@@ -38,94 +52,84 @@
             </div>
             <div class="modal-body" style="top: -1vh;left: 0;padding: 50px; padding-top: 85px;  padding-bottom: 60px;">
                 <div class="row">
-                    < class="col-12">
-                    <p class="popupComponent" style="text-align:center">
-                        Componente - Contratos Commodities Etanol
-                    </p>
-
-                    
-                </div>
-            </div>
-
-
-
-
-            <div class="container-fluid" style="padding: 0;">
-
-                <div class="container" style="padding: 0;">
-
-                    <div class="row mb-3">
-
-                        <div class="col-c3 gutter-margin-1" style="border: 1px solid;">
-                            <div class="c-left">
-                                <label>ID</label>
-                            </div>
-                            <div class="c-right">
-                                <input type="text" id="txtComponentId" class="text-right" placeholder="" />
-                            </div>
-                        </div>
-
+                    <div class="col-12">
+                        <p class="popupComponent" style="text-align:center">
+                            Componente - Contratos Commodities Etanol
+                        </p>
                     </div>
-
-                    <div class="row mb-3">
-
-                        <div class="col-c3 gutter-margin-1" style="border: 1px solid;">
-                            <div class="c-left">
-                                <label>Modelo</label>
-                            </div>
-                            <div class="c-right">
-                                <select id="cbModelo" class="text-right" placeholder=""></select>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="row mb-3">
-
-                        <div class="col-c3 gutter-margin-1" style="border: 1px solid;">
-                            <div class="c-left">
-                                <label>Componente</label>
-                            </div>
-                            <div class="c-right">
-                                <input type="text" id="txtComponenteDescricao" class="text-right" placeholder="" />
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="row mb-3">
-
-                        <div class="col-c3 gutter-margin-1" style="border: 1px solid;">
-                            <div class="c-left">
-                                <label>Classe</label>
-                            </div>
-                            <div class="c-right">
-                                <select id="cbComponenteClasse" class="text-right" placeholder=""></select>
-                            </div>
-                        </div>
-
-                    </div>
-
-
                 </div>
 
-            </div>
+                <div class="container-fluid" style="padding: 0;">
+                    <div class="container" style="padding: 0;">
+
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <div class="input_coyote">
+                                    <label for="txtComponentId">ID:</label><br>
+                                    <input type="text" id="txtComponentId" style="width: 317px;background-color: #F5F5F5 !important;" placeholder="Id" readonly>
+                                </div>
+                            </div>
+                            <div class="col-6">
+
+                                <div class="input_coyote">
+                                    <label for="cbModelo">Modelo:</label><br>
+                                    <select id="cbModelo" placeholder="Modelo" style="width: 317px;"></select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-12">
+                                <div class="input_coyote">
+                                    <label for="txtComponenteDescricao">Componente:</label><br>
+                                    <input type="text" id="txtComponenteDescricao" style="width: 771.41px;" placeholder="Componente">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-12">
+                                <div class="input_coyote">
+                                    <label for="cbComponenteClasse">Classe:</label><br>
+                                    <select id="cbComponenteClasse" style="width: 771.41px;" placeholder="Classe"></select>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <a href="#" id="btnCloseInsertComponent" class="button">
+                                <i class="fas fa-times"></i>
+                                <span class="tooltip">Cancelar</span>
+                            </a>
+                            <a href="#" id="btnInsertComponent" class="button">
+                                <i class="fas fa-save"></i>
+                                <span class="tooltip">Salvar</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
 
 
-            <div class="row">
-                <a href="#" id="btnCloseInsertComponent" class="button">
-                    <i class="fas fa-times"></i>
-                    <span class="tooltip">Cancelar</span>
-                </a>
-                <a href="#" id="btnInsertComponent" class="button">
-                    <i class="fas fa-save"></i>
-                    <span class="tooltip">Salvar</span>
-                </a>
             </div>
         </div>
     </div>
 </div>
-</div>
+
+<!-- Export to Excel - DEVX -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.4.0/polyfill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.1.1/exceljs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>
+<!-- --------------------------------- -->
+<!-- Export to Pdf - DEVX -->
+
+@*<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.0.0/jspdf.umd.min.js"></script>*@
+
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.14/jspdf.plugin.autotable.min.js"></script>
+
+<!-- --------------------------------- -->
+<script src="~/js/footerGrid.js"></script>
 
 <script src="~/js/component/component.js"></script>

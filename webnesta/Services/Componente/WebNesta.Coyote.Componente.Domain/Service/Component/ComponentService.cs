@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using WebNesta.Coyote.Componente.Domain.ViewModel;
@@ -19,7 +21,7 @@ namespace WebNesta.Coyote.Componente.Domain.Service
             _repository = repository;
         }
 
-        public Task<ValidateViewModel> DeleteComponent(int id)
+        public async Task<ValidateViewModel> DeleteComponent(int id)
         {
             ValidateViewModel validateModel = null;
 
@@ -36,12 +38,40 @@ namespace WebNesta.Coyote.Componente.Domain.Service
             return validateModel;
         }
 
-        public Task<ICollection<CHCOMPOT>> GetAllComponent()
+        public ICollection<CHCOMPOT> GetAllComponent()
         {
-            return await _repository.GetAllComponent();
+            return _repository.GetAllComponent();
         }
 
-        public Task<ValidateViewModel> InsertComponent(ComponentViewModel model)
+        public ICollection<CHCOMPOT> GetComponentSearch(string term)
+        {
+            return !string.IsNullOrEmpty(term) ?  _repository.GetComponentSearch(term) : _repository.GetAllComponent();
+        }
+
+        public DataComponentViewModel GetData()
+        {
+            var model = new DataComponentViewModel();
+
+            var classesDictionary = _repository.GetClasseCombo();
+            var modelosDictionary = _repository.GetModelosCombo();
+
+            var classes = new List<Classe>();
+            var modelos = new List<Modelo>();
+
+            foreach(var classe in classesDictionary.ToList())
+            {
+                classes.Add(new Classe() { Id = classe.Key, Descricao = classe.Value });
+            }
+
+            foreach(var modelo in modelosDictionary.ToList())
+            {
+                modelos.Add(new Modelo() { Id = modelo.Key, Descricao = modelo.Value });
+            }
+
+            return model;
+        }
+
+        public async Task<ValidateViewModel> InsertComponent(ComponentViewModel model)
         {
             ValidateViewModel validateModel = null;
 
@@ -58,7 +88,7 @@ namespace WebNesta.Coyote.Componente.Domain.Service
             return validateModel;
         }
 
-        public Task<ValidateViewModel> UpdateComponent(ComponentViewModel model)
+        public async Task<ValidateViewModel> UpdateComponent(ComponentViewModel model)
         {
             ValidateViewModel validateModel = null;
 
