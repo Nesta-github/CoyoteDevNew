@@ -1,8 +1,94 @@
-﻿var util =
+﻿var globalModal = {
+    lang: navigator.language
+}
+var modal =
+{
+    validate:
+    {
+        id: '#myModal',
+        dvModalSuccess: '#dvModalSuccess',
+        dvModalTitleSuccess: '#dvModalTitleSuccess',
+        dvModalMessageSuccess: '#dvModalMessageSuccess',
+        dvModalError: '#dvModalError',
+        dvModalTitleError: '#dvModalTitleError',
+        dvModalMessageError: '#dvModalMessageError',
+        ShowModal: function (isSuccess, message) {
+
+            $(modal.validate.dvModalMessageSuccess).hide();
+            $(modal.validate.dvModalMessageError).hide();
+            $(modal.validate.dvModalSuccess).hide();
+            $(modal.validate.dvModalError).hide();
+            $(modal.validate.dvModalTitleSuccess).hide();
+            $(modal.validate.dvModalTitleError).hide();
+
+            $(modal.validate.id).modal('show');
+
+            setTimeout(function (event) {
+                console.log('sucesso: ' + isSuccess)
+                if (isSuccess) {
+                    $(modal.validate.dvModalSuccess).show();
+                    $(modal.validate.dvModalMessageSuccess).html(message);
+                    $(modal.validate.dvModalTitleSuccess).fadeIn('slow', 'linear');
+                    $(modal.validate.dvModalMessageSuccess).fadeIn('slow', 'linear');
+
+                }
+                else {
+                    $(modal.validate.dvModalError).show();
+                    $(modal.validate.dvModalMessageError).html(message);
+                    $(modal.validate.dvModalTitleError).fadeIn('slow', 'linear');
+                    $(modal.validate.dvModalMessageError).fadeIn('slow', 'linear');
+                }
+            }, 200)
+        },
+        ShowModalDecision: function (isSuccess, headerLabel, successCallback) {
+
+        }
+    },
+    decision:
+    {
+        id: '#myModalDecision',
+        hfDecisionId: '#hfDecisionId',
+        dvModalDecision: '#dvModalDecision',
+        dvModalTitleDecision: '#dvModalTitleDecision',
+        dvModalMessageDecision: '#dvModalMessageDecision',
+        CallbackDecision: null,
+        btnOkDecision: '#btnOkDecision',
+        btnCancelDecision: '#btnCancelDecision',
+        ShowModal: function (type, message) {
+           
+            if (type == 'error') {
+              
+                $(modal.decision.dvModalDecision).removeClass('sucesso');
+                $(modal.decision.dvModalDecision).addClass('modal-content popupAlertaFeedback erro');
+                $(modal.decision.dvModalDecision).show();
+                $(modal.decision.dvModalMessageDecision).html(message);
+                $(modal.decision.dvModalTitleDecision).fadeIn('slow', 'linear');
+                $(modal.decision.dvModalMessageDecision).fadeIn('slow', 'linear');
+
+                $(modal.decision.id).modal('show');
+
+            }
+            if (type == 'success') {
+                $(modal.decision.dvModalDecision).removeClass('erro');
+                $(modal.decision.dvModalDecision).addClass('modal-content popupAlertaFeedback sucesso');
+                $(modal.decision.dvModalDecision).show();
+                $(modal.decision.dvModalMessageDecision).html(message);
+                $(modal.decision.dvModalTitleDecision).fadeIn('slow', 'linear');
+                $(modal.decision.dvModalMessageDecision).fadeIn('slow', 'linear');
+
+                $(modal.decision.id).modal('show');
+            }
+            if (type == 'warning') { }
+        }
+    }
+}
+
+
+var util =
 {
     Validate:
     {
-        FieldIsNotEmpy: function (field) { return ($(field).val().length > 0); },
+        FieldIsNotEmpy: function (field) { return ($(field).val() != null && $(field).val().length > 0); },
         FieldMaxLength: function (max, field) {
             var isValidFieldLength = true;
 
@@ -137,6 +223,36 @@
 
                 }
             });
+        },
+        PutRequest: async function (event, url, model, callback) {
+
+            $.ajax({
+                url: url,
+                type: "PUT",
+                datatype: "json",
+                data: model,
+                contentType: 'application/x-www-form-urlencoded',
+                //contentType: "application/json;",
+                success: callback,
+                error: function (error) {
+
+                }
+            });
+        },
+        DeleteRequest: async function (event, url, model, callback) {
+
+            $.ajax({
+                url: url,
+                type: "DELETE",
+                datatype: "json",
+                data: model,
+                contentType: 'application/x-www-form-urlencoded',
+                //contentType: "application/json;",
+                success: callback,
+                error: function (error) {
+
+                }
+            });
         }
     },
     Loading: function (event, isShow) {
@@ -149,8 +265,7 @@
     },
     Html: {
         FillCombo: function (event, comboId, dataSource) {
-         
-            console.log(dataSource)
+           
             $.each(dataSource, function (key, value) {
                 
                 $(comboId).append($("<option></option>").val(value.id).html(value.descricao));
@@ -158,55 +273,11 @@
         }
     }
 }
-
-var modal =
-{
-    validate:
-    {
-        id: '#myModal',
-        dvModalSuccess: '#dvModalSuccess',
-        dvModalTitleSuccess: '#dvModalTitleSuccess',
-        dvModalMessageSuccess: '#dvModalMessageSuccess',
-        dvModalError: '#dvModalError',
-        dvModalTitleError: '#dvModalTitleError',
-        dvModalMessageError: '#dvModalMessageError',
-        ShowModal: function (isSuccess, message) {
-
-            $(modal.validate.dvModalMessageSuccess).hide();
-            $(modal.validate.dvModalMessageError).hide();
-            $(modal.validate.dvModalSuccess).hide();
-            $(modal.validate.dvModalError).hide();
-            $(modal.validate.dvModalTitleSuccess).hide();
-            $(modal.validate.dvModalTitleError).hide();
-
-            $(modal.validate.id).modal('show');
-
-            setTimeout(function (event) {
-                console.log(modal.validate);
-                if (isSuccess) {
-                    $(modal.validate.dvModalSuccess).show();
-                    $(modal.validate.dvModalMessageSuccess).html(message);
-                    $(modal.validate.dvModalTitleSuccess).fadeIn('slow', 'linear');
-                    $(modal.validate.dvModalMessageSuccess).fadeIn('slow', 'linear');
-
-                }
-                else {
-                    $(modal.validate.dvModalError).show();
-                    $(modal.validate.dvModalMessageError).html(message);
-                    $(modal.validate.dvModalTitleError).fadeIn('slow', 'linear');
-                    $(modal.validate.dvModalMessageError).fadeIn('slow', 'linear');
-                }
-            }, 200)
-        },
-        ShowModalDecision: function (isSuccess, headerLabel, successCallback) {
-            
-        }
-    }
-
-}
+     //modal.decision.ShowModal('error');   
 
 var crudMode =
 {
     isInsert: true,
     editedId: 0
 }
+

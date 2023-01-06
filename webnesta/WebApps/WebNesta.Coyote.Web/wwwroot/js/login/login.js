@@ -1,6 +1,4 @@
-﻿var globalModal = {
-    lang: navigator.language
-}
+﻿
 
 var viewModel = {
     usuario: "#txtLogin",
@@ -309,7 +307,7 @@ var view = {
     }
 }
 
-var model = {
+var masPageModel = {
     ValidateForm: function (event) {
         var isFormValid =
             (util.Validate.FieldIsNotEmpy(viewModel.usuario) &&
@@ -322,8 +320,8 @@ var model = {
     Login: async function (event) {
 
         ////EXIBIR MODAL
-        var formValidate = model.ValidateForm(event);
-        var formValidateCaptcha = model.ValidateCaptchaForm(event);
+        var formValidate = masPageModel.ValidateForm(event);
+        var formValidateCaptcha = masPageModel.ValidateCaptchaForm(event);
         var errorMessage = '';
        
         if (!formValidate) {
@@ -343,14 +341,14 @@ var model = {
         }
         else {
 
-            model.ValidateCaptcha(event)
+            masPageModel.ValidateCaptcha(event)
             //await controller.PostDataLogin(event);
         }
     },
     RecoveryPassword: async function (event) {
 
         ////EXIBIR MODAL
-        if (!model.ValidateFormRecoveryPassword(event)) {
+        if (!masPageModel.ValidateFormRecoveryPassword(event)) {
             view.LoadingComponent(event, false);
             view.ShowModal(event, false, $(messages.hfEmailDeveSerPreenchido).val());
         }
@@ -361,7 +359,7 @@ var model = {
             }
             else
                 //POST
-                await controller.PostDataRecoveryPassword(event);
+                await masterPageController.PostDataRecoveryPassword(event);
         }
     },
     DataLoadCallback: function (data) {
@@ -458,7 +456,7 @@ var model = {
         var codeCaptcha =
             util.Session.getLocalStorageItem($(uiViewModel.storage.catpchaCodeKey).val());
 
-        if (model.ValidateCaptchaForm(event)) {
+        if (masPageModel.ValidateCaptchaForm(event)) {
 
             if ($(uiViewModel.captcha.txtCaptcha).val() == codeCaptcha) {
                 await util.Request.GetRequest(event, url.getValidateCaptcha + "?oldCaptcha=" + $(uiViewModel.storage.catpchaCodeKey).val(),
@@ -556,7 +554,7 @@ var model = {
             }
             else {
                 await util.Request.GetRequest(event, url.getRefreshCaptcha + "?oldCaptcha=" + $(uiViewModel.storage.catpchaCodeKey).val()
-                    , model.RefreshCaptchaCallback);
+                    , masPageModel.RefreshCaptchaCallback);
                 view.ShowModal(event, false, $(messages.hfCampoCodigoCaptchaInformadoDiferente).val());
             }
         }
@@ -606,21 +604,21 @@ var model = {
     }
 }
 
-var controller = {
+var masterPageController = {
     Init: function (event) {
-        controller.GetDataLogin(event);
+        masterPageController.GetDataLogin(event);
 
     },
     GetDataLogin: async function (event) {
-        await util.Request.GetRequest(event, url.getDataLogin, model.DataLoadCallback);
+        await util.Request.GetRequest(event, url.getDataLogin, masPageModel.DataLoadCallback);
     },
     RegisterEvents: async function (event) {
 
-        $(uiViewModel.btnLogin).click(function (event) { view.LoadingComponent(event, true); model.Login(event); });
+        $(uiViewModel.btnLogin).click(function (event) { view.LoadingComponent(event, true); masPageModel.Login(event); });
 
         $(uiViewModel.btnEsqueciMinhaSenha).click(function (event) { view.ShowModalRecoveryPassword(event); });
 
-        $(uiViewModel.btnRecuperarSenha).click(function (event) { model.RecoveryPassword(event); });
+        $(uiViewModel.btnRecuperarSenha).click(function (event) { masPageModel.RecoveryPassword(event); });
 
         $(uiViewModel.btnCancelarRecuperarSenha).click(function (event) { view.CloseModalRecoveryPassword(event); });
 
@@ -630,14 +628,14 @@ var controller = {
 
         $(uiViewModel.captcha.lkbRefreshCaptcha).click(async function (event) {
             await util.Request.GetRequest(event, url.getRefreshCaptcha + "?oldCaptcha=" + $(uiViewModel.storage.catpchaCodeKey).val()
-                , model.RefreshCaptchaCallback);
+                , masPageModel.RefreshCaptchaCallback);
         });
 
         $(uiViewModel.captcha.btnEntraCaptcha).click(async function (event) {
 
             var codeCaptcha =
                 util.Session.getLocalStorageItem($(uiViewModel.storage.catpchaCodeKey).val());
-            if (model.ValidateCaptchaForm(event)) {
+            if (masPageModel.ValidateCaptchaForm(event)) {
 
                 if ($(uiViewModel.captcha.txtCaptcha).val() == codeCaptcha) {
                     await util.Request.GetRequest(event, url.getValidateCaptcha + "?oldCaptcha=" + $(uiViewModel.storage.catpchaCodeKey).val()
@@ -650,7 +648,7 @@ var controller = {
                 }
                 else {
                     await util.Request.GetRequest(event, url.getRefreshCaptcha + "?oldCaptcha=" + $(uiViewModel.storage.catpchaCodeKey).val()
-                        , model.RefreshCaptchaCallback);
+                        , masPageModel.RefreshCaptchaCallback);
                     view.ShowModal(event, false, $(messages.hfCampoCodigoCaptchaInformadoDiferente).val());
                 }
             }
@@ -774,7 +772,7 @@ var controller = {
 
         $(uiViewModel.MFA.btnValidaGoogleAuth).click(async function (event) {
 
-            if (model.ValidateGoogleAuthForm(event)) {
+            if (masPageModel.ValidateGoogleAuthForm(event)) {
                 await util.Request.GetRequest(event, url.getValidateGoogleAuth
                     + "?"
                     + "userUniqueKey=" + $(uiViewModel.MFA.hfUserUniqueKey).val()
@@ -815,7 +813,7 @@ var controller = {
             $(uiViewModel.captcha.txtCaptcha).text('');
 
             await util.Request.GetRequest(event, url.getRefreshCaptcha + "?oldCaptcha=" + $(uiViewModel.storage.catpchaCodeKey).val()
-                , model.RefreshCaptchaCallback);
+                , masPageModel.RefreshCaptchaCallback);
         });
 
 
@@ -915,8 +913,8 @@ var events =
         view.LoadingComponent(event, true);
 
         $(document).ready(function (event) {
-            controller.Init(event);
-            controller.RegisterEvents(event);
+            masterPageController.Init(event);
+            masterPageController.RegisterEvents(event);
         });
     }
 }

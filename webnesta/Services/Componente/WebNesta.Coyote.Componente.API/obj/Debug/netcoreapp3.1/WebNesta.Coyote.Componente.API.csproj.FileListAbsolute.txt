@@ -1,9 +1,3 @@
-E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Componente\WebNesta.Coyote.Componente.API\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Componente.API.csproj.AssemblyReference.cache
-E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Componente\WebNesta.Coyote.Componente.API\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Componente.API.GeneratedMSBuildEditorConfig.editorconfig
-E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Componente\WebNesta.Coyote.Componente.API\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Componente.API.AssemblyInfoInputs.cache
-E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Componente\WebNesta.Coyote.Componente.API\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Componente.API.AssemblyInfo.cs
-E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Componente\WebNesta.Coyote.Componente.API\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Componente.API.csproj.CoreCompileInputs.cache
-E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Componente\WebNesta.Coyote.Componente.API\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Componente.API.MvcApplicationPartsAssemblyInfo.cache
 E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Componente\WebNesta.Coyote.Componente.API\bin\Debug\netcoreapp3.1\appsettings.Development.json
 E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Componente\WebNesta.Coyote.Componente.API\bin\Debug\netcoreapp3.1\appsettings.json
 E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Componente\WebNesta.Coyote.Componente.API\bin\Debug\netcoreapp3.1\WebNesta.Coyote.Componente.API.exe
@@ -30,6 +24,12 @@ E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Componente\WebNesta.Coyote.Compone
 E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Componente\WebNesta.Coyote.Componente.API\bin\Debug\netcoreapp3.1\WebNesta.Coyote.Core.pdb
 E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Componente\WebNesta.Coyote.Componente.API\bin\Debug\netcoreapp3.1\WebNesta.Coyote.Componente.Data.pdb
 E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Componente\WebNesta.Coyote.Componente.API\bin\Debug\netcoreapp3.1\WebNesta.Coyote.Componente.Domain.pdb
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Componente\WebNesta.Coyote.Componente.API\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Componente.API.csproj.AssemblyReference.cache
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Componente\WebNesta.Coyote.Componente.API\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Componente.API.GeneratedMSBuildEditorConfig.editorconfig
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Componente\WebNesta.Coyote.Componente.API\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Componente.API.AssemblyInfoInputs.cache
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Componente\WebNesta.Coyote.Componente.API\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Componente.API.AssemblyInfo.cs
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Componente\WebNesta.Coyote.Componente.API\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Componente.API.csproj.CoreCompileInputs.cache
+E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Componente\WebNesta.Coyote.Componente.API\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Componente.API.MvcApplicationPartsAssemblyInfo.cache
 E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Componente\WebNesta.Coyote.Componente.API\obj\Debug\netcoreapp3.1\staticwebassets\WebNesta.Coyote.Componente.API.StaticWebAssets.Manifest.cache
 E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Componente\WebNesta.Coyote.Componente.API\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Componente.API.RazorTargetAssemblyInfo.cache
 E:\ProjetoAlex\CoyoteDevNew\webnesta\Services\Componente\WebNesta.Coyote.Componente.API\obj\Debug\netcoreapp3.1\WebNesta.Coyote.Componente.API.csproj.CopyComplete

@@ -324,11 +324,20 @@
   <data name="tooltip_btn_action" xml:space="preserve">
     <value>Actions</value>
   </data>
+  <data name="tooltip_btn_editar" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="tooltip_btn_excluir" xml:space="preserve">
+    <value>Delete</value>
+  </data>
   <data name="tooltip_btn_links" xml:space="preserve">
     <value>Links</value>
   </data>
   <data name="tooltip_btn_nestabot" xml:space="preserve">
     <value>HelpDesk</value>
+  </data>
+  <data name="tooltip_btn_novo" xml:space="preserve">
+    <value>New</value>
   </data>
   <data name="tooltip_btn_tutorial" xml:space="preserve">
     <value>Tutorials</value>

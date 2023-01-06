@@ -8,11 +8,11 @@ namespace WebNesta.Coyote.Web.Services
 {
     public interface IComponentService
     {
-        Task DeleteComponent(int id);
+        Task<ValidateViewModel> DeleteComponent(int id);
         Task<ResponseResultGeneric<ICollection<Component>>> GetAllComponent();
         Task<ResponseResultGeneric<ICollection<Component>>> GetComponentSearch(string term);
-        Task<ResponseResultGeneric<DataComponentViewModel>> GetData();
-        Task InsertComponent(ComponentViewModel componentViewModel);
-        Task UpdateComponent(ComponentViewModel componentViewModel);
+        Task<ResponseResultGeneric<DataComponentViewModel>> GetData(string lang);
+        Task<ValidateViewModel> InsertComponent(ComponentViewModel componentViewModel);
+        Task<ValidateViewModel> UpdateComponent(ComponentViewModel componentViewModel);
     }
 }

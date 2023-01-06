@@ -34,13 +34,13 @@ namespace WebNesta.Coyote.Componente.API.Controllers
 
         [HttpGet]
         //[Route("GetData")]
-        [Route("GetData")]
-        public async Task<IActionResult> GetData()
+        [Route("GetData/{lang}")]
+        public async Task<IActionResult> GetData(string lang)
         {
             // var modelGrid = new ResponseResultGeneric<ICollection<CHCOMPOT>>();
             // modelGrid.Result = _componentService.GetAllComponent();
             var model = new ResponseResultGeneric<DataComponentViewModel>();
-            model.Result = _componentService.GetData();
+            model.Result = _componentService.GetData(lang);
             // model.Result.Componentes = modelGrid.Result.ToList();
             return Ok(model);
         }
@@ -68,7 +68,6 @@ namespace WebNesta.Coyote.Componente.API.Controllers
         }
 
         [HttpPost]
-        [Route("component")]
         public async Task<IActionResult> InsertComponent(ComponentViewModel model)
         {
             ValidateViewModel validate = null;
@@ -78,7 +77,6 @@ namespace WebNesta.Coyote.Componente.API.Controllers
         }
 
         [HttpPut]
-        [Route("component")]
         public async Task<IActionResult> UpdateComponent(ComponentViewModel model)
         {
             ValidateViewModel validate = null;
@@ -87,8 +85,8 @@ namespace WebNesta.Coyote.Componente.API.Controllers
             return Ok(validate);
         }
 
-        [HttpDelete]
-        [Route("component")]
+        [HttpGet]
+        [Route("delete/{id}")]
         public async Task<IActionResult> DeleteComponent(int id)
         {
             ValidateViewModel validate = null;

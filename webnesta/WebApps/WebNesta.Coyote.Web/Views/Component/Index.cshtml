@@ -9,35 +9,26 @@
 <div class="row">
 
     <div class="col-12">
-
-        <a href="#" id="btnOpenModalInsertEditComponent" class="button">
-            <i class="fas fa-times"></i>
-            <span class="tooltip">Novo</span>
-
-        </a>
-
-
-        <div class="card-body" style="height: 500px; overflow: auto;">
+        <div class="card-body grid-content">
             <div id="gridContainer"></div>
-            <div class="row" style="background: #F5F5F5;border-radius: 0px 0px 10px 10px;height: 43px;border:1px solid black">
-                <div class="col-12 text-right">
-                    <a href="#" style="float: left;" id="btnRefreshGrid" class="button">
-                        <i class="fas fa-times"></i>
-                        <span class="tooltip">Atualizar</span>
-                    </a>
-                    <a href="#" style="float: left;" id="btnExportGrid" class="button">
-                        <i class="fas fa-save"></i>
-                        <span class="tooltip">Exportar</span>
-                    </a>
-                </div>
-            </div>
-
         </div>
+        @*<div class="row"*@
+       <div class="grid-footer-buttons">
+            <a href="#" style="float: right;" id="btnRefreshGrid" class="btn-grid-footer ml-3">
+                <i class="fas fa-sync-alt"></i>
+                @WebNesta.Coyote.Web.App_GlobalResources.Component.grid_update
+            </a>
+            <a href="#" style="float: right;" id="btnExportGrid" class="btn-grid-footer ml-3">
+                <i class="fas fa-file-pdf"></i>
+                @WebNesta.Coyote.Web.App_GlobalResources.Component.grid_exportar
+            </a>
+        </div>
+
+
+        @* </div>*@
     </div>
-
-
-
 </div>
+
 
 <!-- INICIO - MODAL - INSERT/EDIT COMPONENT -->
 <div class="modal fade modal-component" id="modalInsertEditComponent" style="z-index:999999 !important;width: 125%;" role="dialog">
@@ -53,8 +44,8 @@
             <div class="modal-body" style="top: -1vh;left: 0;padding: 50px; padding-top: 85px;  padding-bottom: 60px;">
                 <div class="row">
                     <div class="col-12">
-                        <p class="popupComponent" style="text-align:center">
-                            Componente - Contratos Commodities Etanol
+                        <p class="popupComponent" id="popupComponent" style="text-align:center">
+                           @* Componente - Contratos Commodities Etanol*@
                         </p>
                     </div>
                 </div>
@@ -65,15 +56,15 @@
                         <div class="row mb-3">
                             <div class="col-6">
                                 <div class="input_coyote">
-                                    <label for="txtComponentId">ID:</label><br>
-                                    <input type="text" id="txtComponentId" style="width: 317px;background-color: #F5F5F5 !important;" placeholder="Id" readonly>
+                                    <label for="txtComponentId">@WebNesta.Coyote.Web.App_GlobalResources.Component.grid_id :</label><br>
+                                    <input type="text" id="txtComponentId" style="width: 317px;background-color: #F5F5F5 !important;" placeholder="@WebNesta.Coyote.Web.App_GlobalResources.Component.grid_id" readonly>
                                 </div>
                             </div>
                             <div class="col-6">
 
                                 <div class="input_coyote">
-                                    <label for="cbModelo">Modelo:</label><br>
-                                    <select id="cbModelo" placeholder="Modelo" style="width: 317px;"></select>
+                                    <label for="cbModelo">@WebNesta.Coyote.Web.App_GlobalResources.Component.form_modelo:</label><br>
+                                    <select id="cbModelo" placeholder="@WebNesta.Coyote.Web.App_GlobalResources.Component.form_modelo" style="width: 317px;"></select>
                                 </div>
                             </div>
                         </div>
@@ -81,8 +72,8 @@
                         <div class="row mb-3">
                             <div class="col-12">
                                 <div class="input_coyote">
-                                    <label for="txtComponenteDescricao">Componente:</label><br>
-                                    <input type="text" id="txtComponenteDescricao" style="width: 771.41px;" placeholder="Componente">
+                                    <label for="txtComponenteDescricao">@WebNesta.Coyote.Web.App_GlobalResources.Component.form_component:</label><br>
+                                    <input type="text" id="txtComponenteDescricao" style="width: 771.41px;" placeholder="@WebNesta.Coyote.Web.App_GlobalResources.Component.form_component">
                                 </div>
                             </div>
                         </div>
@@ -90,8 +81,8 @@
                         <div class="row mb-3">
                             <div class="col-12">
                                 <div class="input_coyote">
-                                    <label for="cbComponenteClasse">Classe:</label><br>
-                                    <select id="cbComponenteClasse" style="width: 771.41px;" placeholder="Classe"></select>
+                                    <label for="cbComponenteClasse">@WebNesta.Coyote.Web.App_GlobalResources.Component.form_classe:</label><br>
+                                    <select id="cbComponenteClasse" style="width: 771.41px;" placeholder="@WebNesta.Coyote.Web.App_GlobalResources.Component.form_classe"></select>
                                 </div>
                             </div>
                         </div>
@@ -100,11 +91,11 @@
                         <div class="row">
                             <a href="#" id="btnCloseInsertComponent" class="button">
                                 <i class="fas fa-times"></i>
-                                <span class="tooltip">Cancelar</span>
+                                <span class="tooltip">@WebNesta.Coyote.Web.App_GlobalResources.GlobalResource.btn_cancelar</span>
                             </a>
                             <a href="#" id="btnInsertComponent" class="button">
                                 <i class="fas fa-save"></i>
-                                <span class="tooltip">Salvar</span>
+                                <span class="tooltip">@WebNesta.Coyote.Web.App_GlobalResources.GlobalResource.btn_salvar</span>
                             </a>
                         </div>
                     </div>
@@ -118,18 +109,35 @@
 </div>
 
 <!-- Export to Excel - DEVX -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.4.0/polyfill.min.js"></script>
+@*<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.4.0/polyfill.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.1.1/exceljs.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>*@
 <!-- --------------------------------- -->
 <!-- Export to Pdf - DEVX -->
-
 @*<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.0.0/jspdf.umd.min.js"></script>*@
-
+@*
  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.14/jspdf.plugin.autotable.min.js"></script>
 
-<!-- --------------------------------- -->
+*@<!-- --------------------------------- -->
+<input id="hfPageHeaderTitle" type="hidden" value="@WebNesta.Coyote.Web.App_GlobalResources.Component.ResourceManager.GetString("page-title")" />
+<input id="hfPageHeaderSubTitle" type="hidden" value="@WebNesta.Coyote.Web.App_GlobalResources.Component.ResourceManager.GetString("page-sub-title")" />
+<input id="hfPageHeaderTitleDesc" type="hidden" value="@WebNesta.Coyote.Web.App_GlobalResources.Component.ResourceManager.GetString("page-title-desc")" />
+<input id="hfValidacaoPreenchaCampos" type="hidden" value="@WebNesta.Coyote.Web.App_GlobalResources.Component.ResourceManager.GetString("frm-validacao-preencha-campos")" />
+<input id="hfPesquisarComponent" type="hidden" value="@WebNesta.Coyote.Web.App_GlobalResources.Component.ResourceManager.GetString("tooltip_txt_pesqcomp")" />
+<input id="hfDesejaExcluir" type="hidden" value="@WebNesta.Coyote.Web.App_GlobalResources.GlobalResource.ResourceManager.GetString("btn_excluir_second")" />
+
+<input id="hfGridComponentId" type="hidden" value="@WebNesta.Coyote.Web.App_GlobalResources.Component.ResourceManager.GetString("grid-id")" />
+<input id="hfGridComponentComponente" type="hidden" value="@WebNesta.Coyote.Web.App_GlobalResources.Component.ResourceManager.GetString("grid-componente")" />
+<input id="hfGridComponentClasse" type="hidden" value="@WebNesta.Coyote.Web.App_GlobalResources.Component.ResourceManager.GetString("grid-classe")" />
+<input id="hfGridComponentAcoes" type="hidden" value="@WebNesta.Coyote.Web.App_GlobalResources.Component.ResourceManager.GetString("grid-acao")" />
+<input id="hfGridComponent" type="hidden" value="@WebNesta.Coyote.Web.App_GlobalResources.Component.ResourceManager.GetString("grid-componente")" />
+
+  
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/1.7.0/exceljs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js"></script>
+<script src="~/devextreme/js/exportdatagrid.js"></script>
 <script src="~/js/footerGrid.js"></script>
 
 <script src="~/js/component/component.js"></script>

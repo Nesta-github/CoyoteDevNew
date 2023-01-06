@@ -9,6 +9,8 @@ using WebNesta.Coyote.Core.Data;
 using WebNesta.Coyote.Componente.Domain.ViewModel;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using System.Runtime.CompilerServices;
+using System.Collections;
 
 namespace WebNesta.Coyote.Componente.Data
 {
@@ -44,7 +46,7 @@ namespace WebNesta.Coyote.Componente.Data
 
                     using (var command = new SqlCommand(query, connection))
                     {
-                        command.CommandType = CommandType.Text;
+
 
                         if (Int32.TryParse(term, out idSearch))
                         {
@@ -93,37 +95,86 @@ namespace WebNesta.Coyote.Componente.Data
 
         }
 
-        public Task<ValidateViewModel> InsertComponent(ComponentViewModel model)
+        public ValidateViewModel InsertComponent(ComponentViewModel model)
         {
-            throw new NotImplementedException();
-        }
+            ValidateViewModel validate = null;
+            var querySearchLastId = @"SELECT
+                                   MAX(chidcodi)
+                                FROM  CHCOMPOT";
+            var idSearch = 0;
 
-        public Task<ValidateViewModel> UpdateComponent(ComponentViewModel model)
-        {
             using (var connection = new SqlConnection(this.ConnectionString))
             {
-                var query = string.Concat(@"
-UPDATE CHCOMPOT 
-SET 
-UTIDUTSE=UTIDUTSE+1 
-WHERE
-chidcodi = @CHIDCODI");
-
-
-                connection.Open();
-
-                using (var command = new SqlCommand(query, connection))
+                using (var command = new SqlCommand(querySearchLastId, connection))
                 {
+                    connection.Open();
+                    /* **********  ID *************** */
                     command.CommandType = CommandType.Text;
 
-                    command.Parameters.AddWithValue("CHIDCODI", model.Id);
-                    command.Parameters.AddWithValue("CHIDCODI", model.Id);
+                    using (SqlDataReader rdr = command.ExecuteReader())
+                    {
+                        while (rdr.Read())
+                        {
+                            idSearch = !rdr.IsDBNull(0) ? rdr.GetInt32(0) + 1 : 0;
+                        }
+                    }
+
+
+                    /* **********  INSERT *************** */
+                    command.CommandText = @"
+INSERT INTO 
+CHCOMPOT(chidcodi, chdsdecr,chdsobsr,cmidcodi, chflsimp) 
+VALUES 
+(@chidcodi, @chdsdecr, @chdsobsr, @cmidcodi, @chflsimp)";
+
+                    command.CommandType = CommandType.Text;
+
+                    command.Parameters.AddWithValue("chidcodi", idSearch);
+                    command.Parameters.AddWithValue("chdsdecr", model.Descricao);
+                    command.Parameters.AddWithValue("chdsobsr", model.Descricao);
+                    command.Parameters.AddWithValue("cmidcodi", model.Classe); //--classe
+                    command.Parameters.AddWithValue("chflsimp", model.Modelo); //--modelo
 
                     int rowsAffected = command.ExecuteNonQuery();
+                    validate = new ValidateViewModel(true, "Componente inserido com sucesso.");
                 }
             }
 
-            return null;
+            return validate;
+        }
+
+        public ValidateViewModel UpdateComponent(ComponentViewModel model)
+        {
+            ValidateViewModel validate = null;
+            var query = @"
+UPDATE CHCOMPOT
+SET
+    chdsdecr = @chdsdecr,
+    chdsobsr= @chdsobsr, 
+    cmidcodi = @cmidcodi, 
+    chflsimp = @chflsimp
+WHERE chidcodi = @chidcodi";
+
+            using (var connection = new SqlConnection(this.ConnectionString))
+            {
+                using (var command = new SqlCommand(query, connection))
+                {
+                    connection.Open();
+
+                    command.CommandType = CommandType.Text;
+
+                    command.Parameters.AddWithValue("chidcodi", model.Id);
+                    command.Parameters.AddWithValue("chdsdecr", model.Descricao);
+                    command.Parameters.AddWithValue("chdsobsr", model.Descricao);
+                    command.Parameters.AddWithValue("cmidcodi", model.Classe); //--classe
+                    command.Parameters.AddWithValue("chflsimp", model.Modelo); //--modelo
+
+                    int rowsAffected = command.ExecuteNonQuery();
+                    validate = new ValidateViewModel(true, "Componente atualizado com sucesso."); ;
+                }
+            }
+
+            return validate;
         }
 
         public ICollection<CHCOMPOT> GetAllComponent()
@@ -134,7 +185,8 @@ chidcodi = @CHIDCODI");
 
             using (var connection = new SqlConnection(this.ConnectionString))
             {
-                var query = @"SELECT
+                var count =1000;
+                var query = @$"SELECT top {count.ToString()}
 chidcodi,
 chdsdecr,
 chdsobsr,
@@ -185,89 +237,141 @@ cjdsmodu FROM CHCOMPOT"; //where chidcodi = @chidcodi
             throw new NotImplementedException();
         }
 
-        public Task<ValidateViewModel> DeleteComponent(int id)
+        public ValidateViewModel DeleteComponent(int id)
         {
-            throw new NotImplementedException();
-        }
+            ValidateViewModel validate = null;
+            var query = @"DELETE CHCOMPOT WHERE chidcodi = @chidcodi";
 
-        public Dictionary<int,string> GetModelosCombo()
-        {
-            /*select * from CMCLACOM
-select * from CMTPCMCL*/
-            Dictionary<int, string> modelos = null;
-            
             using (var connection = new SqlConnection(this.ConnectionString))
             {
-                var query = @"SELECT
-CMTPIDCM,	--numeric
-PAIDPAIS,	--numeric
-CMTPDSCM	--varchar
-FROM CMTPCMCL"; //where chidcodi = @chidcodi
-                connection.Open();
-
                 using (var command = new SqlCommand(query, connection))
                 {
+                    connection.Open();
+
                     command.CommandType = CommandType.Text;
-                    // command.Parameters.AddWithValue("CHIDCODI", 12);
 
-                    using (SqlDataReader rdr = command.ExecuteReader())
+                    command.Parameters.AddWithValue("chidcodi", id);
+                    int rowsAffected = command.ExecuteNonQuery();
+                    validate = new ValidateViewModel(true, "Componente excluido com sucesso."); ;
+                }
+            }
+
+            return validate;
+        }
+
+        public Dictionary<decimal, string> GetModelosCombo(string lang)
+        {
+            try
+            {
+                var idioma = 0;
+
+                if (!string.IsNullOrEmpty(lang))
+                {
+                    if (lang.ToLower() == "pt-br")
                     {
+                        idioma = 1;
+                    }
 
-                        while (rdr.Read())
-                        {
-                            if (modelos == null) { modelos = new Dictionary<int, string>(); }
+                    if (lang.ToLower() == "en-us")
+                    {
+                        idioma = 2;
+                    }
 
-
-                           // var Id = rdr.IsDBNull(0) ? rdr.GetInt32(0) : 0;
-                           // var Descricao = !rdr.IsDBNull(2) ? rdr.GetString(2) : null;
-                           //
-                           // modelos.Add(Id, Descricao);
-                        }
+                    if (lang.ToLower() == "es-es")
+                    {
+                        idioma = 3;
                     }
                 }
+                else idioma = 1;
 
-                connection.Close();
+                Dictionary<decimal, string> modelos = null;
+
+                using (var connection = new SqlConnection(this.ConnectionString))
+                {
+                    var query = @"SELECT DISTINCT
+CMTPIDCM,	--numeric
+CMTPDSCM	--varchar
+FROM CMTPCMCL where PAIDPAIS = @PAIDPAIS"; //where chidcodi = @chidcodi
+                    connection.Open();
+
+                    using (var command = new SqlCommand(query, connection))
+                    {
+                        command.CommandType = CommandType.Text;
+                        command.Parameters.AddWithValue("PAIDPAIS", idioma);
+
+                        using (SqlDataReader rdr = command.ExecuteReader())
+                        {
+
+                            while (rdr.Read())
+                            {
+                                if (modelos == null) { modelos = new Dictionary<decimal, string>(); }
+
+
+                                var Id = !rdr.IsDBNull(0) ? rdr.GetDecimal(0) : 0;
+                                var Descricao = !rdr.IsDBNull(1) ? rdr.GetString(1) : null;
+
+                                modelos.Add(Id, Descricao);
+                            }
+                        }
+                    }
+
+                    connection.Close();
+                }
+                return modelos;
+
             }
-            return modelos;
-          
-        }
-        public Dictionary<int,string> GetClasseCombo()
-        {
-            /*select * from CMCLACOM
-select * from CMTPCMCL*/
-            Dictionary<int, string> classes = null;
-
-            using (var connection = new SqlConnection(this.ConnectionString))
+            catch (Exception ex)
             {
-                var query = @"SELECT
+
+                throw;
+            }
+        }
+        public Dictionary<decimal, string> GetClasseCombo()
+        {
+            try
+            {
+
+
+                /*select * from CMCLACOM
+    select * from CMTPCMCL*/
+                Dictionary<decimal, string> classes = null;
+
+                using (var connection = new SqlConnection(this.ConnectionString))
+                {
+                    var query = @"SELECT DISTINCT
 CMIDCODI,
 CMDSCLAN
 FROM CMCLACOM"; //where chidcodi = @chidcodi
-                connection.Open();
+                    connection.Open();
 
-                using (var command = new SqlCommand(query, connection))
-                {
-                    command.CommandType = CommandType.Text;
-                    // command.Parameters.AddWithValue("CHIDCODI", 12);
-
-                    using (SqlDataReader rdr = command.ExecuteReader())
+                    using (var command = new SqlCommand(query, connection))
                     {
+                        command.CommandType = CommandType.Text;
+                        // command.Parameters.AddWithValue("CHIDCODI", 12);
 
-                        while (rdr.Read())
+                        using (SqlDataReader rdr = command.ExecuteReader())
                         {
-                            if (classes == null) { classes = new Dictionary<int, string>(); }
-                            
-                          //var Id = rdr.IsDBNull(0) ? rdr.GetInt64(0) : 0;
-                          //var Descricao = !rdr.IsDBNull(1) ? rdr.GetString(1) : null;
-                          //
-                          //classes.Add(0, Descricao);  
+
+                            while (rdr.Read())
+                            {
+                                if (classes == null) { classes = new Dictionary<decimal, string>(); }
+
+                                var Id = !rdr.IsDBNull(0) ? rdr.GetDecimal(0) : 0;
+                                var Descricao = !rdr.IsDBNull(1) ? rdr.GetString(1) : null;
+
+                                classes.Add(Id, Descricao);
+                            }
                         }
                     }
-                }
 
-                connection.Close();
+                    connection.Close();
+                }
+                return classes;
             }
-            return classes;
+            catch (Exception ex)
+            {
+                throw;
+            }
 
         }
     }

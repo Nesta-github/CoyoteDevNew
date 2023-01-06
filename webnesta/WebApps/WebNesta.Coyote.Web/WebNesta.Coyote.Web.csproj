@@ -19,6 +19,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Carteira.resx</DependentUpon>
     </Compile>
+    <Compile Update="App_GlobalResources\Component.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Component.resx</DependentUpon>
+    </Compile>
     <Compile Update="App_GlobalResources\GlobalResource.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -35,6 +40,10 @@
     <EmbeddedResource Update="App_GlobalResources\Carteira.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Carteira.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="App_GlobalResources\Component.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Component.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="App_GlobalResources\GlobalResource.es.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

@@ -30,13 +30,20 @@ namespace WebNesta.Coyote.Web.Controllers
         }
 
         [HttpGet]
-        [Route("component/GetData")]
-        public async Task<IActionResult> GetData()
+        [Route("component/Index2")]
+        public IActionResult Index2()
         {
-            
-            
+            return View("Index1");
+        }
+
+
+
+        [HttpGet]
+        [Route("component/GetData")]
+        public async Task<IActionResult> GetData(string lang)
+        {
             var modelGrid = await _componentService.GetAllComponent();
-            var model = await _componentService.GetData();
+            var model = await _componentService.GetData(lang);
             model.Result.Componentes = modelGrid.Result.ToList();
             return Json(model);
         }
@@ -72,7 +79,7 @@ namespace WebNesta.Coyote.Web.Controllers
             }
             else
             {
-                await _componentService.InsertComponent(componentViewModel);
+                response = await _componentService.InsertComponent(componentViewModel);
             }
 
             return Json(response);
@@ -98,32 +105,32 @@ namespace WebNesta.Coyote.Web.Controllers
             }
             else
             {
-                await _componentService.UpdateComponent(componentViewModel);
+                response = await _componentService.UpdateComponent(componentViewModel);
             }
 
             return Json(response);
         }
 
-        [HttpDelete]
-        [Route("component")]
+        [HttpGet]
+        [Route("component/delete")]
         public async Task<IActionResult> DeleteData(int id)
         {
             var componentViewModel = new ComponentViewModel();
             componentViewModel.Id = id;
-            
 
             ValidateViewModel response = null;
 
-            var validacao = GetModelErrors(componentViewModel);
-
-            if (validacao != null && validacao.Count() > 0)
-            {
-                response = new ValidateViewModel(false, GetModelErrorMessage(validacao.ToList()));
-            }
-            else
-            {
-                await _componentService.DeleteComponent(id);
-            }
+            // var validacao = GetModelErrors(componentViewModel);
+            //
+            // if (validacao != null && validacao.Count() > 0)
+            // {
+            //     response = new ValidateViewModel(false, GetModelErrorMessage(validacao.ToList()));
+            // }
+            // else
+            // {
+            response =   await _componentService.DeleteComponent(id);
+            
+           // }
 
             return Json(response);
         }

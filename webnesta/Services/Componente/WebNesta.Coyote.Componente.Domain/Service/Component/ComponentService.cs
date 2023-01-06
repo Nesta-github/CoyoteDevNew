@@ -27,12 +27,12 @@ namespace WebNesta.Coyote.Componente.Domain.Service
 
             try
             {
-                validateModel = await _repository.DeleteComponent(id);
+                validateModel = _repository.DeleteComponent(id);
             }
             catch (Exception ex)
             {
-
-                throw;
+                validateModel = new ValidateViewModel(false, ex.Message);
+                return validateModel;
             }
 
             return validateModel;
@@ -45,28 +45,31 @@ namespace WebNesta.Coyote.Componente.Domain.Service
 
         public ICollection<CHCOMPOT> GetComponentSearch(string term)
         {
-            return !string.IsNullOrEmpty(term) ?  _repository.GetComponentSearch(term) : _repository.GetAllComponent();
+            return !string.IsNullOrEmpty(term) ? _repository.GetComponentSearch(term) : _repository.GetAllComponent();
         }
 
-        public DataComponentViewModel GetData()
+        public DataComponentViewModel GetData(string lang)
         {
             var model = new DataComponentViewModel();
 
             var classesDictionary = _repository.GetClasseCombo();
-            var modelosDictionary = _repository.GetModelosCombo();
+            var modelosDictionary = _repository.GetModelosCombo(lang);
 
             var classes = new List<Classe>();
             var modelos = new List<Modelo>();
 
-            foreach(var classe in classesDictionary.ToList())
+            foreach (var classe in classesDictionary.ToList())
             {
                 classes.Add(new Classe() { Id = classe.Key, Descricao = classe.Value });
             }
 
-            foreach(var modelo in modelosDictionary.ToList())
+            foreach (var modelo in modelosDictionary.ToList())
             {
                 modelos.Add(new Modelo() { Id = modelo.Key, Descricao = modelo.Value });
             }
+
+            model.Classes = classes;
+            model.Modelos = modelos;
 
             return model;
         }
@@ -77,12 +80,13 @@ namespace WebNesta.Coyote.Componente.Domain.Service
 
             try
             {
-                validateModel = await _repository.InsertComponent(model);
+                validateModel = _repository.InsertComponent(model);
+
             }
             catch (Exception ex)
             {
-
-                throw;
+                validateModel = new ValidateViewModel(false, ex.Message);
+                return validateModel;
             }
 
             return validateModel;
@@ -94,12 +98,13 @@ namespace WebNesta.Coyote.Componente.Domain.Service
 
             try
             {
-                validateModel = await _repository.UpdateComponent(model);
+                validateModel = _repository.UpdateComponent(model);
+
             }
             catch (Exception ex)
             {
-
-                throw;
+                validateModel = new ValidateViewModel(false, ex.Message);
+                return validateModel;
             }
 
             return validateModel;

@@ -10,7 +10,7 @@ namespace WebNesta.Coyote.Componente.Domain.Service
         ICollection<T> GetAllComponent();
         Task<ValidateViewModel> InsertComponent(ComponentViewModel model);
         Task<ValidateViewModel> UpdateComponent(ComponentViewModel model);
-        DataComponentViewModel GetData();
+        DataComponentViewModel GetData(string lang);
         ICollection<T> GetComponentSearch(string term);
     }
 }

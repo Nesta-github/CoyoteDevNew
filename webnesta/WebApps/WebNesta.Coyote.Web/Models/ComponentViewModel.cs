@@ -8,7 +8,7 @@ namespace WebNesta.Coyote.Web.Models
         public int Id { get; set; }
        
         [Required]
-        [StringLength(10, MinimumLength = 4)]
+        [StringLength(10, MinimumLength = 1)]
         [Display(Name = "Modelo")]
         public string Modelo { get; set; }
 

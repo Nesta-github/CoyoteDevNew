@@ -32,12 +32,28 @@ const discountCellTemplate = function (container, options) {
 
 let collapsed = false;
 
+var messages =
+{
+    hfValidacaoPreenchaCampos: '#hfValidacaoPreenchaCampos',
+    hfPageHeaderTitle: '#hfPageHeaderTitle',
+    hfPageHeaderSubTitle: '#hfPageHeaderSubTitle',
+    hfPageHeaderTitleDesc: '#hfPageHeaderTitleDesc',
+    hfPesquisarComponent: '#hfPesquisarComponent',
+    hfGridComponentId: '#hfGridComponentId',
+    hfGridComponentComponente: '#hfGridComponentComponente',
+    hfGridComponentClasse: '#hfGridComponentClasse',
+    hfGridComponentAcoes: '#hfGridComponentAcoes',
+    hfGridComponent: '#hfGridComponent',
+    hfDesejaExcluir: '#hfDesejaExcluir'
+}
 var componentUrl =
 {
     getDataGridComponent: '/component/GetAllComponent',
     getData: '/component/GetData',
     getDataSearch: 'component/search',
-    postDataComponent: '/component'
+    postDataComponent: '/component',
+    putDataComponent: '/component',
+    deleteDataComponent: 'component/delete'
 }
 
 var uiComponentViewModel =
@@ -46,10 +62,11 @@ var uiComponentViewModel =
     modal: {
         modalInsertEditComponent: "#modalInsertEditComponent",
         btnCloseInsertComponent: '#btnCloseInsertComponent',
-        btnInsertComponent: '#btnInsertComponent'
+        btnInsertComponent: '#btnInsertComponent',
+        popupComponent: '#popupComponent'
     },
     dvLoading: "#dvLoading",
-    txtSerchComponent: "#txtSerchComponent"
+    gridContainer: "#gridContainer"
 }
 
 var viewModelComponent =
@@ -87,8 +104,11 @@ var componentView = {
 //MODEL 
 var componentModel = {
     ValidateForm: function (event) {
-        var isFormValid = util.Validate.FieldIsNotEmpy(viewModelComponent.txtComponenteDescricao);
-        console.log('isFormValid: ' + isFormValid);
+        var isFormValid =
+            util.Validate.FieldIsNotEmpy(viewModelComponent.txtComponenteDescricao) &&
+            util.Validate.FieldIsNotEmpy(viewModelComponent.cbModelo) &&
+            util.Validate.FieldIsNotEmpy(viewModelComponent.cbComponenteClasse);
+      
         return isFormValid;
     }
 }
@@ -98,11 +118,14 @@ var componentController = {
 
         $(uiComponentViewModel.modal.btnInsertComponent).click(function (event) {
             if (componentModel.ValidateForm()) {
-                componentView.LoadingComponent(event, true);
-                model.PostData(event);
+                $(uiComponentViewModel.dvLoading).show();
+                if (crudMode.isInsert)
+                    componentController.PostData(event);
+                else
+                    componentController.PutData(event);
             }
             else {
-                modal.validate.ShowModal(false, 'preencha os campos');
+                modal.validate.ShowModal(false, $(messages.hfValidacaoPreenchaCampos).val());
             }
         });
 
@@ -110,51 +133,142 @@ var componentController = {
             .click(function (event) { $(uiComponentViewModel.modal.modalInsertEditComponent).modal('hide'); });
 
         $(uiComponentViewModel.btnOpenModalInsertEditComponent).click(function (event) {
-
+           
             crudMode.isInsert = true;
             crudMode.editedId = 0;
             componentView.ClearForm();
+            $(uiComponentViewModel.modal.popupComponent).text('Componente');
             $(uiComponentViewModel.modal.modalInsertEditComponent).modal('show');
         });
+       
 
-        $(uiComponentViewModel.txtSerchComponent).keyup(function (event) {
+        $(masterPageViewModel.txtSerchComponent).keyup(function (event) {
             if (event.keyCode === 13) {
                 componentController.Search(event);
             }
+
+            else {
+                if ($(masterPageViewModel.txtSerchComponent).val().length > 1) {
+                    $(uiComponentViewModel.dvLoading).show();
+                    componentController.Search(event);
+                }
+            }
         });
 
-        footerGridCallback.RefreshGrid = async function (event) { console.log('RefreshGrid'); componentController.Search(event); }
-        footerGridCallback.ExportGrid = async function (event) { console.log('ExportGrid'); componentController.ExportGrid(event); }
+        footerGridCallback.RefreshGrid = async function (event) { componentController.Search(event); }
+        footerGridCallback.ExportGrid = async function (event) { componentController.ExportGrid(event); }
 
         footerGridEvents.Init(event);
+        $(modal.decision.btnCancelDecision).click(async function () {
+            console.log('btnCancelDecision')
+            $(modal.decision.id).modal('hide');
+
+        });
+        $(modal.decision.btnOkDecision).click(async function () {
+            componentController.DeleteData($(modal.decision.hfDecisionId).val());
+        });
+
     },
     GetData: async function (event) {
-        await util.Request.GetRequest(event, componentUrl.getData, function (data) {
+        await util.Request.GetRequest(event, componentUrl.getData + "?lang=" + globalModal.lang, function (data) {
             $(uiComponentViewModel.dvLoading).hide();
             var responseComponentCallback = util.Request.ParseResponse(data);
             componentController.CreateGrid(responseComponentCallback.result.componentes);
-            // util.Html.FillCombo(event, viewModelComponent.cbModelo, responseComponentCallback.result.modelos)
-            // util.Html.FillCombo(event, viewModelComponent.cbComponenteClasse, responseComponentCallback.result.classes)
-            // util.Loading(event, false);
+            util.Html.FillCombo(event, viewModelComponent.cbModelo, responseComponentCallback.result.modelos)
+            util.Html.FillCombo(event, viewModelComponent.cbComponenteClasse, responseComponentCallback.result.classes)
         });
     },
     ExportGrid: async function (event) {
-        console.log('ExportGrid');
-        window.jsPDF = window.jspdf.jsPDF;
-        applyPlugin(window.jsPDF);
 
-        var doc = new jsPDF();
-        var grid = $("#gridContainer").dxDataGrid("instance");
 
-        DevExpress.pdfExporter.exportDataGrid({
-            jsPDFDocument: doc,
-            component: grid
+        var workbook = new ExcelJS.Workbook();
+        var worksheet = workbook.addWorksheet('Main sheet');
+
+        exportDataGrid({
+            component: $(uiComponentViewModel.gridContainer).dxDataGrid("instance"),
+            worksheet: worksheet,
+            topLeftCell: { row: 7, column: 1 },
+            customizeCell: function (options) {
+
+            }
         }).then(function () {
-            doc.save('Customers.pdf');
+            workbook.xlsx.writeBuffer().then(function (buffer) {
+                saveAs(new Blob([buffer], { type: "application/octet-stream" }), "DataGrid.xlsx");
+            });
         });
+
+
+
+        // /* ********************************** */
+        // console.log('ExportGrid');
+        // window.jsPDF = window.jspdf.jsPDF;
+        //// applyPlugin(window.jsPDF);
+        // var pdfDoc = new jsPDF();
+        // console.log(pdfDoc);
+        // //var doc = new jsPDF();
+        // var grid = $("#gridContainer").dxDataGrid("instance");
+        // //console.log(grid);
+        //
+
+        //const options = {
+        //    pdfDoc: pdfDoc,
+        //    component: grid,
+        //    customizeCell: (pdfCell, gridCell) => {
+        //        if (gridCell.rowType === 'header') {
+        //            if (gridCell.column.caption === 'Area') {
+        //                pdfCell.content = "";
+        //                pdfCell.customDrawCell = (data) => {
+        //                    const padding = data.cell.styles.cellPadding;
+        //                    const x = data.cell.x + padding;
+        //                    const y = data.cell.y + padding;
+        //                    const w = data.cell.width - padding * 2;
+        //                    const opts = {
+        //                        maxWidth: data.cell.width,
+        //                        align: data.cell.styles.halign,
+        //                        baseline: 'top'
+        //                    };
+        //                    pdfDoc.text('Area, km', x + w - 5, y, opts);
+        //                    pdfDoc.setFontSize(8);
+        //                    pdfDoc.text('2', x + w, y - 2, opts);
+        //                };
+        //            }
+        //        }
+        //    },
+        //    autoTableOptions: {
+        //        columnStyles: {
+        //            7: { cellWidth: 200 }
+        //        },
+        //        tableWidth: 'wrap',
+        //        margin: 20
+        //    }
+        //};
+
+        //exportDataGrid(options).then(() => {
+        //    pdfDoc.save("filePDF.pdf");
+        //});
+        //DevExpress.pdfExporter.exportDataGrid({
+        //    jsPDFDocument: pdfDoc,
+        //    component: grid
+        //}).then(function () {
+        //    doc.save('Customers.pdf');
+        //});
+        // exportDataGridToPdf({
+        //     jsPDFDocument: pdfDoc,
+        //     component: grid,
+        //     autoTableOptions: {
+        //         styles: {
+        //             font: 'PTSans-Regular' // this is a part I forgot about before
+        //         }
+        //     }
+        // }).then(() => {
+        //     doc.save('Customers.pdf');
+        // })
+
     },
     CreateGrid: function (dataSource) {
-        $('#gridContainer').dxDataGrid({
+       
+        $(uiComponentViewModel.gridContainer).dxDataGrid({
+            /* loadingTimeout: null,  */
             allowColumnReordering: true, //SE O USUÁRIO PODE REORDENAR A COLUNA
             allowColumnResizing: true, //SE O USUÁRIO PODE REDIMENSIONAR A LARGURA DA COLUNA
             autoNavigateToFocusedRow: true,//COMPATIVEL COM MODO DE SCROOL INFINITO, QD FOCUSEDROWKEY É ALTERADO
@@ -164,48 +278,18 @@ var componentController = {
             columnChooser: true,//PERMITE HABILITAR E DESBILITAR COLUNAS EM TEMPO DE EXECUÇÃO
             //columnFixing: QUANDO COLUNA EXCEDE O TAMANHO PODEW SELECIONAR NO MENU PARA SE AJUSTAR
             dataSource: dataSource,
-            //export: { enabled: true },
-            export: {
+            export: true,
+            /*{
                 enabled: true,
-                formats: ['pdf'],
-                allowExportSelectedData: true,
-            },
-            onExporting(e) {
-                window.jsPDF = window.jspdf.jsPDF;
-                applyPlugin(window.jsPDF);
-
-                const doc = new jsPDF();
-
-                DevExpress.pdfExporter.exportDataGrid({
-                    jsPDFDocument: window.jspdf.jsPDF,
-                    component: e.component,
-                    indent: 5,
-                }).then(() => {
-                    doc.save('Companies.pdf');
-                });
-            },
-            //{
-            //    store: {
-            //        type: 'odata',
-            //        url: 'https://localhost:44325/component/GetAllComponent',
-            //        key: 'chidcodi',
-            //        beforeSend(request) {
-            //            //parametros
-            //            //request.params.startDate = '2020-05-10';
-
-            //            //request.params.endDate = '2020-05-15';
-            //        },
-            //    },
-            //},
-            //paging: {
-            //    pageSize: 10,
-            //},
+                fileName: "Employees",
+                allowExportSelectedData: true
+            },*/
             paging: { enabled: false },
             paginate: false,
             remoteOperations: false,
             searchPanel: {
                 visible: false,
-                highlightCaseSensitive: true,
+                highlightCaseSensitive: false,
             },
             groupPanel: { visible: false },
             grouping: {
@@ -223,47 +307,29 @@ var componentController = {
             //    },
             //    useIcons: true,
             //},
+            /*hfGridComponentId
+hfGridComponentComponente
+hfGridComponentClasse
+hfGridComponentAcoes
+hfGridComponent
+*/
             columns: [
-                //allowExporting: false,
-                //{
-                //    type: 'buttons',
-                //    width: 15,
-                //    buttons: ['delete', {
-                //        //hint: 'DELETE',
-                //        //icon: 'delete',
-                //        cssClass:'dx-datagrid-table-delete',
-                //        visible(e) {
-                //            return !e.row.isEditing;
-                //        },
-                //        disabled(e) {
-                //            return isChief(e.row.data.Position);
-                //        },
-                //        onClick(e) {
-                //            console.log('click delete');
-                //           // const clonedItem = $.extend({}, e.row.data, { ID: maxID += 1 });
-                //           //
-                //           // employees.splice(e.row.rowIndex, 0, clonedItem);
-                //           // e.component.refresh(true);
-                //           // e.event.preventDefault();
-                //        },
-                //    }],
-                //},
                 {
                     dataField: 'chidcodi',
-                    caption: 'ID',
+                    caption: $(messages.hfGridComponentId).val(),
                 },
                 {
                     dataField: 'chdsdecr',
-                    caption: 'Component',
+                    caption: $(messages.hfGridComponentComponente).val(),
                 },
                 {
                     dataField: 'chdsobsr',
-                    caption: 'Classe',
+                    caption: $(messages.hfGridComponentClasse).val(),
                 },
                 {
                     type: 'buttons',
-                    caption: 'Ações',
-                    dataField:'customDataField',
+                    caption: $(messages.hfGridComponentAcoes).val(),
+                    dataField: 'customDataField',
                     width: 100,
                     buttons: ['edit', {
                         //hint: 'Edit',
@@ -276,27 +342,25 @@ var componentController = {
                             return isChief(e.row.data.Position);
                         },
                         onClick(e) {
-                            console.log(e.row.data);
                             crudMode.isInsert = false;
                             crudMode.editedId = e.row.data.chidcodi;
+
+                            $(uiComponentViewModel.modal.popupComponent).text(e.row.data.chdsdecr)
+
                             componentView.FillForm(
                                 e.row.data.chidcodi,
-                                e.row.data.crnumcap,
+                                e.row.data.chflsimp,
                                 e.row.data.chdsdecr,
-                                e.row.data.crnumcap
-                            )
-                            console.log('click edit');
-                            console.log(e.row.data.chidcodi);
-                            $("#modalInsertEditComponent").modal('show');
-                            /*const clonedItem = $.extend({}, e.row.data, { ID: maxID += 1 });
+                                e.row.data.cmidcodi
+                            );
+                            /*cmidcodi as 'CLASSE',
+                                    chflsimp as 'MODELO', */
 
-                            employees.splice(e.row.rowIndex, 0, clonedItem);
-                            e.component.refresh(true);
-                            e.event.preventDefault();*/
+
+                            $("#modalInsertEditComponent").modal('show');
+
                         },
                     }, 'delete', {
-                            //hint: 'DELETE',
-                            //icon: 'delete',
                             cssClass: 'dx-datagrid-table-delete',
                             visible(e) {
                                 return !e.row.isEditing;
@@ -305,78 +369,88 @@ var componentController = {
                                 return isChief(e.row.data.Position);
                             },
                             onClick(e) {
-                                model.validate.ShowModal(false, "V")
-                                console.log('click delete');
-                                // const clonedItem = $.extend({}, e.row.data, { ID: maxID += 1 });
-                                //
-                                // employees.splice(e.row.rowIndex, 0, clonedItem);
-                                // e.component.refresh(true);
-                                // e.event.preventDefault();
+                                
+                             /*componentController.DeleteData(e.row.data.chidcodi);*/
+                                $(modal.decision.hfDecisionId).val(e.row.data.chidcodi)
+                             modal.decision.ShowModal('error', $(messages.hfDesejaExcluir).val());
+                              
                             },
                         }],
                 },
-            ],
-
-            //summary: {
-            //    totalItems: [{
-            //        name: 'SelectedRowsSummary',
-            //        showInColumn: 'customDataField',
-            //        displayFormat: 'Sum: {0}',
-            //        valueFormat: 'currency',
-            //        summaryType: 'custom',
-            //    },
-            //    ],
-            //    calculateCustomSummary(options) {
-            //        if (options.name === 'SelectedRowsSummary') {
-            //            if (options.summaryProcess === 'start') {
-            //                options.totalValue = 0;
-            //            }
-            //            if (options.summaryProcess === 'calculate') {
-            //                if (options.component.isRowSelected(options.value.ID)) {
-            //                    options.totalValue += options.value.SaleAmount;
-            //                }
-            //            }
-            //        }
-            //    },
-            //},
-
-            onContentReady(e) {
-                if (!collapsed) {
-                    collapsed = true;
-                    e.component.expandRow(['EnviroCare']);
-                }
-            },
+            ]
         });
     },
     PostData: function (event) {
 
-        var viewModelComponent =
+        var viewModelComponentPost =
         {
-            "id": viewModelComponent.txtComponentId,
-            "modelo": viewModelComponent.cbModelo,
-            "descricao": viewModelComponent.txtComponenteDescricao,
-            "classe": viewModelComponent.cbComponenteClasse
+            "id": $(viewModelComponent.txtComponentId).val(),
+            "modelo": $(viewModelComponent.cbModelo).val(),
+            "descricao": $(viewModelComponent.txtComponenteDescricao).val(),
+            "classe": $(viewModelComponent.cbComponenteClasse).val()
         }
 
-        util.Request.PostRequest(event, componentUrl.postDataComponent, viewModelComponent,
+        util.Request.PostRequest(event, componentUrl.postDataComponent, viewModelComponentPost,
             function (data) {
-
-                if (data.isSuccess == false) {
-                    view.ShowModal(false, data.message);
+              
+                console.log('callback');
+                console.log(data);
+                $(uiComponentViewModel.dvLoading).hide();
+                if (data.isValid) {
+                    $(uiComponentViewModel.modal.modalInsertEditComponent).modal('hide');
                 }
-                else {
+                modal.validate.ShowModal(data.isValid, data.message);
+            });
+    },
+    PutData: function (event) {
 
-
+        var viewModelComponentPost =
+        {
+            "id": $(viewModelComponent.txtComponentId).val(),
+            "modelo": $(viewModelComponent.cbModelo).val(),
+            "descricao": $(viewModelComponent.txtComponenteDescricao).val(),
+            "classe": $(viewModelComponent.cbComponenteClasse).val()
+        }
+      
+        util.Request.PutRequest(event, componentUrl.putDataComponent, viewModelComponentPost,
+            function (data) {
+                $(uiComponentViewModel.dvLoading).hide();
+                console.log(data)
+                if (data.isValid) {
+                    $(uiComponentViewModel.modal.modalInsertEditComponent).modal('hide');
                 }
+
+                modal.validate.ShowModal(data.isValid, data.message);
+            });
+    },
+    DeleteData: function (id) {
+
+        var viewModelComponentPost =
+        {
+            "id": id,
+        }
+        console.log('viewModelComponentPost');
+        console.log(viewModelComponentPost);
+        console.log(componentUrl.deleteDataComponent)
+        util.Request.GetRequest(event, componentUrl.deleteDataComponent + "?id=" + id,
+            function (data) {
+                $(uiComponentViewModel.dvLoading).hide();
+                data = JSON.parse(data)
+                console.log(data)
+                if (data.isValid) {
+                    $(modal.decision.id).modal('hide');
+                }
+
+                modal.validate.ShowModal(data.isValid, data.message);
             });
     },
     Search: async function (event) {
-        await util.Request.GetRequest(event, componentUrl.getDataSearch + "?term=" + $(uiComponentViewModel.txtSerchComponent).val(), function (data) {
+        await util.Request.GetRequest(event, componentUrl.getDataSearch + "?term=" + $(masterPageViewModel.txtSerchComponent).val(), function (data) {
 
             var responseComponentCallback = util.Request.ParseResponse(data);
 
             componentController.CreateGrid(responseComponentCallback.result);
-            util.Loading(event, false);
+            $(uiComponentViewModel.dvLoading).hide();
         });
     }
 }
@@ -386,13 +460,21 @@ var componentEvents =
 {
     Init: async function (event) {
 
-        util.Loading(event, true);
+        masterPageController.SetPageHeader(
+            $(messages.hfPageHeaderTitle).val(),
+            $(messages.hfPageHeaderSubTitle).val(),
+            $(messages.hfPageHeaderTitleDesc).val(),
+            $(messages.hfPesquisarComponent).val());
+
+        $(uiComponentViewModel.dvLoading).show();
 
         $(document).ready(function (event) {
             componentController.RegisterEvents(event)
             componentController.GetData(event);
         });
     }
+
+
 }
 
 componentEvents.Init(event);

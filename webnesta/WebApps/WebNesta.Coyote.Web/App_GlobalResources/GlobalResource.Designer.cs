@@ -628,6 +628,24 @@ namespace WebNesta.Coyote.Web.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Edit.
+        /// </summary>
+        public static string tooltip_btn_editar {
+            get {
+                return ResourceManager.GetString("tooltip_btn_editar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        public static string tooltip_btn_excluir {
+            get {
+                return ResourceManager.GetString("tooltip_btn_excluir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Links.
         /// </summary>
         public static string tooltip_btn_links {
@@ -642,6 +660,15 @@ namespace WebNesta.Coyote.Web.App_GlobalResources {
         public static string tooltip_btn_nestabot {
             get {
                 return ResourceManager.GetString("tooltip_btn_nestabot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New.
+        /// </summary>
+        public static string tooltip_btn_novo {
+            get {
+                return ResourceManager.GetString("tooltip_btn_novo", resourceCulture);
             }
         }
         

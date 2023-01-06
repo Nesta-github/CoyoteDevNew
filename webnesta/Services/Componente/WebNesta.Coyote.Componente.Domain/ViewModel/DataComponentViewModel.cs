@@ -12,13 +12,13 @@ namespace WebNesta.Coyote.Componente.Domain.ViewModel
 
     public class Classe 
     {
-        public int Id { get; set; } 
+        public decimal Id { get; set; } 
         public string Descricao { get; set; }
 
     }
     public class Modelo
     {
-        public int Id { get; set; }
+        public decimal Id { get; set; }
         public string Descricao { get; set; }
     }
 }

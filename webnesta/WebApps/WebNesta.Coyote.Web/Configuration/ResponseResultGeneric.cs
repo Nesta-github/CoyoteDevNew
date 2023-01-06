@@ -15,4 +15,5 @@ namespace WebNesta.Coyote.Web.Configuration
 
         public ResponseErrorMessages Errors { get; set; }
     }
+
 }

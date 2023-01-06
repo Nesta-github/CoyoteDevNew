@@ -321,14 +321,23 @@
   <data name="numero_nestabot" xml:space="preserve">
     <value>5511995543452</value>
   </data>
+  <data name="tooltipo_btn_alterar" xml:space="preserve">
+    <value>Alterar</value>
+  </data>
   <data name="tooltip_btn_action" xml:space="preserve">
     <value>Ações</value>
+  </data>
+  <data name="tooltip_btn_excluir" xml:space="preserve">
+    <value>Excluir</value>
   </data>
   <data name="tooltip_btn_links" xml:space="preserve">
     <value>Links</value>
   </data>
   <data name="tooltip_btn_nestabot" xml:space="preserve">
     <value>Suporte</value>
+  </data>
+  <data name="tooltip_btn_novo" xml:space="preserve">
+    <value>Novo</value>
   </data>
   <data name="tooltip_btn_tutorial" xml:space="preserve">
     <value>Tutoriais</value>

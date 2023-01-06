@@ -7,6 +7,8 @@ using WebNesta.Coyote.Web.Configuration;
 using WebNesta.Coyote.Web.Models;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using Microsoft.AspNetCore.Mvc;
+using WebNesta.Coyote.Geral.Domain.ViewModel;
 
 namespace WebNesta.Coyote.Web.Services
 {
@@ -37,55 +39,72 @@ namespace WebNesta.Coyote.Web.Services
             return responseModel;
         }
 
-        public Task InsertComponent(ComponentViewModel componentViewModel)
+        public async Task<ValidateViewModel> InsertComponent(ComponentViewModel componentViewModel)
         {
-            // await _httpClient.($"/component/Delete");
-            //DataComponentViewModel responseModel = null;
+            try
+            {
+                var itemModel = ObterConteudo(componentViewModel);
 
-            // TratarErrosResponse(response);
+                var response = await _httpClient.PostAsync("/component", itemModel);
 
+                // if (!TratarErrosResponse(response)) return await DeserializarObjetoResponse<HttpResponseMessage>(response);
 
-            //responseModel = await DeserializarObjetoResponse<DataComponentViewModel>(response);
+                var responseModel = await DeserializarObjetoResponse<ValidateViewModel>(response);
+                //DeserializarObjetoResponse<ResponseResult>(response);
+                return responseModel;
 
-            //  DeserializarObjetoResponse<ResponseResult>(response);
-
-            return null;
+            }
+            catch (Exception ex)
+            {
+                var mesage = ex.Message;
+                throw;
+            }
         }
 
-        public Task UpdateComponent(ComponentViewModel componentViewModel)
+        public async Task<ValidateViewModel> UpdateComponent(ComponentViewModel componentViewModel)
         {
-            // await _httpClient.DeleteAsync($"/component/Delete");
-            //DataComponentViewModel responseModel = null;
+            try
+            {
+                var itemModel = ObterConteudo(componentViewModel);
 
-            // TratarErrosResponse(response);
+                var response = await _httpClient.PutAsync("/component", itemModel);
 
+                // if (!TratarErrosResponse(response)) return await DeserializarObjetoResponse<HttpResponseMessage>(response);
 
-            //responseModel = await DeserializarObjetoResponse<DataComponentViewModel>(response);
+                var responseModel = await DeserializarObjetoResponse<ValidateViewModel>(response);
+                //DeserializarObjetoResponse<ResponseResult>(response);
+                return responseModel;
 
-            //  DeserializarObjetoResponse<ResponseResult>(response);
-
-            //return new ResponseResult() { Title = result };
-            return null;
+            }
+            catch (Exception ex)
+            {
+                var mesage = ex.Message;
+                throw;
+            }
         }
-        public Task DeleteComponent(int id)
+        public async Task<ValidateViewModel> DeleteComponent(int id)
         {
-            // await _httpClient.DeleteAsync($"/component/Delete");
-            //DataComponentViewModel responseModel = null;
+            try
+            {
+                var response = await _httpClient. GetAsync($"/component/delete/{id}");
 
-            // TratarErrosResponse(response);
+                // if (!TratarErrosResponse(response)) return await DeserializarObjetoResponse<HttpResponseMessage>(response);
 
+                var responseModel = await DeserializarObjetoResponse<ValidateViewModel>(response);
+                //DeserializarObjetoResponse<ResponseResult>(response);
+                return responseModel;
 
-            //responseModel = await DeserializarObjetoResponse<DataComponentViewModel>(response);
-
-            //  DeserializarObjetoResponse<ResponseResult>(response);
-
-            //return new ResponseResult() { Title = result };
-            return null;
+            }
+            catch (Exception ex)
+            {
+                var mesage = ex.Message;
+                throw;
+            }
         }
 
-        public async Task<ResponseResultGeneric<DataComponentViewModel>> GetData()
+        public async Task<ResponseResultGeneric<DataComponentViewModel>> GetData(string lang)
         {
-            var response = await _httpClient.GetAsync($"/component/GetData");
+            var response = await _httpClient.GetAsync($"/component/GetData/{lang}");
             ResponseResultGeneric<DataComponentViewModel>  responseModel = null;
 
             TratarErrosResponse(response);

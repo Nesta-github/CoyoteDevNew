@@ -8,11 +8,11 @@ namespace WebNesta.Coyote.Core.Data
         ICollection<T> GetComponent();
         ICollection<T> GetAllComponent();
         ICollection<T> GetComponentSearch(string term);
-        Task<Y> UpdateComponent(Z model);
-        Task<Y> InsertComponent(Z model);
-        Task<Y> DeleteComponent(int id);
+        Y UpdateComponent(Z model);
+        Y InsertComponent(Z model);
+        Y DeleteComponent(int id);
 
-        Dictionary<int, string> GetModelosCombo();
-        Dictionary<int, string> GetClasseCombo();
+        Dictionary<decimal, string> GetModelosCombo(string lang);
+        Dictionary<decimal, string> GetClasseCombo();
     }
 }
